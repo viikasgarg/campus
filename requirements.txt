@@ -33,12 +33,8 @@ django-localflavor==1.0
 django-mass-edit==2.2
 django-pagination==1.0.7
 django-positions==0.5.0
--e git://github.com/burke-software/django-report-builder.git@ae4da2e5e28a92bbaf7114606d768e7547ffa789#egg=django_report_builder-dev
--e git://github.com/burke-software/django-responsive-dashboard.git@5ccc205f1a3b7fd1913c26c8cc30c54eaac4312e#egg=django_responsive_dashboard-dev
 django-reversion==1.8.1
 django-rosetta==0.7.4
--e git://github.com/zsiciarz/django-rosetta-grappelli.git@d2f8b26ecb12ed369c8e496d6a8f401e923745d0#egg=django_rosetta_grappelli-origin/develop
--e git://github.com/burke-software/django-simple-import.git@34e5bf62a3d26a491056c479706fc5880548f31e#egg=django_simple_import-dev
 django-storages==1.1.8
 django-su==0.4.5
 django-toolbelt==0.0.1
