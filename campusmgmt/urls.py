@@ -48,7 +48,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls) ),
     (r'^ajax_select/', include('ajax_select.urls')),
     url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
-    (r'^reports/', include('scaffold_report.urls')),
+    #(r'^reports/', include('scaffold_report.urls')),
     url(r"^su/", include("django_su.urls")),
 )
 
