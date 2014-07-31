@@ -34,8 +34,6 @@ django-mass-edit==2.2
 django-pagination==1.0.7
 django-positions==0.5.0
 -e git://github.com/burke-software/django-report-builder.git@ae4da2e5e28a92bbaf7114606d768e7547ffa789#egg=django_report_builder-dev
--e git://github.com/burke-software/django-report-scaffold.git@d9070e7cc14f0f40a7fec3ca9d9e85cd07157711#egg=django_report_scaffold-origin/master
-django-report-utils==0.2.5
 -e git://github.com/burke-software/django-responsive-dashboard.git@5ccc205f1a3b7fd1913c26c8cc30c54eaac4312e#egg=django_responsive_dashboard-dev
 django-reversion==1.8.1
 django-rosetta==0.7.4

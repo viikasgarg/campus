@@ -74,7 +74,7 @@ INSTALLED_APPS = (
     'responsive_dashboard',
     'simple_import',
     'djangobower',
-    'scaffold_report',
+    #'scaffold_report',
     'django_su',
     'floppy_gumby_forms',
     'floppyforms',
@@ -329,6 +329,7 @@ LOGGING = {
     }
 }
 # Parse database configuration from $DATABASE_URL
+'''
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
@@ -347,3 +348,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+'''
