@@ -1,0 +1,39 @@
+
+
+
+{% extends "base.html"  %}
+{% block content %}
+{% load bootstrap_tags %}
+{# coding: utf8 #}
+
+
+<div id="Student_form_header" class="object-form-header Student-form-header">
+
+
+<h2><span class="label label-primary">
+{% if object %}
+
+Editing : {{object}}
+
+{% else %}
+Create new : {{modelname}}
+{% endif %}
+</span>
+</h2>
+</div>
+
+
+
+
+<form action="." method="post" name="Student_form" class="form-inline">
+    {% csrf_token %}
+    <div class = 'well' >
+            {{ form|as_bootstrap }}
+    </div>
+    <div class='actions'>
+                    <input type="submit" value="Save" class="btn btn-success"/>
+                    <a href="{% url "
+            profiles:student:list" 1 %}"class="btn btn-default">Cancel </a>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base_home.html" %}
+{% load crispy_forms_tags %}
+    {% block header %}
+    <link href="/static/login/style.css" rel="stylesheet">
+    {% endblock %}
+
+    {% block content %}
+
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Campus Management System</h1>
+        <p class="lead">Automate All Campus Activities with this Awesome Tool :)</p>
+        <p>
+              <div class="wrap" id="login-form" title="Login">
+                  {% if login_form  %}
+                        {% crispy login_form %}
+                  {% endif %}
+              </div>
+        </p>
+      </div>
+
+      {% load parabuilder %}{% para top 1 %}
+      {% paraheader top %}
+  {% endblock %}

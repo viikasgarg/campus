@@ -1,0 +1,41 @@
+<!-- Just plain HTML, no admin stuff. Useful for ajax -->
+{% load floppyforms %}
+
+<div class="row">
+  <h2> {{ subtitle }} </h2>
+  {{ msg }}
+  <form method="post" onsubmit="handle_form_fragment_submit(this); return false;" item_id="{{ item_id }}" id="form_fragment" enctype="multipart/form-data" action="">
+    {% form my_form using "floppy_gumby_forms/layouts/gumby.html" %}
+      {% if item_id %}
+      <div class="medium danger btn">
+        <a onclick="confirm_assignment_delete({{ item_id }});">Delete</a>
+      </div>
+      <div class="medium secondary btn">
+        <a onclick="prepare_to_copy(this);">Make a copy</a>
+      </div>
+      {% endif %}
+      <div class="medium primary btn">
+        <input  type="submit" value="Submit" />
+      </div>
+  </form>
+  {% if lists %}
+  <hr />
+      {% for list in lists %}
+      <h2>{{ list.heading }}</h2>
+      <ul>
+      {% for item in list.items %}
+          <li>{{ item }}</li>
+      {% endfor %}
+      </ul>
+      {% endfor %}
+  {% endif %}
+</div>
+
+<script type="text/javascript">
+    $("#id_item-benchmark").parent('div').removeClass('picker');
+    $("#id_item-benchmark").simple_multiselect({
+        multiple: false,
+        selectedList: 1
+     }).multiselectfilter();
+    if ($(".datepicker").is('*')) { $(".datepicker").datepicker(); }
+</script>

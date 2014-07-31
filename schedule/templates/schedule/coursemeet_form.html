@@ -1,0 +1,47 @@
+{% extends "base_home.html"  %}
+
+{% block extrastyle %}
+        <link href="/static/jquery_time/css/jquery.ui.timepicker.css" rel="stylesheet">
+{% endblock %}
+
+{% block extrahead %}
+    <script src="/static/jquery_time/js/jquery.ui.timepicker.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $("input[id$='time']").each(function() {
+                $(this).timepicker();
+                $(this).attr("readonly", "readonly");
+                $(this).css('cursor', 'pointer');
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+{% load bootstrap_tags %}
+{# coding: utf8 #}
+
+<div id="CourseMeet_form_header" class="object-form-header CourseMeet-form-header">
+
+<h2><span class="label label-primary">
+{% if object %}
+Editing : {{object}}
+{% else %}
+Create Period :
+{% endif %}
+</span>
+</h2>
+</div>
+
+<form action="." method="post" name="CourseMeet_form" class="form-inline">
+    {% csrf_token %}
+    <div class = 'well' >
+            {{ form|as_bootstrap }}
+    </div>
+    <div class='actions'>
+                    <input type="submit" value="Save" class="btn btn-success"/>
+                    <a href="{% url 'schedule:period:list' 1 %}"class="btn btn-default">Cancel </a>
+    </div>
+</form>
+{% endblock %}

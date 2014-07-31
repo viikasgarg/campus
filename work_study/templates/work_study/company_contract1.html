@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block css %}
+	textarea {
+		width:100%;
+		height:70px;
+	}
+	input[type=text] {
+		width:300px;
+	}
+{% endblock %}
+
+{% block content %}
+	<h1 style="text-align:center;"> Contract for {{ company }} </h1>
+	<br/>
+	<div class="contract">
+		<form action="" method="post">
+			{{ form.non_field_errors }}
+			<table>
+				{{ form.company }}
+				<tr><th>{{ form.company_name.label }}:</th>
+					<td>{{ form.company_name }} {{ form.company_name.errors }}</td></tr>
+				<tr><th>{{ form.name.label }}:</th>
+					<td>{{ form.name }} {{ form.name.errors }}</td></tr>
+				<tr><th>{{ form.title.label }}:</th>
+					<td>{{ form.title }} {{ form.title.errors }}</td></tr>
+				<tr><th>{{ form.date.label }}:</th>
+					<td>{{ form.date }} {{ form.date.errors }}</td></tr>
+				<tr><th>{{ form.number_students.label }}:</th>
+					<td>{{ form.number_students }} {{ form.number_students.errors }}</td></tr>
+			</table>
+			<input type="submit" value="Next" style="width:150px;"/>
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "admin_base.html" %}
+{% load floppyforms %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+<a href="/"> Home ></a>
+Preferences
+{% endblock %}
+
+{% block content %}
+    <h2>User Preferences</h2>
+    
+    <form action="" method="post">
+      {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+      {% endfor %}
+      {% form form using %}
+        {% formconfig row using "floppy_gumby_forms/rows/gumby.html" %}
+        {% formrow form.prefered_file_format %}
+        {% formrow form.include_deleted_students %}
+        {% formrow form.course_sort %}
+        {% formrow form.gradebook_preference %}
+        {% if 'omr' in settings.INSTALLED_APPS %}
+          <h3> OMR </h3>
+          {% formrow form.omr_default_point_value %}
+          {% formrow form.omr_default_number_answers %}
+        {% else %}
+            <span style="visibility:hidden">
+                {{ form.omr_default_point_value }}
+                {{ form.omr_default_save_question_to_bank }}
+            </span>
+        {% endif %}
+        <input type="submit"/>
+      {% endform %}
+    </form>
+{% endblock %}

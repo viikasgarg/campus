@@ -1,0 +1,21 @@
+
+{% extends "base_home.html" %}
+{% block content %}
+{# coding: utf8 #}
+
+<div id="CourseMeet_confirm_delete_header" class="model-confirm-delete-header CourseMeet-confirm-delete-header">
+    <h2><span class="label label-warning">
+Are you sure to delete : {{ object }} ?
+</span>
+</h2>
+</div>
+
+<form action="." method="post" name="CourseMeet_delete" class="model-confirm-delete-form CourseMeet-confirm-delete-form">
+    {% csrf_token %}
+    {{ form }}
+    <div class="model-confirm-delete-buttons-bar CourseMeet-confirm-delete-buttons-bar">
+        <input type="submit" value="Ok" class="btn btn-danger"/>
+        <a href="{% url "schedule:period:list" page="1" %}" class="btn btn-default">Cancel </a>
+    </div>
+</form>
+{% endblock %}

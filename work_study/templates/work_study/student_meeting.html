@@ -1,0 +1,41 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+    {{ formset.media }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs"> 
+<a href="/admin"> 
+Home
+</a> 
+&rsaquo; 
+<a href="/admin/work_study/studentinteraction/"> 
+ Student interactions
+</a> 
+&rsaquo; Student meetings</div> 
+{% endblock %}
+
+{% block content %}
+	<h2> Students who had mentor meetings </h2>
+       <div class='table'>
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <th>Mentor meeting this year?</th>
+                    <th>Date of last meeting</th>
+                </tr>
+                {% for meeting in meetings %}
+                <tr>
+                    <td>{{ meeting.student }}</td>
+                    <td>{{ meeting.met }}</td>
+                    <td>{{ meeting.date }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+     
+{% endblock %}
+

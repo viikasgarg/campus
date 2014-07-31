@@ -1,0 +1,27 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+<div id="breadcrumbs"> 
+<a href="/admin"> 
+Home
+</a> 
+&rsaquo; 
+<a href="/admin/discipline/"> 
+ Discipline
+</a> 
+&rsaquo;
+<a href="/admin/discipline/studentdiscipline/"> 
+ Student disciplines
+</a> 
+&rsaquo; 
+View
+</div> 
+{% endblock %}
+
+{% block content %}
+    <h2> View Student Discipline Records </h2>
+    {{ form }}
+{% endblock %}
+
+

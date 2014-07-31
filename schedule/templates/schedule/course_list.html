@@ -1,0 +1,106 @@
+
+{% extends "base_home.html" %}
+
+
+{# coding: utf8 #}
+{% block button_bar %}
+
+
+
+{% if perms.schedule.add_course %}
+ <div style="padding-bottom:16px;text-align:right;">
+    <a href="{% url "schedule:course:create"  %}" class="btn btn-primary">Add Course</a>
+</div>
+
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+ {% if object_list %}
+    <table class="table table-striped">
+    <thead >
+        <tr>
+            <th >Course </th>
+            <th > Actions </th>
+        </tr>
+    </thead>
+
+    <tbody >
+     {% for obj in object_list %}
+        <tr>
+            <td >{{obj}}</td>
+            <td >
+
+                {% if perms.schedule.change_course %}
+                <a href="{% url "schedule:course:update" obj.pk %}" class="btn btn-success">edit</a>
+                {%  endif %}
+
+                {% if perms.schedule.delete_course %}
+                <a href="{% url "schedule:course:delete" obj.pk %}" class="btn btn-danger">delete</a>
+                {%  endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    {% if is_paginated %}
+
+    <div class="pagination">
+    <ul class="pagination">
+        <li
+            {% if page_obj.number == 1 %}
+                class = 'disabled'
+            {% endif %}
+        >
+
+            <a class = '' href="{% url "
+            schedule:course:list" page_obj.first %}"
+            >&lt;&lt;</a>
+        </li>
+
+        {% if page_obj.has_previous %}
+        <li class =''>
+        <a class = 'prev-page' href="{% url "schedule:course:list" page_obj.previous_page_number %}">&lt;</a>
+        </li>
+        {% endif %}
+
+        {% for po in paginator.page_range %}
+           {% if po == page_obj.number %}
+            <li class ='active' >
+                <a class ='current'> </a>
+            {% else %}
+            <li class =''>
+            <a class ='' href="{% url "schedule:course:list" po %}">
+
+            {{po}}
+
+            </a>
+            {% endif %}
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+        <li class =''>
+        <a class ='next-page' href="{% url "schedule:course:list" page_obj.next_page_number %}">&gt;</a>
+        </li>
+        {% endif %}
+
+
+        <li
+            {% if page_obj.number == page_obj.paginator.num_pages %}
+            class ='disabled'
+            {% endif %}
+        >
+
+        <a class ='' href="{% url "schedule:course:list" page_obj.paginator.num_pages %}">&gt;&gt;</a>
+        </li>
+        </ul>
+    </div>
+
+        {% endif %}
+{% else %}
+    <p id="course_list_not_found_msg" > No courses found. </p>
+{% endif %}
+{% endblock %}

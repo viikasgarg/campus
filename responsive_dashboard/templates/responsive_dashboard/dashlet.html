@@ -1,0 +1,27 @@
+{% load static from staticfiles %}
+{% block content %}
+  <header>
+    {% block dashlet_header %}
+      {{ dashlet.get_verbose_name }}
+      {% if has_config %}
+        <img src="{% static 'responsive_dashboard/img/gear.svg' %}"/>
+      {% endif %}
+    {% endblock %}
+  </header>
+  
+  <div class="dashlet_body">
+    {% block dashlet_body %}
+      {% if list_items %}
+        {% for item in list_items %}
+          <div class="list_item">{{ item|safe }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+  </div>
+  
+  <div class="dashlet_footer">{% block dashlet_footer %}{% endblock %}</div>
+{% endblock %}
+
+{% block close_x %}
+<img src="{% static 'responsive_dashboard/img/x.svg' %}" class="close_x" onclick="delete_dashlet({{ dashlet.user_dashlet.id }})"/>
+{% endblock %}

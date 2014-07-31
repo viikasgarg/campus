@@ -1,0 +1,27 @@
+{% extends "responsive_dashboard/dashlet.html" %}
+
+{% block content %}
+    <header>{{ title }}</header>
+    <table>
+    <tbody>
+        <tr>
+            <td>
+              {% if due_in %}
+              Grades for {{ marking_period }} are due in {{ due_in }} day{{ due_in|pluralize }}
+              {% endif %}
+            </td>
+            <td style="border-left: none;">
+              <div class="primary btn">
+                <a href="{% url "grades.views.select_grade_method" %}?next=teacher_grade">Submit Grades</a>
+              </div>
+            </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td style="border-left: none;">
+            <div class="primary btn"><a>View Analytics</a></div>
+          </td>
+        </tr>
+    </tbody>
+    </table>
+{% endblock %}

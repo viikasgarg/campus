@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block extrahead %}    
+    <script type="text/javascript" src="{% static "js/jquery.ptTimeSelect.js" %}"></script>    
+    <script type="text/javascript" src="{% static "js/date.js" %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/ui.core.css" %}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{% static "css/jquery.ptTimeSelect.css" %}">
+    
+    <script type="text/javascript">
+    // Wow dates in javascript are soooooo bad
+        function add_hours(){
+            try {
+                var time_in = Date.parse($('#id_time_in').val())
+                var hours_in = time_in.getHours();
+                var minutes_in = time_in.getMinutes();
+                
+                var time_out = Date.parse($('#id_time_out').val())
+                var hours_out = time_out.getHours();
+                var minutes_out = time_out.getMinutes();
+                
+                var time_lunch = Date.parse($('#id_time_lunch').val())
+                var time_lunch_return = Date.parse($('#id_time_lunch_return').val())
+                if (time_lunch && time_lunch_return) {
+                    var hours_lunch = time_lunch.getHours();
+                    var minutes_lunch = time_lunch.getMinutes();
+                    var hours_lunch_return = time_lunch_return.getHours();
+                    var minutes_lunch_return = time_lunch_return.getMinutes();
+                } else {
+                    var hours_lunch = 0;
+                    var minutes_lunch = 0;
+                    var hours_lunch_return = 0;
+                    var minutes_lunch_return = 0;
+                }
+                
+                var hours = hours_lunch - hours_in;
+                hours = hours + (hours_out - hours_lunch_return);
+                
+                var minutes = minutes_lunch - minutes_in;
+                minutes = minutes + (minutes_out - minutes_lunch_return);
+                
+                hours = hours + minutes/60;
+                hours = Math.round(hours * 100) / 100
+                
+                $('#span_hours').html(hours);
+            } catch (err) {
+                $('#span_hours').html("N/A");
+            }
+            
+        }
+        
+        $(document).ready(
+            function () {
+                $('code').each(
+                    function() {
+                        eval($(this).html());
+                    }
+                )
+                add_hours();
+                $('#ptTimeSelectSetButton').click(function() {
+                    add_hours();
+                });
+                $('#id_time_in').change(function() {
+                    add_hours();
+                });
+                $('#id_time_out').change(function() {
+                    add_hours();
+                });
+                $('#id_time_lunch').change(function() {
+                    add_hours();
+                });
+                $('#id_time_lunch_return').change(function() {
+                    add_hours();
+                });
+                $(".datepicker").datepicker();
+            }
+        );
+        
+        function check_time() {
+            lunch_out = document.timesheet_form.time_lunch.value;
+            lunch_in = document.timesheet_form.time_lunch_return.value;
+            if (lunch_out == "" && lunch_in == "") {
+                document.timesheet_form.time_lunch.value = "12:00 pm";
+                document.timesheet_form.time_lunch_return.value = "12:00 pm";
+            }
+            return check_date();
+        }
+        
+        function no_lunch() {
+            document.timesheet_form.time_lunch.value = "";
+            document.timesheet_form.time_lunch_return.value = "";
+            add_hours();
+        }
+        
+        function check_date() {
+            date = new Date(document.timesheet_form.date.value.replace('-', '/').replace('-', '/'));
+            if (date.getDay()%6==0) {
+                if (confirm('Warning: You have selected a weekend.')) {
+                    return true;
+                } else {
+                    return false;
+                } 
+            }
+            return true;
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+<h1>Create Time Card</h1>
+
+<div class="subhead-text">
+You are logged in as
+<strong>
+    {% if user.first_name and user.last_name %}
+        {{ user.first_name }} {{ user.last_name }}
+    {% else %}
+        {{ user }}
+    {% endif %}
+</strong>
+.
+{% if student %}
+    Please fill out your time card below.
+{% else %}
+    Please review {{ studentName.fname }} {{ studentName.lname }}'s time card below.
+{% endif %}
+</div>
+
+{{ form.non_field_errors }}
+{% if warning %}
+    <br/><h3 style="color: red;">Warning student has already posted a time sheet for today. You may approve it <a href="{% url "work_study.views.approve" %}?key={{ key }}">here</a></h3><br/>
+{% endif %}
+</div>
+
+<form method="post" name="timesheet_form" onsubmit="return check_time()" action="">
+
+<table class="timecard-date">
+<tbody>
+    <tr>
+        <td>Date</td>
+    </tr>
+    <tr>
+        <td>
+            <input
+                   type="text"
+                   class="timecard-datefield datepicker"
+                   name="{{ form.date.html_name }}"
+                   id="id_{{ form.date.html_name }}"
+                   value="{{ form.date.value }}"/>
+        </td>
+        {{ form.date.errors }}
+    </tr>
+</tbody>
+</table>
+
+<table class="timecard-date">
+<tbody>
+	<tr>
+		<td>Start</td>
+		<td>Lunch Out</td>
+		<td>Lunch In</td>
+		<td>End</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>{{ form.time_in }} {{ form.time_in.errors }}</td>
+		<td>{{ form.time_lunch }} {{ form.time_lunch.errors }}</td>
+		<td>{{ form.time_lunch_return }} {{ form.time_lunch_return.errors }}</td>
+		<td>{{ form.time_out }} {{ form.time_out.errors }}</td>
+		<td><a href="#" onclick="no_lunch()" class="button gray">No Lunch</a></td>
+                            <script>
+                                $('#id_time_in').ptTimeSelect();
+                                $('#id_time_lunch').ptTimeSelect();
+                                $('#id_time_lunch_return').ptTimeSelect();
+                                $('#id_time_out').ptTimeSelect();
+                            </script>
+	</tr>
+</tbody>
+</table>
+
+<div class="subhead-text">
+{% if student %} You {% else %} {{ studentName.fname }} {{ studentName.lname }} {% endif %} worked <strong><span id="span_hours"></span></strong> total hours.
+</div>
+
+
+<div class="timecard-comments">
+<p>
+    {% if student %} My supervisor was: {% else %} Supervisor: {% endif %}
+		{{ form.my_supervisor }} {{ form.my_supervisor.errors }}
+</p>
+</div>
+
+
+<div class="spacer-3"></div>
+
+
+<div class="timecard-options">
+{% if not form.for_pay.is_hidden %}
+    <input type="checkbox" name="{{ form.for_pay.html_name }}" id="id_{{ form.for_pay.html_name }}" {% if form.for_pay.value %}checked="checked"{% endif %}>
+        {% if student %} I {% else %} Student {% endif %}was working over a school break (such as a holiday) and should be paid separately for these hours.
+    </label><br />
+    {{ form.for_pay.errors }} 
+{% endif %}
+<input type="checkbox" name="{{ form.make_up.html_name }}" id="id_{{ form.make_up.html_name }}" {% if form.make_up.value %}checked="checked"{% endif %}>
+    {% if student %} I {% else %} Student {% endif %} was making up a missed day.
+</label>
+</div>
+
+<div class="spacer-3"></div>
+
+<div class="timecard-comments">
+
+	<p>{% if student %} My {% else %} Student's {% endif %} major accomplishment for today was...</p>
+        <textarea
+                  class="timecard-commentsbox"
+                  id="id_{{ form.student_accomplishment.html_name }}"
+                  name="{{ form.student_accomplishment.html_name }}">{{ form.student_accomplishment.value|default_if_none:"" }}</textarea>
+        {{ form.student_accomplishment.errors }} 
+	
+	<p>Client comments, concerns, questions...</p>
+        {% if student %}
+            <textarea class="timecard-commentsbox" disabled="disabled"></textarea>
+        {% else %}
+            <textarea
+                    class="timecard-commentsbox"
+                    id="id_{{ form.supervisor_comment.html_name }}"
+                    name="{{ form.supervisor_comment.html_name }}">{{ form.supervisor_comment.value|default_if_none:"" }}</textarea>
+            {{ form.supervisor_comment.errors }}
+            <br/>
+            {{ form.show_student_comments }} Allow students to see comments and performance review.
+        {% endif %}
+
+	<p>Daily Student Worker Performance:
+		 {{ form.performance.errors }} {{ form.performance }} 
+	</p>
+
+{% if approved %}
+    <p> Approved by supervisor </p>
+{% endif %}    
+{% if not student %}
+    <p> Submitted by student </p>
+{% endif %}
+</div>
+
+
+
+
+<div class="spacer-3"></div>
+
+
+<div class="submitwrap">
+{% if student %}
+    <input type="submit" class="button gray" value="Submit for Approval">
+{% else %}
+    <input type="submit" class="button gray" value="Approve Time Card"/>
+{% endif %}
+<span class="hidden">{{ form.student }} {{ form.company }} {{ form.edit }}</span>
+</div>
+</form>
+{% endblock %}
+

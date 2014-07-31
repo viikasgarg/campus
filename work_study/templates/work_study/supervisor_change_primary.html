@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Select / Add Supervisor</h1>
+
+<div class="subhead-text">
+	Here, you can change the supervisor for <strong>{{ student }}</strong>.
+</div>
+
+<form method="post" action="">
+
+	<div class="timecard-comments">
+		{{ form.primary_contact.label }} {{ form.primary_contact }} {{ form.primary_contact.errors }}
+		<div class="submitwrap">
+			<input type="submit" name="edit" class="button gray" value="Edit">
+			<input type="submit" name="save" class="button gray" value="Save">
+		</div>
+		
+		<div class="spacer-3"></div>
+		
+			<p>If your primary supervisor is not in the dropdown menu, you may add a new one.</p>
+		<div class="submitwrap">
+			<input type="submit" name="add" class="button gray" value="Add New Supervisor">
+		</div>
+	</div>
+</form>
+
+{% endblock %}
+

@@ -1,0 +1,93 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_modify grp_tags %}
+
+{% block object-tools-items %}
+    {% if has_add_permission %}
+        {% if 'grades' in settings.INSTALLED_APPS %}
+            <li><a href="{% url "grades.views.student_gradesheet" object_id %}" class="historylink">{% trans "Gradesheet" %}</a></li>
+        {% endif %}
+    {% endif %}
+    <li><a href="history/">{% trans "History" %}</a></li>
+    {% if object_id %}
+        <li><a href="{% url "admin:auth_user_change" object_id %}">User Permissions and Password</a></li>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script type="text/javascript">
+        function check_inactive() {
+            if ( $('#id_inactive').is(":checked") ) {
+                $('div.row.date_dismissed.reason_left').show('fast');
+            } else {
+                $('div.row.date_dismissed.reason_left').hide();
+            }
+        }
+
+        $(document).ready(function() {
+            check_inactive();
+
+            $('#id_inactive').change(function() {
+                check_inactive();
+            });
+
+            $('#student_form').submit(function() {
+                if (
+                    $('#id_inactive').is(":checked") &&
+                    $('#id_date_dismissed').val() == "" &&
+                    $('#id_reason_left').val() == ""
+                ) {
+                    return confirm('You set student to inactive but didn\'t give a date dismissed nor reason left. Are you sure you want to submit?');
+                }
+                return true;
+              });
+
+            $('div#studentcohort_set-group div.primary input').change(function() {
+                if ( $(this).prop("checked") ) {
+                    check_it = true;
+                } else {
+                    check_it = false;
+                }
+                $('div#studentcohort_set-group div.primary input').prop("checked", false);
+                if ( check_it ) {
+                    $(this).prop("checked", true);
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block after_field_sets %}
+    <fieldset class="grp-module module collapse closed open">
+        <h2 class="collapse-handler">Courses</h2>
+        <div class="form-row checklist">
+            <p>
+                <a href="/admin/profiles/studentcourse/{{ object_id }}" target="_blank" >Change Enrollment (Will open new tab)</a>
+            </p>
+             <table>
+                  {% for course in courses %}
+                       <tr>
+                            <td><a href="/admin/schedule/course/{{ course.id }}">{{ course }}</a></td>
+                            <td><a href="/admin/schedule/courseenrollment/{{ course.enroll }}"> Enrollment </a></td>
+                            <td><a href="{% url "grades.views.teacher_grade_upload" course.id %}"> Grades </a></td>
+                       </tr>
+                  {% endfor %}
+             </table>
+             {% if other_courses %}
+             <br/>
+             <a href="javascript:void(0)" onclick="$('#all_courses').toggle('fast');"> See all courses </a>
+             <div id="all_courses" style="display: none">
+                  <table>
+                      {% for course in other_courses %}
+                           <tr>
+                                <td><a href="/admin/schedule/course/{{ course.id }}">{{ course }}</a></td>
+                                <td><a href="/admin/schedule/courseenrollment/{{ course.enroll }}"> Enrollment </a></td>
+                                <td><a href="/schedule/teacher_grade/upload/{{ course.id }}"> Grades </a></td>
+                           </tr>
+                      {% endfor %}
+                 {% endif %}
+                 </table>
+             </div>
+        </div>
+    </fieldset>
+{% endblock %}

@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% block content %}
+{# coding: utf8 #}
+
+<div id="Student_confirm_delete_header" class="model-confirm-delete-header Student-confirm-delete-header">
+    <h2><span class="label label-warning">
+Are you sure to delete : {{ object }} ?
+</span>
+</h2>
+</div>
+
+<form action="." method="post" name="Student_delete" class="model-confirm-delete-form Student-confirm-delete-form">
+    {% csrf_token %}
+    {{ form }}
+    <div class="model-confirm-delete-buttons-bar Student-confirm-delete-buttons-bar">
+        <input type="submit" value="Ok" class="btn btn-danger"/>
+        <a href="{% url "profiles:student:list" page="1" %}" class="btn btn-default">Cancel </a>
+    </div>
+</form>
+{% endblock %}

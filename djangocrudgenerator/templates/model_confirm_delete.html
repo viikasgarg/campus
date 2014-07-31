@@ -1,0 +1,21 @@
+{% load generatortags %}
+{% start_tag %} extends "base.html" {% end_tag %}
+{% start_tag %} block content {% end_tag %}
+{% start_comment %} coding: utf8 {% end_comment %}
+
+<div id="{{modelname}}_confirm_delete_header" class="model-confirm-delete-header {{modelname}}-confirm-delete-header">
+    <h2><span class="label label-warning">
+Are you sure to delete : {% start_var %} object {% end_var %} ?
+</span>
+</h2>
+</div>
+
+<form action="." method="post" name="{{modelname}}_delete" class="model-confirm-delete-form {{modelname}}-confirm-delete-form">
+    {% start_tag %} csrf_token {% end_tag %}
+    {% start_var %} form {% end_var %}
+    <div class="model-confirm-delete-buttons-bar {{modelname}}-confirm-delete-buttons-bar">
+        <input type="submit" value="Ok" class="btn btn-danger"/>
+        <a href="{% gen_url_tag appname|lower modelname|lower "list" page=1 %}" class="btn btn-default">Cancel </a>
+    </div>
+</form>
+{% start_tag %} endblock {% end_tag %}

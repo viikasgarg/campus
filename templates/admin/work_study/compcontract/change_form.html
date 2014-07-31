@@ -1,0 +1,8 @@
+{% extends "admin/change_form.html" %}
+
+{% block object-tools-items %}
+    {% if not add %} 
+        <li><a href="/work_study/company_contract_pdf/{{ object_id }}" class="historylink">Download PDF</a></li> 
+    {% endif %}
+    {{ block.super }}
+{% endblock %}

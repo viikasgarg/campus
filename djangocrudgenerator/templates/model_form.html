@@ -1,0 +1,39 @@
+{% load generatortags %}
+
+{% verbatim %}
+{% extends "base_home.html"  %}
+{% block content %}
+{% load bootstrap_tags %}
+{# coding: utf8 #}
+
+{% endverbatim %}
+<div id="{{modelname}}_form_header" class="object-form-header {{modelname}}-form-header">
+
+{% verbatim %}
+<h2><span class="label label-primary">
+{% if object %}
+
+Editing : {{object}}
+
+{% else %}
+Create new : {{modelname}}
+{% endif %}
+</span>
+</h2>
+</div>
+
+{% endverbatim %}
+
+
+<form action="." method="post" name="{{modelname}}_form" class="form-inline">
+    {% start_tag %} csrf_token {% end_tag %}
+    <div class = 'well' >
+            {% start_var %} form|as_bootstrap {% end_var %}
+    </div>
+    <div class='actions'>
+                    <input type="submit" value="Save" class="btn btn-success"/>
+                    <a href="{{"{"}}% url "
+            {{appname|lower}}:{{modelname|lower}}:list" 1 %{{"}"}}"class="btn btn-default">Cancel </a>
+    </div>
+</form>
+{% start_tag %} endblock {% end_tag %}

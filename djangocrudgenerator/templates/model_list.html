@@ -1,0 +1,109 @@
+{% load generatortags %}
+{% start_tag %} extends "base_home.html" {% end_tag %}
+
+{% verbatim %}
+{# coding: utf8 #}
+{% block button_bar %}
+{% endverbatim %}
+
+{% start_tag %} if perms.{{appname|lower}}.add_{{modelname|lower}} {% end_tag %}
+
+<div style="padding-bottom:16px;text-align:right;">
+    <a href="{% gen_url_tag appname|lower modelname|lower "create" %}" class="btn btn-primary">Add {{modelname}}</a>
+</div>
+
+{% verbatim %}
+{% endif %}
+{% endblock %}
+{% endverbatim %}
+
+{% start_tag %} block content {% end_tag %}
+
+{% verbatim %} {% if object_list %} {% endverbatim %}
+    <table class="table table-striped">
+    <thead >
+        <tr>
+            <th >{{modelname}} </th>
+            <th > Actions </th>
+        </tr>
+    </thead>
+
+    <tbody >
+    {% verbatim %} {% for obj in object_list %} {% endverbatim %}
+        <tr>
+            <td >{{"{"}}{{"{"}}obj{{"}"}}{{"}"}}</td>
+            <td >
+
+                {% start_tag %} if perms.{{appname|lower}}.change_{{modelname|lower}} {% end_tag %}
+                <a href="{{"{"}}% url "{{appname|lower}}:{{modelname|lower}}:update" obj.pk %{{"}"}}" class="btn btn-success">edit</a>
+                {% start_tag %}  endif {% end_tag %}
+
+                {% start_tag %} if perms.{{appname|lower}}.delete_{{modelname|lower}} {% end_tag %}
+                <a href="{{"{"}}% url "{{appname|lower}}:{{modelname|lower}}:delete" obj.pk %{{"}"}}" class="btn btn-danger">delete</a>
+                {% start_tag %}  endif {% end_tag %}
+            </td>
+        </tr>
+    {% start_tag %} endfor {% end_tag %}
+    </tbody>
+    </table>
+    {% start_tag %} if is_paginated {% end_tag %}
+{% verbatim %}
+    <div class="pagination">
+    <ul class="pagination">
+        <li
+            {% if page_obj.number == 1 %}
+                class = 'disabled'
+            {% endif %}
+    >
+
+{% endverbatim %}
+            <a class = '' href="{{"{"}}% url "
+            {{appname|lower}}:{{modelname|lower}}:list" page_obj.first %{{"}"}}"
+            >&lt;&lt;</a>
+        </li>
+
+        {% start_tag %} if page_obj.has_previous {% end_tag %}
+        <li class =''>
+        <a class = 'prev-page' href="{{"{"}}% url "{{appname|lower}}:{{modelname|lower}}:list" page_obj.previous_page_number %{{"}"}}">&lt;</a>
+        </li>
+        {% start_tag %} endif {% end_tag %}
+
+        {% start_tag %} for po in paginator.page_range {% end_tag %}
+           {% start_tag %} if po == page_obj.number {% end_tag %}
+            <li class ='active' >
+                <a class ='current'> {{ page_obj.number }}</a>
+            {% start_tag %} else {% end_tag %}
+            <li class =''>
+            <a class ='' href="{{"{"}}% url "{{appname|lower}}:{{modelname|lower}}:list" po %{{"}"}}">
+
+            {{"{"}}{{"{"}}po{{"}"}}{{"}"}}
+
+            </a>
+            {% start_tag %} endif {% end_tag %}
+            </li>
+        {% start_tag %} endfor {% end_tag %}
+
+        {% start_tag %} if page_obj.has_next {% end_tag %}
+        <li class =''>
+        <a class ='next-page' href="{{"{"}}% url "{{appname|lower}}:{{modelname|lower}}:list" page_obj.next_page_number %{{"}"}}">&gt;</a>
+        </li>
+        {% start_tag %} endif {% end_tag %}
+
+{% verbatim %}
+        <li
+            {% if page_obj.number == page_obj.paginator.num_pages %}
+            class ='disabled'
+            {% endif %}
+        >
+{% endverbatim %}
+        <a class ='' href="{{"{"}}% url "{{appname|lower}}:{{modelname|lower}}:list" page_obj.paginator.num_pages %{{"}"}}">&gt;&gt;</a>
+        </li>
+        </ul>
+    </div>
+
+        {% start_tag %} endif {% end_tag %}
+{% start_tag %} else {% end_tag %}
+    <p id="{{modelname|lower}}_list_not_found_msg" > No {{modelname|lower}}s found. </p>
+{% start_tag %} endif {% end_tag %}
+
+{% start_tag %} endblock {% end_tag %}

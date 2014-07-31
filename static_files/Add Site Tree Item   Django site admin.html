@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://127.0.0.1:8000/admin/sitetree/tree/2/item_add/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Add Site Tree Item | Django site admin</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="NONE,NOARCHIVE">
+
+    <!-- jQuery, jQuery-UI -->
+    <script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/jquery.js"></script>
+    <script src="./Add Site Tree Item   Django site admin_files/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="./Add Site Tree Item   Django site admin_files/ajax_select.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/admin_django_sis.js"></script>
+
+    <!-- STYLESHEETS -->
+    
+    
+        <link href="./Add Site Tree Item   Django site admin_files/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./Add Site Tree Item   Django site admin_files/screen.css" rel="stylesheet" type="text/css" media="screen">
+        
+            <link href="./Add Site Tree Item   Django site admin_files/output.css" rel="stylesheet" type="text/css" media="screen">
+        
+    
+
+
+    
+    <!-- Bootstrap core CSS -->
+    <link href="http://127.0.0.1:8000/static/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- EXTRASTYLES -->
+    
+    <!-- JAVASCRIPTS -->
+    
+    
+        <script type="text/javascript">window.__admin_media_prefix__ = "/static/grappelli/";</script>
+        <script type="text/javascript">window.__admin_utc_offset__ = "0";</script>
+        <script type="text/javascript" charset="utf-8">
+            // GLOBALS
+            var grappelli = {},
+                ADMIN_URL = "/admin/",
+                MODEL_URL_ARRAY = {"1": {"pk": 1, "app": "admin", "model": "logentry"}, "2": {"pk": 2, "app": "auth", "model": "permission"}, "3": {"pk": 3, "app": "auth", "model": "group"}, "4": {"pk": 4, "app": "auth", "model": "user"}, "5": {"pk": 5, "app": "contenttypes", "model": "contenttype"}, "6": {"pk": 6, "app": "sessions", "model": "session"}, "7": {"pk": 7, "app": "menu", "model": "menu"}, "8": {"pk": 8, "app": "menu", "model": "menuitem"}, "9": {"pk": 9, "app": "django_para", "model": "para"}, "10": {"pk": 10, "app": "django_para", "model": "paraitem"}, "11": {"pk": 11, "app": "sitetree", "model": "tree"}, "12": {"pk": 12, "app": "sitetree", "model": "treeitem"}, "13": {"pk": 13, "app": "profiles", "model": "userpreference"}, "14": {"pk": 14, "app": "profiles", "model": "emergencycontact"}, "15": {"pk": 15, "app": "profiles", "model": "emergencycontactnumber"}, "16": {"pk": 16, "app": "profiles", "model": "faculty"}, "17": {"pk": 17, "app": "profiles", "model": "cohort"}, "18": {"pk": 18, "app": "profiles", "model": "percoursecohort"}, "19": {"pk": 19, "app": "profiles", "model": "reasonleft"}, "20": {"pk": 20, "app": "profiles", "model": "gradelevel"}, "21": {"pk": 21, "app": "profiles", "model": "languagechoice"}, "22": {"pk": 22, "app": "profiles", "model": "classyear"}, "23": {"pk": 23, "app": "profiles", "model": "student"}, "24": {"pk": 24, "app": "profiles", "model": "studentcohort"}, "25": {"pk": 25, "app": "profiles", "model": "transcriptnotechoices"}, "26": {"pk": 26, "app": "profiles", "model": "transcriptnote"}, "27": {"pk": 27, "app": "profiles", "model": "studentnumber"}, "28": {"pk": 28, "app": "profiles", "model": "studentfile"}, "29": {"pk": 29, "app": "profiles", "model": "studenthealthrecord"}, "30": {"pk": 30, "app": "profiles", "model": "schoolyear"}, "31": {"pk": 31, "app": "profiles", "model": "messagetostudent"}, "32": {"pk": 32, "app": "profiles", "model": "familyaccessuser"}, "33": {"pk": 33, "app": "administration", "model": "accesslog"}, "34": {"pk": 34, "app": "administration", "model": "configuration"}, "35": {"pk": 35, "app": "administration", "model": "template"}, "36": {"pk": 36, "app": "schedule", "model": "markingperiod"}, "37": {"pk": 37, "app": "schedule", "model": "daysoff"}, "38": {"pk": 38, "app": "schedule", "model": "period"}, "39": {"pk": 39, "app": "schedule", "model": "coursemeet"}, "40": {"pk": 40, "app": "schedule", "model": "location"}, "41": {"pk": 41, "app": "schedule", "model": "courseenrollment"}, "42": {"pk": 42, "app": "schedule", "model": "day"}, "43": {"pk": 43, "app": "schedule", "model": "department"}, "44": {"pk": 44, "app": "schedule", "model": "departmentgraduationcredits"}, "45": {"pk": 45, "app": "schedule", "model": "course"}, "46": {"pk": 46, "app": "schedule", "model": "omitcoursegpa"}, "47": {"pk": 47, "app": "schedule", "model": "omityeargpa"}, "48": {"pk": 48, "app": "schedule", "model": "award"}, "49": {"pk": 49, "app": "schedule", "model": "awardstudent"}, "50": {"pk": 50, "app": "discipline", "model": "disciplineaction"}, "51": {"pk": 51, "app": "discipline", "model": "disciplineactioninstance"}, "52": {"pk": 52, "app": "discipline", "model": "infraction"}, "53": {"pk": 53, "app": "discipline", "model": "studentdiscipline"}, "54": {"pk": 54, "app": "grades", "model": "gradecomment"}, "55": {"pk": 55, "app": "grades", "model": "studentmarkingperiodgrade"}, "56": {"pk": 56, "app": "grades", "model": "studentyeargrade"}, "57": {"pk": 57, "app": "grades", "model": "gradeletterrule"}, "58": {"pk": 58, "app": "grades", "model": "grade"}, "59": {"pk": 59, "app": "custom_field", "model": "customfield"}, "60": {"pk": 60, "app": "custom_field", "model": "customfieldvalue"}, "61": {"pk": 61, "app": "report_builder", "model": "report"}, "62": {"pk": 62, "app": "report_builder", "model": "format"}, "63": {"pk": 63, "app": "report_builder", "model": "displayfield"}, "64": {"pk": 64, "app": "report_builder", "model": "filterfield"}, "65": {"pk": 65, "app": "responsive_dashboard", "model": "userdashboard"}, "66": {"pk": 66, "app": "responsive_dashboard", "model": "userdashlet"}, "67": {"pk": 67, "app": "responsive_dashboard", "model": "dashletsetting"}, "68": {"pk": 68, "app": "simple_import", "model": "importsetting"}, "69": {"pk": 69, "app": "simple_import", "model": "columnmatch"}, "70": {"pk": 70, "app": "simple_import", "model": "importlog"}, "71": {"pk": 71, "app": "simple_import", "model": "relationalmatch"}, "72": {"pk": 72, "app": "simple_import", "model": "importedobject"}, "73": {"pk": 73, "app": "work_study", "model": "cracontact"}, "74": {"pk": 74, "app": "work_study", "model": "pickuplocation"}, "75": {"pk": 75, "app": "work_study", "model": "contact"}, "76": {"pk": 76, "app": "work_study", "model": "company"}, "77": {"pk": 77, "app": "work_study", "model": "workteam"}, "78": {"pk": 78, "app": "work_study", "model": "paymentoption"}, "79": {"pk": 79, "app": "work_study", "model": "studentfunctionalresponsibility"}, "80": {"pk": 80, "app": "work_study", "model": "studentdesiredskill"}, "81": {"pk": 81, "app": "work_study", "model": "compcontract"}, "82": {"pk": 82, "app": "work_study", "model": "personality"}, "83": {"pk": 83, "app": "work_study", "model": "studentworkerroute"}, "84": {"pk": 84, "app": "work_study", "model": "studentworker"}, "85": {"pk": 85, "app": "work_study", "model": "survey"}, "86": {"pk": 86, "app": "work_study", "model": "companyhistory"}, "87": {"pk": 87, "app": "work_study", "model": "presetcomment"}, "88": {"pk": 88, "app": "work_study", "model": "studentinteraction"}, "89": {"pk": 89, "app": "work_study", "model": "timesheetperformancechoice"}, "90": {"pk": 90, "app": "work_study", "model": "timesheet"}, "91": {"pk": 91, "app": "work_study", "model": "attendancefee"}, "92": {"pk": 92, "app": "work_study", "model": "attendancereason"}, "93": {"pk": 93, "app": "work_study", "model": "attendance"}, "94": {"pk": 94, "app": "work_study", "model": "clientvisit"}, "95": {"pk": 95, "app": "work_study", "model": "messagetosupervisor"}, "96": {"pk": 96, "app": "work_study", "model": "workteamuser"}, "97": {"pk": 97, "app": "engrade_sync", "model": "coursesync"}, "98": {"pk": 98, "app": "engrade_sync", "model": "teachersync"}, "99": {"pk": 99, "app": "attendance", "model": "attendancestatus"}, "100": {"pk": 100, "app": "attendance", "model": "courseattendance"}, "101": {"pk": 101, "app": "attendance", "model": "studentattendance"}, "102": {"pk": 102, "app": "attendance", "model": "attendancelog"}, "103": {"pk": 103, "app": "reversion", "model": "revision"}, "104": {"pk": 104, "app": "reversion", "model": "version"}, "105": {"pk": 105, "app": "xadmin", "model": "bookmark"}, "106": {"pk": 106, "app": "xadmin", "model": "usersettings"}, "107": {"pk": 107, "app": "xadmin", "model": "userwidget"}, "108": {"pk": 108, "app": "djangocrudgenerator", "model": "djangocrudgeneratortestmodel"}, "109": {"pk": 109, "app": "testcrud", "model": "test"}},
+                DATE_FORMAT = "%Y-%m-%d",
+                TIME_FORMAT = "%H:%M:%S",
+                DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S";
+        </script>
+        <!-- jQuery, jQuery-UI -->
+        <script src="./Add Site Tree Item   Django site admin_files/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="./Add Site Tree Item   Django site admin_files/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+
+        <script src="./Add Site Tree Item   Django site admin_files/bootstrap.min.js"></script>
+
+        
+            <!-- Grappelli Minified -->
+            <script src="./Add Site Tree Item   Django site admin_files/grappelli.min.js" type="text/javascript"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            (function($) {
+                $(document).ready(function() {
+                    //$("#grp-navigation .grp-collapse").grp_collapsible();
+
+                });
+            })(grp.jQuery);
+
+        </script>
+    
+    
+    <script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/saved_resource"></script>
+    <script type="text/javascript" charset="utf-8">
+        (function($) {
+            $(document).ready(function() {
+                grappelli.initDateAndTimePicker();
+                $("#grp-content-container .grp-group").grp_collapsible_group();
+                $("#grp-content-container .grp-collapse").grp_collapsible({
+                    on_init: function(elem, options) {
+                        // open collapse (and all collapse parents) in case of errors
+                        if (elem.find("ul.errorlist").length > 0) {
+                            elem.removeClass("grp-closed")
+                                .addClass("grp-open");
+                            elem.parents(".grp-collapse")
+                                .removeClass("grp-closed")
+                                .addClass("grp-open");
+                        }
+                    }
+                });
+                var related_lookup_fields_fk = [];
+                var related_lookup_fields_m2m = [];
+                var related_lookup_fields_generic = [];
+                var autocomplete_fields_fk = [];
+                var autocomplete_fields_m2m = [];
+                var autocomplete_fields_generic = [];
+                $.each(related_lookup_fields_fk, function() {
+                    $("#id_" + this).grp_related_fk({lookup_url:"/grappelli/lookup/related/"});
+                });
+                $.each(related_lookup_fields_m2m, function() {
+                    $("#id_" + this).grp_related_m2m({lookup_url:"/grappelli/lookup/m2m/"});
+                });
+                $.each(related_lookup_fields_generic, function() {
+                    var content_type = "#id_" + this[0],
+                        object_id = "#id_" + this[1];
+                    $(object_id).grp_related_generic({content_type:content_type, object_id:object_id, lookup_url:"/grappelli/lookup/related/"});
+                });
+                $.each(autocomplete_fields_fk, function() {
+                    $("#id_" + this).grp_autocomplete_fk({
+                        lookup_url:"/grappelli/lookup/related/",
+                        autocomplete_lookup_url:"/grappelli/lookup/autocomplete/"
+                    });
+                });
+                $.each(autocomplete_fields_m2m, function() {
+                    $("#id_" + this).grp_autocomplete_m2m({
+                        lookup_url:"/grappelli/lookup/m2m/",
+                        autocomplete_lookup_url:"/grappelli/lookup/autocomplete/"
+                    });
+                });
+                $.each(autocomplete_fields_generic, function() {
+                    var content_type = "#id_" + this[0],
+                        object_id = "#id_" + this[1];
+                    $(object_id).grp_autocomplete_generic({
+                        content_type:content_type,
+                        object_id:object_id,
+                        lookup_url:"/grappelli/lookup/related/",
+                        autocomplete_lookup_url:"/grappelli/lookup/autocomplete/"
+                    });
+                });
+                $("a#grp-open-all").bind("click", function(){
+                    $("#grp-content .grp-collapse-handler").each(function() {
+                        $(this).parent(".grp-collapse").removeClass("grp-closed").addClass("grp-open");
+                    });   
+                });
+                $("a#grp-close-all").bind("click", function(){
+                    $("#grp-content .grp-collapse-handler").each(function() {
+                        $(this).parent(".grp-collapse").removeClass("grp-open").addClass("grp-closed");
+                    });
+                });
+                // HACK: get rid of currently/change with URL–fields. F**K!!!
+                $('p.url').each(function() {
+                    $(this).find("a").remove();
+                    var text = $(this).html();
+                    text = text.replace(/^\w*: /, "");
+                    text = text.replace(/<br>.*: /, "");
+                    $(this).html(text);
+                });
+                // HACK: rearrange inlines
+                $('div.grp-group').each(function() {
+                    var placeholder = $("fieldset.placeholder."+$(this).attr("id"));
+                    if (placeholder.length) {
+                        $(placeholder).replaceWith($(this));
+                    }
+                });
+            });
+        })(grp.jQuery);
+    </script>
+    <script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/core.js"></script>
+<script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/jquery(1).js"></script>
+<script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/jquery.init.js"></script>
+<script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/actions.js"></script>
+<script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/SelectBox.js"></script>
+<script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/SelectFilter2.js"></script>
+<script type="text/javascript" src="./Add Site Tree Item   Django site admin_files/collapse.js"></script>
+
+    <!-- EXTRAHEAD -->
+    
+    
+    
+    <script type="text/javascript">
+        (function($){
+            $(document).ready(function() {
+                $('form#treeitem_form :input:visible:enabled:first').focus()
+            });
+        }(grp.jQuery));
+    </script>
+    
+
+    <style type="text/css">
+        #sitetree-urlnames {
+            margin-top: 1em;
+            padding: 1em;
+            line-height: 20px;
+            max-width: 600px;
+            color: #444;
+            border: 2px dashed #CC3434;
+        }
+        #sitetree-urlnames ul {
+            margin-left: 1em;
+        }
+        #sitetree-urlnames p {
+            margin-left: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        (function($) {
+            var known_url_names = ["xadmin:auth_user_change", "xadmin:xadmin_bookmark_change", "xadmin:jsi18n", "xadmin:xadmin_bookmark_patch", "xadmin:auth_permission_delete", "xadmin:xadmin_userwidget_patch", "xadmin:auth_group_patch", "xadmin:auth_group_change", "xadmin:xadmin_bookmark_add", "xadmin:auth_user_changelist", "xadmin:auth_group_bookmark", "xadmin:index", "xadmin:auth_group_chart", "xadmin:xadmin_userwidget_change", "xadmin:xadmin_password_reset_confirm", "xadmin:auth_user_add", "xadmin:auth_permission_change", "xadmin:auth_group_add", "xadmin:account_password", "xadmin:auth_group_changelist", "xadmin:auth_group_detail", "xadmin:user_change_password", "xadmin:xadmin_usersettings_add", "xadmin:xadmin_usersettings_detail", "xadmin:logout", "xadmin:auth_group_delete", "xadmin:xadmin_usersettings_delete", "xadmin:auth_user_detail", "xadmin:auth_permission_detail", "xadmin:login", "xadmin:xadmin_password_reset_complete", "xadmin:xadmin_userwidget_detail", "xadmin:auth_permission_dashboard", "xadmin:xadmin_userwidget_delete", "xadmin:xadmin_password_reset", "xadmin:auth_permission_changelist", "xadmin:auth_permission_chart", "xadmin:user_settings", "xadmin:xadmin_bookmark_chart", "xadmin:auth_user_delete", "xadmin:xadmin_bookmark_bookmark", "xadmin:auth_user_patch", "xadmin:xadmin_usersettings_changelist", "xadmin:xadmin_userwidget_changelist", "xadmin:auth_user_chart", "xadmin:xadmin_bookmark_changelist", "xadmin:xadmin_usersettings_chart", "xadmin:xadmin_usersettings_change", "xadmin:xadmin_usersettings_dashboard", "xadmin:auth_permission_patch", "xadmin:auth_permission_bookmark", "xadmin:auth_user_bookmark", "xadmin:xadmin_userwidget_bookmark", "xadmin:xadmin_userwidget_add", "xadmin:xadmin_bookmark_detail", "xadmin:xadmin_userwidget_dashboard", "xadmin:auth_group_dashboard", "xadmin:xadmin_bookmark_dashboard", "xadmin:xadmin_usersettings_bookmark", "xadmin:auth_permission_add", "xadmin:xadmin_usersettings_patch", "xadmin:xadmin_userwidget_chart", "xadmin:xadmin_bookmark_delete", "xadmin:auth_user_dashboard", "student:create", "student:list", "student:update", "student:delete", "django-admindocs-tags", "grp_doc_modules", "dajaxice-call-endpoint", "grp_related_lookup", "grp_doc_date_hierarchy", "grp_doc_basic_page_structure", "su_login", "ckeditor_browse", "simple_import-start_import", "simple_import-do_import", "grp_doc_tables", "ajax_lookup", "django-admindocs-templates", "export_to_report", "grp_m2m_lookup", "grp_switch_user", "dajaxice-endpoint", "grp_doc_errors", "grp_autocomplete_lookup", "ckeditor_upload", "report_check_status", "django-admindocs-models-index", "grp_doc_submit_rows", "scaffold-report", "grp_doc_mueller_grid_system", "logout", "grp_doc_object_tools", "report_download_xlsx", "report_update_view", "ajax_get_formats", "grp_doc_groups", "report_create", "grp_doc_admin_index", "scaffold-report-download", "grp_doc_change_list", "simple_import-match_columns", "grp_doc_navigation", "main.home", "grp_doc", "grp_doc_form_fields", "grp_doc_tools", "grp_doc_pagination", "django-admindocs-views-index", "grp_doc_filter", "grp_doc_mueller_grid_system_layouts", "django-admindocs-models-detail", "password_change_done", "django-admindocs-docroot", "django-admindocs-filters", "login_as_user", "grp_doc_change_form", "simple_import-match_relations", "su_exit", "grp_doc_mueller_grid_system_tests", "django-admindocs-bookmarklets", "ajax_get_choices", "django-admindocs-views-detail", "grp_doc_fieldsets", "grp_doc_context_navigation", "grp_doc_search_form", "add_popup"];
+            function check_url_pattern() {
+                var urlnames = $('#sitetree-urlnames');
+                urlnames.hide();
+                if ($('#id_urlaspattern').is(':checked')) {
+                    var val = $('#id_url').val().split(' ', 1);
+                    val = val[0].replace(/'/g, '').replace(/"/g, '');
+                    if ($.inArray(val, known_url_names) == -1) {
+                        urlnames.show();
+                    }
+                }
+            }
+            $(function() {
+                $('.field-url div').append($('#sitetree-urlnames'));
+                $('#id_url').bind({'keyup': function(){check_url_pattern()}});
+                $('#id_urlaspattern').bind({'click': function(){check_url_pattern()}});
+                check_url_pattern();
+            });
+        })(django.jQuery);
+    </script>
+
+    <style>
+
+button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    color:black;
+    font-size: 12px;
+}
+
+</style>
+</head>
+<body>
+
+    
+
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://127.0.0.1:8000/admin/sitetree/tree/2/item_add/#"></a><h3><a class="navbar-brand" href="http://127.0.0.1:8000/admin/sitetree/tree/2/item_add/#"></a><a href="http://127.0.0.1:8000/admin/sitetree/tree/2/item_add/#"> Campus Management </a></h3>
+        </div>
+        <div class="navbar-collapse collapse">
+          
+                    
+
+                    
+                    
+                        
+<ul class="nav navbar-nav">
+    
+        <li class=" ">
+            <a href="http://127.0.0.1:8000/administration/dashboard/">
+                Home
+                
+            </a>
+            
+        </li>
+    
+        <li class=" ">
+            <a href="http://127.0.0.1:8000/admin/profiles/student/">
+                Students
+                
+            </a>
+            
+        </li>
+    
+        <li class=" ">
+            <a href="http://127.0.0.1:8000/admin/profiles/cohort/">
+                Batch
+                
+            </a>
+            
+        </li>
+    
+        <li class=" ">
+            <a href="http://127.0.0.1:8000/admin/profiles/faculty/">
+                Faculty
+                
+            </a>
+            
+        </li>
+    
+        <li class=" ">
+            <a href="http://127.0.0.1:8000/admin/schedule/location/">
+                Locations
+                
+            </a>
+            
+        </li>
+    
+        <li class=" ">
+            <a href="http://127.0.0.1:8000/admin/schedule/course/">
+                Courses
+                
+            </a>
+            
+        </li>
+    
+        <li class=" ">
+            <a href="http://127.0.0.1:8000/admin">
+                Index
+                
+            </a>
+            
+        </li>
+    
+</ul>
+                    
+
+          
+
+          <ul class="nav navbar-nav navbar-right">
+            
+               <li> <a> Logged in:  vikas</a></li>
+               <li><a href="http://127.0.0.1:8000/logout">logout</a></li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+    </div>
+    
+
+        <!-- CONTENT -->
+        <div class="container" style="margin-top:60px;margin-bottom:100px;">
+
+            <!-- MESSAGES -->
+            
+                
+            
+
+            <!-- CONTENT TITLE -->
+            <header id="grp-content-title">
+                
+                <h1>Add Site Tree Item </h1>
+                
+    
+
+            </header>
+
+            <!-- CONTENT-CONTAINER -->
+            <div id="grp-content-container">
+                
+    <form enctype="multipart/form-data" action="" method="post" id="treeitem_form"><input type="hidden" name="csrfmiddlewaretoken" value="iNnB8IQbygdFsgakhpLFK5bRlkMW5U73"> 
+        <div>
+            <!-- Popup Hidden Field -->
+            
+            
+            <!-- No Submit-Row on Top -->
+
+            <!-- Errors -->
+            
+            
+            <!-- Fieldsets -->
+            
+                
+                    
+<fieldset class="grp-module "><h2 class="grp-collapse-handler">Basic settings</h2><div class="grp-row grp-cells-1 parent "><div class="l-2c-fluid l-d-4"><div class="c-1"><label class="required" for="id_parent">Parent</label></div><div class="c-2"><select id="id_parent" name="parent"><option value="" selected="selected">---------</option><option value="4">Home</option><option value="16">My Courses</option><option value="17">My Classes</option></select><p class="grp-help">Parent site tree item.</p></div></div></div><div class="grp-row grp-cells-1 title "><div class="l-2c-fluid l-d-4"><div class="c-1"><label class="required" for="id_title">Title</label></div><div class="c-2"><input class="vTextField" id="id_title" maxlength="100" name="title" type="text"><p class="grp-help">Site tree item title. Can contain template variables E.g.: {{ mytitle }}.</p></div></div></div><div class="grp-row grp-cells-1 url "><div class="l-2c-fluid l-d-4"><div class="c-1"><label class="required" for="id_url">URL</label></div><div class="c-2"><input class="vTextField" id="id_url" maxlength="200" name="url" type="text"><p class="grp-help">Exact URL or URL pattern (see "Additional settings") for this item.</p></div></div></div></fieldset>
+                
+                    
+<fieldset class="grp-module collapse"><h2 class="grp-collapse-handler">Access settings</h2><div class="grp-row grp-cells-1 access_loggedin "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input id="id_access_loggedin" name="access_loggedin" type="checkbox"><label class="vCheckboxLabel" for="id_access_loggedin">Logged in only</label><p class="grp-help">Check it to grant access to this item to authenticated users only.</p></div></div></div><div class="grp-row grp-cells-1 access_guest "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input id="id_access_guest" name="access_guest" type="checkbox"><label class="vCheckboxLabel" for="id_access_guest">Guests only</label><p class="grp-help">Check it to grant access to this item to guests only.</p></div></div></div><div class="grp-row grp-cells-1 access_restricted "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input id="id_access_restricted" name="access_restricted" type="checkbox"><label class="vCheckboxLabel" for="id_access_restricted">Restrict access to permissions</label><p class="grp-help">Check it to restrict user access to this item, using Django permissions system.</p></div></div></div><div class="grp-row grp-cells-1 access_permissions "><div class="l-2c-fluid l-d-4"><div class="c-1"><label for="id_access_permissions">Permissions granting access</label></div><div class="c-2"><script type="text/javascript">addEvent(window, "load", function(e) {SelectFilter.init("id_access_permissions", "Permissions granting access", 0, "/static/admin/"); });</script><div class="selector"><div class="selector-available"><h2>Available Permissions granting access <img src="./Add Site Tree Item   Django site admin_files/icon-unknown.gif" width="10" height="10" class="help help-tooltip" title="This is the list of available Permissions granting access. You may choose some by selecting them in the box below and then clicking the &quot;Choose&quot; arrow between the two boxes."></h2><p id="id_access_permissions_filter" class="selector-filter"><label for="id_access_permissions_input"></label> <input type="text" placeholder="Filter" id="id_access_permissions_input"></p><select multiple="multiple" class="filtered" id="id_access_permissions_from" name="access_permissions_old"><option value="1" title="admin | log entry | Can add log entry">admin | log entry | Can add log entry</option><option value="2" title="admin | log entry | Can change log entry">admin | log entry | Can change log entry</option><option value="3" title="admin | log entry | Can delete log entry">admin | log entry | Can delete log entry</option><option value="41" title="admin | log entry | Can view log entry">admin | log entry | Can view log entry</option><option value="113" title="administration | access log | Can add access log">administration | access log | Can add access log</option><option value="114" title="administration | access log | Can change access log">administration | access log | Can change access log</option><option value="115" title="administration | access log | Can delete access log">administration | access log | Can delete access log</option><option value="238" title="administration | access log | Can view access log">administration | access log | Can view access log</option><option value="116" title="administration | configuration | Can add configuration">administration | configuration | Can add configuration</option><option value="117" title="administration | configuration | Can change configuration">administration | configuration | Can change configuration</option><option value="118" title="administration | configuration | Can delete configuration">administration | configuration | Can delete configuration</option><option value="243" title="administration | configuration | Can view configuration">administration | configuration | Can view configuration</option><option value="119" title="administration | template | Can add template">administration | template | Can add template</option><option value="120" title="administration | template | Can change template">administration | template | Can change template</option><option value="121" title="administration | template | Can delete template">administration | template | Can delete template</option><option value="288" title="administration | template | Can view template">administration | template | Can view template</option><option value="411" title="attendance | attendance log | Can add attendance log">attendance | attendance log | Can add attendance log</option><option value="412" title="attendance | attendance log | Can change attendance log">attendance | attendance log | Can change attendance log</option><option value="413" title="attendance | attendance log | Can delete attendance log">attendance | attendance log | Can delete attendance log</option><option value="414" title="attendance | attendance log | Can view attendance log">attendance | attendance log | Can view attendance log</option><option value="401" title="attendance | attendance status | Can add attendance status">attendance | attendance status | Can add attendance status</option><option value="402" title="attendance | attendance status | Can change attendance status">attendance | attendance status | Can change attendance status</option><option value="403" title="attendance | attendance status | Can delete attendance status">attendance | attendance status | Can delete attendance status</option><option value="415" title="attendance | attendance status | Can view attendance status">attendance | attendance status | Can view attendance status</option><option value="404" title="attendance | course attendance | Can add course attendance">attendance | course attendance | Can add course attendance</option><option value="405" title="attendance | course attendance | Can change course attendance">attendance | course attendance | Can change course attendance</option><option value="406" title="attendance | course attendance | Can delete course attendance">attendance | course attendance | Can delete course attendance</option><option value="416" title="attendance | course attendance | Can view course attendance">attendance | course attendance | Can view course attendance</option><option value="407" title="attendance | student attendance | Can add student attendance">attendance | student attendance | Can add student attendance</option><option value="408" title="attendance | student attendance | Can change student attendance">attendance | student attendance | Can change student attendance</option><option value="409" title="attendance | student attendance | Can delete student attendance">attendance | student attendance | Can delete student attendance</option><option value="410" title="attendance | student attendance | Take own student attendance">attendance | student attendance | Take own student attendance</option><option value="417" title="attendance | student attendance | Can view student attendance">attendance | student attendance | Can view student attendance</option><option value="7" title="auth | group | Can add group">auth | group | Can add group</option><option value="8" title="auth | group | Can change group">auth | group | Can change group</option><option value="9" title="auth | group | Can delete group">auth | group | Can delete group</option><option value="40" title="auth | group | Can view group">auth | group | Can view group</option><option value="4" title="auth | permission | Can add permission">auth | permission | Can add permission</option><option value="5" title="auth | permission | Can change permission">auth | permission | Can change permission</option><option value="6" title="auth | permission | Can delete permission">auth | permission | Can delete permission</option><option value="46" title="auth | permission | Can view permission">auth | permission | Can view permission</option><option value="110" title="auth | user | Can add family access user">auth | user | Can add family access user</option><option value="10" title="auth | user | Can add user">auth | user | Can add user</option><option value="390" title="auth | user | Can add work team user">auth | user | Can add work team user</option><option value="111" title="auth | user | Can change family access user">auth | user | Can change family access user</option><option value="11" title="auth | user | Can change user">auth | user | Can change user</option><option value="391" title="auth | user | Can change work team user">auth | user | Can change work team user</option><option value="112" title="auth | user | Can delete family access user">auth | user | Can delete family access user</option><option value="12" title="auth | user | Can delete user">auth | user | Can delete user</option><option value="392" title="auth | user | Can delete work team user">auth | user | Can delete work team user</option><option value="48" title="auth | user | Can view user">auth | user | Can view user</option><option value="13" title="contenttypes | content type | Can add content type">contenttypes | content type | Can add content type</option><option value="14" title="contenttypes | content type | Can change content type">contenttypes | content type | Can change content type</option><option value="15" title="contenttypes | content type | Can delete content type">contenttypes | content type | Can delete content type</option><option value="39" title="contenttypes | content type | Can view content type">contenttypes | content type | Can view content type</option><option value="193" title="custom_field | custom field | Can add custom field">custom_field | custom field | Can add custom field</option><option value="194" title="custom_field | custom field | Can change custom field">custom_field | custom field | Can change custom field</option><option value="195" title="custom_field | custom field | Can delete custom field">custom_field | custom field | Can delete custom field</option><option value="247" title="custom_field | custom field | Can view custom field">custom_field | custom field | Can view custom field</option><option value="196" title="custom_field | custom field value | Can add custom field value">custom_field | custom field value | Can add custom field value</option><option value="197" title="custom_field | custom field value | Can change custom field value">custom_field | custom field value | Can change custom field value</option><option value="198" title="custom_field | custom field value | Can delete custom field value">custom_field | custom field value | Can delete custom field value</option><option value="248" title="custom_field | custom field value | Can view custom field value">custom_field | custom field value | Can view custom field value</option><option value="164" title="discipline | discipline action | Can add discipline action">discipline | discipline action | Can add discipline action</option><option value="165" title="discipline | discipline action | Can change discipline action">discipline | discipline action | Can change discipline action</option><option value="166" title="discipline | discipline action | Can delete discipline action">discipline | discipline action | Can delete discipline action</option><option value="254" title="discipline | discipline action | Can view discipline action">discipline | discipline action | Can view discipline action</option><option value="167" title="discipline | discipline action instance | Can add discipline action instance">discipline | discipline action instance | Can add discipline action instance</option><option value="168" title="discipline | discipline action instance | Can change discipline action instance">discipline | discipline action instance | Can change discipline action instance</option><option value="169" title="discipline | discipline action instance | Can delete discipline action instance">discipline | discipline action instance | Can delete discipline action instance</option><option value="255" title="discipline | discipline action instance | Can view discipline action instance">discipline | discipline action instance | Can view discipline action instance</option><option value="170" title="discipline | infraction | Can add infraction">discipline | infraction | Can add infraction</option><option value="171" title="discipline | infraction | Can change infraction">discipline | infraction | Can change infraction</option><option value="172" title="discipline | infraction | Can delete infraction">discipline | infraction | Can delete infraction</option><option value="268" title="discipline | infraction | Can view infraction">discipline | infraction | Can view infraction</option><option value="173" title="discipline | student discipline | Can add student discipline">discipline | student discipline | Can add student discipline</option><option value="174" title="discipline | student discipline | Can change student discipline">discipline | student discipline | Can change student discipline</option><option value="175" title="discipline | student discipline | Can delete student discipline">discipline | student discipline | Can delete student discipline</option><option value="282" title="discipline | student discipline | Can view student discipline">discipline | student discipline | Can view student discipline</option><option value="25" title="django_para | para | Can add para">django_para | para | Can add para</option><option value="26" title="django_para | para | Can change para">django_para | para | Can change para</option><option value="27" title="django_para | para | Can delete para">django_para | para | Can delete para</option><option value="44" title="django_para | para | Can view para">django_para | para | Can view para</option><option value="28" title="django_para | para item | Can add para item">django_para | para item | Can add para item</option><option value="29" title="django_para | para item | Can change para item">django_para | para item | Can change para item</option><option value="30" title="django_para | para item | Can delete para item">django_para | para item | Can delete para item</option><option value="45" title="django_para | para item | Can view para item">django_para | para item | Can view para item</option><option value="438" title="djangocrudgenerator | django crud generator test model | Can add django crud generator test model">djangocrudgenerator | django crud generator test model | Can add django crud generator test model</option><option value="439" title="djangocrudgenerator | django crud generator test model | Can change django crud generator test model">djangocrudgenerator | django crud generator test model | Can change django crud generator test model</option><option value="440" title="djangocrudgenerator | django crud generator test model | Can delete django crud generator test model">djangocrudgenerator | django crud generator test model | Can delete django crud generator test model</option><option value="441" title="djangocrudgenerator | django crud generator test model | Can view django crud generator test model">djangocrudgenerator | django crud generator test model | Can view django crud generator test model</option><option value="393" title="engrade_sync | course sync | Can add course sync">engrade_sync | course sync | Can add course sync</option><option value="394" title="engrade_sync | course sync | Can change course sync">engrade_sync | course sync | Can change course sync</option><option value="395" title="engrade_sync | course sync | Can delete course sync">engrade_sync | course sync | Can delete course sync</option><option value="399" title="engrade_sync | course sync | Can view course sync">engrade_sync | course sync | Can view course sync</option><option value="396" title="engrade_sync | teacher sync | Can add teacher sync">engrade_sync | teacher sync | Can add teacher sync</option><option value="397" title="engrade_sync | teacher sync | Can change teacher sync">engrade_sync | teacher sync | Can change teacher sync</option><option value="398" title="engrade_sync | teacher sync | Can delete teacher sync">engrade_sync | teacher sync | Can delete teacher sync</option><option value="400" title="engrade_sync | teacher sync | Can view teacher sync">engrade_sync | teacher sync | Can view teacher sync</option><option value="188" title="grades | grade | Can add grade">grades | grade | Can add grade</option><option value="189" title="grades | grade | Can change grade">grades | grade | Can change grade</option><option value="192" title="grades | grade | Change final YTD grades for own class">grades | grade | Change final YTD grades for own class</option><option value="191" title="grades | grade | Change grades for own class">grades | grade | Change grades for own class</option><option value="190" title="grades | grade | Can delete grade">grades | grade | Can delete grade</option><option value="261" title="grades | grade | Can view grade">grades | grade | Can view grade</option><option value="176" title="grades | grade comment | Can add grade comment">grades | grade comment | Can add grade comment</option><option value="177" title="grades | grade comment | Can change grade comment">grades | grade comment | Can change grade comment</option><option value="178" title="grades | grade comment | Can delete grade comment">grades | grade comment | Can delete grade comment</option><option value="262" title="grades | grade comment | Can view grade comment">grades | grade comment | Can view grade comment</option><option value="185" title="grades | grade letter rule | Can add grade letter rule">grades | grade letter rule | Can add grade letter rule</option><option value="186" title="grades | grade letter rule | Can change grade letter rule">grades | grade letter rule | Can change grade letter rule</option><option value="187" title="grades | grade letter rule | Can delete grade letter rule">grades | grade letter rule | Can delete grade letter rule</option><option value="263" title="grades | grade letter rule | Can view grade letter rule">grades | grade letter rule | Can view grade letter rule</option><option value="179" title="grades | student marking period grade | Can add student marking period grade">grades | student marking period grade | Can add student marking period grade</option><option value="180" title="grades | student marking period grade | Can change student marking period grade">grades | student marking period grade | Can change student marking period grade</option><option value="181" title="grades | student marking period grade | Can delete student marking period grade">grades | student marking period grade | Can delete student marking period grade</option><option value="285" title="grades | student marking period grade | Can view student marking period grade">grades | student marking period grade | Can view student marking period grade</option><option value="182" title="grades | student year grade | Can add student year grade">grades | student year grade | Can add student year grade</option><option value="183" title="grades | student year grade | Can change student year grade">grades | student year grade | Can change student year grade</option><option value="184" title="grades | student year grade | Can delete student year grade">grades | student year grade | Can delete student year grade</option><option value="287" title="grades | student year grade | Can view student year grade">grades | student year grade | Can view student year grade</option><option value="19" title="menu | menu | Can add menu">menu | menu | Can add menu</option><option value="20" title="menu | menu | Can change menu">menu | menu | Can change menu</option><option value="21" title="menu | menu | Can delete menu">menu | menu | Can delete menu</option><option value="42" title="menu | menu | Can view menu">menu | menu | Can view menu</option><option value="22" title="menu | menu item | Can add menu item">menu | menu item | Can add menu item</option><option value="23" title="menu | menu item | Can change menu item">menu | menu item | Can change menu item</option><option value="24" title="menu | menu item | Can delete menu item">menu | menu item | Can delete menu item</option><option value="43" title="menu | menu item | Can view menu item">menu | menu item | Can view menu item</option><option value="76" title="profiles | Graduating Class | Can add Graduating Class">profiles | Graduating Class | Can add Graduating Class</option><option value="77" title="profiles | Graduating Class | Can change Graduating Class">profiles | Graduating Class | Can change Graduating Class</option><option value="78" title="profiles | Graduating Class | Can delete Graduating Class">profiles | Graduating Class | Can delete Graduating Class</option><option value="235" title="profiles | Graduating Class | Can view Graduating Class">profiles | Graduating Class | Can view Graduating Class</option><option value="61" title="profiles | cohort | Can add cohort">profiles | cohort | Can add cohort</option><option value="62" title="profiles | cohort | Can change cohort">profiles | cohort | Can change cohort</option><option value="63" title="profiles | cohort | Can delete cohort">profiles | cohort | Can delete cohort</option><option value="241" title="profiles | cohort | Can view cohort">profiles | cohort | Can view cohort</option><option value="52" title="profiles | Student Contact | Can add Student Contact">profiles | Student Contact | Can add Student Contact</option><option value="53" title="profiles | Student Contact | Can change Student Contact">profiles | Student Contact | Can change Student Contact</option><option value="54" title="profiles | Student Contact | Can delete Student Contact">profiles | Student Contact | Can delete Student Contact</option><option value="236" title="profiles | Student Contact | Can view Student Contact">profiles | Student Contact | Can view Student Contact</option><option value="55" title="profiles | Student Contact | Can add Student Contact">profiles | Student Contact | Can add Student Contact</option><option value="56" title="profiles | Student Contact | Can change Student Contact">profiles | Student Contact | Can change Student Contact</option><option value="57" title="profiles | Student Contact | Can delete Student Contact">profiles | Student Contact | Can delete Student Contact</option><option value="237" title="profiles | Student Contact | Can view Student Contact">profiles | Student Contact | Can view Student Contact</option><option value="58" title="profiles | faculty | Can add faculty">profiles | faculty | Can add faculty</option><option value="59" title="profiles | faculty | Can change faculty">profiles | faculty | Can change faculty</option><option value="60" title="profiles | faculty | Can delete faculty">profiles | faculty | Can delete faculty</option><option value="257" title="profiles | faculty | Can view faculty">profiles | faculty | Can view faculty</option><option value="258" title="profiles | family access user | Can view family access user">profiles | family access user | Can view family access user</option><option value="70" title="profiles | grade level | Can add grade level">profiles | grade level | Can add grade level</option><option value="71" title="profiles | grade level | Can change grade level">profiles | grade level | Can change grade level</option><option value="72" title="profiles | grade level | Can delete grade level">profiles | grade level | Can delete grade level</option><option value="264" title="profiles | grade level | Can view grade level">profiles | grade level | Can view grade level</option><option value="73" title="profiles | language choice | Can add language choice">profiles | language choice | Can add language choice</option><option value="74" title="profiles | language choice | Can change language choice">profiles | language choice | Can change language choice</option><option value="75" title="profiles | language choice | Can delete language choice">profiles | language choice | Can delete language choice</option><option value="269" title="profiles | language choice | Can view language choice">profiles | language choice | Can view language choice</option><option value="107" title="profiles | message to student | Can add message to student">profiles | message to student | Can add message to student</option><option value="108" title="profiles | message to student | Can change message to student">profiles | message to student | Can change message to student</option><option value="109" title="profiles | message to student | Can delete message to student">profiles | message to student | Can delete message to student</option><option value="272" title="profiles | message to student | Can view message to student">profiles | message to student | Can view message to student</option><option value="64" title="profiles | per course cohort | Can add per course cohort">profiles | per course cohort | Can add per course cohort</option><option value="65" title="profiles | per course cohort | Can change per course cohort">profiles | per course cohort | Can change per course cohort</option><option value="66" title="profiles | per course cohort | Can delete per course cohort">profiles | per course cohort | Can delete per course cohort</option><option value="275" title="profiles | per course cohort | Can view per course cohort">profiles | per course cohort | Can view per course cohort</option><option value="67" title="profiles | reason left | Can add reason left">profiles | reason left | Can add reason left</option><option value="68" title="profiles | reason left | Can change reason left">profiles | reason left | Can change reason left</option><option value="69" title="profiles | reason left | Can delete reason left">profiles | reason left | Can delete reason left</option><option value="277" title="profiles | reason left | Can view reason left">profiles | reason left | Can view reason left</option><option value="104" title="profiles | school year | Can add school year">profiles | school year | Can add school year</option><option value="105" title="profiles | school year | Can change school year">profiles | school year | Can change school year</option><option value="106" title="profiles | school year | Can delete school year">profiles | school year | Can delete school year</option><option value="280" title="profiles | school year | Can view school year">profiles | school year | Can view school year</option><option value="79" title="profiles | student | Can add student">profiles | student | Can add student</option><option value="80" title="profiles | student | Can change student">profiles | student | Can change student</option><option value="81" title="profiles | student | Can delete student">profiles | student | Can delete student</option><option value="85" title="profiles | student | View reports">profiles | student | View reports</option><option value="84" title="profiles | student | View mentoring information student">profiles | student | View mentoring information student</option><option value="83" title="profiles | student | View student ssn">profiles | student | View student ssn</option><option value="82" title="profiles | student | View student">profiles | student | View student</option><option value="86" title="profiles | student cohort | Can add student cohort">profiles | student cohort | Can add student cohort</option><option value="87" title="profiles | student cohort | Can change student cohort">profiles | student cohort | Can change student cohort</option><option value="88" title="profiles | student cohort | Can delete student cohort">profiles | student cohort | Can delete student cohort</option><option value="281" title="profiles | student cohort | Can view student cohort">profiles | student cohort | Can view student cohort</option><option value="98" title="profiles | student file | Can add student file">profiles | student file | Can add student file</option><option value="99" title="profiles | student file | Can change student file">profiles | student file | Can change student file</option><option value="100" title="profiles | student file | Can delete student file">profiles | student file | Can delete student file</option><option value="283" title="profiles | student file | Can view student file">profiles | student file | Can view student file</option><option value="101" title="profiles | student health record | Can add student health record">profiles | student health record | Can add student health record</option><option value="102" title="profiles | student health record | Can change student health record">profiles | student health record | Can change student health record</option><option value="103" title="profiles | student health record | Can delete student health record">profiles | student health record | Can delete student health record</option><option value="284" title="profiles | student health record | Can view student health record">profiles | student health record | Can view student health record</option><option value="95" title="profiles | student number | Can add student number">profiles | student number | Can add student number</option><option value="96" title="profiles | student number | Can change student number">profiles | student number | Can change student number</option><option value="97" title="profiles | student number | Can delete student number">profiles | student number | Can delete student number</option><option value="286" title="profiles | student number | Can view student number">profiles | student number | Can view student number</option><option value="92" title="profiles | transcript note | Can add transcript note">profiles | transcript note | Can add transcript note</option><option value="93" title="profiles | transcript note | Can change transcript note">profiles | transcript note | Can change transcript note</option><option value="94" title="profiles | transcript note | Can delete transcript note">profiles | transcript note | Can delete transcript note</option><option value="289" title="profiles | transcript note | Can view transcript note">profiles | transcript note | Can view transcript note</option><option value="89" title="profiles | transcript note choices | Can add transcript note choices">profiles | transcript note choices | Can add transcript note choices</option><option value="90" title="profiles | transcript note choices | Can change transcript note choices">profiles | transcript note choices | Can change transcript note choices</option><option value="91" title="profiles | transcript note choices | Can delete transcript note choices">profiles | transcript note choices | Can delete transcript note choices</option><option value="290" title="profiles | transcript note choices | Can view transcript note choices">profiles | transcript note choices | Can view transcript note choices</option><option value="49" title="profiles | user preference | Can add user preference">profiles | user preference | Can add user preference</option><option value="50" title="profiles | user preference | Can change user preference">profiles | user preference | Can change user preference</option><option value="51" title="profiles | user preference | Can delete user preference">profiles | user preference | Can delete user preference</option><option value="293" title="profiles | user preference | Can view user preference">profiles | user preference | Can view user preference</option><option value="205" title="report_builder | display field | Can add display field">report_builder | display field | Can add display field</option><option value="206" title="report_builder | display field | Can change display field">report_builder | display field | Can change display field</option><option value="207" title="report_builder | display field | Can delete display field">report_builder | display field | Can delete display field</option><option value="256" title="report_builder | display field | Can view display field">report_builder | display field | Can view display field</option><option value="208" title="report_builder | filter field | Can add filter field">report_builder | filter field | Can add filter field</option><option value="209" title="report_builder | filter field | Can change filter field">report_builder | filter field | Can change filter field</option><option value="210" title="report_builder | filter field | Can delete filter field">report_builder | filter field | Can delete filter field</option><option value="259" title="report_builder | filter field | Can view filter field">report_builder | filter field | Can view filter field</option><option value="202" title="report_builder | format | Can add format">report_builder | format | Can add format</option><option value="203" title="report_builder | format | Can change format">report_builder | format | Can change format</option><option value="204" title="report_builder | format | Can delete format">report_builder | format | Can delete format</option><option value="260" title="report_builder | format | Can view format">report_builder | format | Can view format</option><option value="199" title="report_builder | report | Can add report">report_builder | report | Can add report</option><option value="200" title="report_builder | report | Can change report">report_builder | report | Can change report</option><option value="201" title="report_builder | report | Can delete report">report_builder | report | Can delete report</option><option value="279" title="report_builder | report | Can view report">report_builder | report | Can view report</option><option value="217" title="responsive_dashboard | dashlet setting | Can add dashlet setting">responsive_dashboard | dashlet setting | Can add dashlet setting</option><option value="218" title="responsive_dashboard | dashlet setting | Can change dashlet setting">responsive_dashboard | dashlet setting | Can change dashlet setting</option><option value="219" title="responsive_dashboard | dashlet setting | Can delete dashlet setting">responsive_dashboard | dashlet setting | Can delete dashlet setting</option><option value="249" title="responsive_dashboard | dashlet setting | Can view dashlet setting">responsive_dashboard | dashlet setting | Can view dashlet setting</option><option value="211" title="responsive_dashboard | user dashboard | Can add user dashboard">responsive_dashboard | user dashboard | Can add user dashboard</option><option value="212" title="responsive_dashboard | user dashboard | Can change user dashboard">responsive_dashboard | user dashboard | Can change user dashboard</option><option value="213" title="responsive_dashboard | user dashboard | Can delete user dashboard">responsive_dashboard | user dashboard | Can delete user dashboard</option><option value="291" title="responsive_dashboard | user dashboard | Can view user dashboard">responsive_dashboard | user dashboard | Can view user dashboard</option><option value="214" title="responsive_dashboard | user dashlet | Can add user dashlet">responsive_dashboard | user dashlet | Can add user dashlet</option><option value="215" title="responsive_dashboard | user dashlet | Can change user dashlet">responsive_dashboard | user dashlet | Can change user dashlet</option><option value="216" title="responsive_dashboard | user dashlet | Can delete user dashlet">responsive_dashboard | user dashlet | Can delete user dashlet</option><option value="292" title="responsive_dashboard | user dashlet | Can view user dashlet">responsive_dashboard | user dashlet | Can view user dashlet</option><option value="418" title="reversion | revision | Can add revision">reversion | revision | Can add revision</option><option value="419" title="reversion | revision | Can change revision">reversion | revision | Can change revision</option><option value="420" title="reversion | revision | Can delete revision">reversion | revision | Can delete revision</option><option value="424" title="reversion | revision | Can view revision">reversion | revision | Can view revision</option><option value="421" title="reversion | version | Can add version">reversion | version | Can add version</option><option value="422" title="reversion | version | Can change version">reversion | version | Can change version</option><option value="423" title="reversion | version | Can delete version">reversion | version | Can delete version</option><option value="425" title="reversion | version | Can view version">reversion | version | Can view version</option><option value="158" title="schedule | award | Can add award">schedule | award | Can add award</option><option value="159" title="schedule | award | Can change award">schedule | award | Can change award</option><option value="160" title="schedule | award | Can delete award">schedule | award | Can delete award</option><option value="239" title="schedule | award | Can view award">schedule | award | Can view award</option><option value="161" title="schedule | award student | Can add award student">schedule | award student | Can add award student</option><option value="162" title="schedule | award student | Can change award student">schedule | award student | Can change award student</option><option value="163" title="schedule | award student | Can delete award student">schedule | award student | Can delete award student</option><option value="240" title="schedule | award student | Can view award student">schedule | award student | Can view award student</option><option value="149" title="schedule | course | Can add course">schedule | course | Can add course</option><option value="150" title="schedule | course | Can change course">schedule | course | Can change course</option><option value="151" title="schedule | course | Can delete course">schedule | course | Can delete course</option><option value="244" title="schedule | course | Can view course">schedule | course | Can view course</option><option value="137" title="schedule | course enrollment | Can add course enrollment">schedule | course enrollment | Can add course enrollment</option><option value="138" title="schedule | course enrollment | Can change course enrollment">schedule | course enrollment | Can change course enrollment</option><option value="139" title="schedule | course enrollment | Can delete course enrollment">schedule | course enrollment | Can delete course enrollment</option><option value="245" title="schedule | course enrollment | Can view course enrollment">schedule | course enrollment | Can view course enrollment</option><option value="131" title="schedule | course meet | Can add course meet">schedule | course meet | Can add course meet</option><option value="132" title="schedule | course meet | Can change course meet">schedule | course meet | Can change course meet</option><option value="133" title="schedule | course meet | Can delete course meet">schedule | course meet | Can delete course meet</option><option value="246" title="schedule | course meet | Can view course meet">schedule | course meet | Can view course meet</option><option value="140" title="schedule | day | Can add day">schedule | day | Can add day</option><option value="141" title="schedule | day | Can change day">schedule | day | Can change day</option><option value="142" title="schedule | day | Can delete day">schedule | day | Can delete day</option><option value="250" title="schedule | day | Can view day">schedule | day | Can view day</option><option value="125" title="schedule | days off | Can add days off">schedule | days off | Can add days off</option><option value="126" title="schedule | days off | Can change days off">schedule | days off | Can change days off</option><option value="127" title="schedule | days off | Can delete days off">schedule | days off | Can delete days off</option><option value="251" title="schedule | days off | Can view days off">schedule | days off | Can view days off</option><option value="143" title="schedule | department | Can add department">schedule | department | Can add department</option><option value="144" title="schedule | department | Can change department">schedule | department | Can change department</option><option value="145" title="schedule | department | Can delete department">schedule | department | Can delete department</option><option value="252" title="schedule | department | Can view department">schedule | department | Can view department</option><option value="146" title="schedule | department graduation credits | Can add department graduation credits">schedule | department graduation credits | Can add department graduation credits</option><option value="147" title="schedule | department graduation credits | Can change department graduation credits">schedule | department graduation credits | Can change department graduation credits</option><option value="148" title="schedule | department graduation credits | Can delete department graduation credits">schedule | department graduation credits | Can delete department graduation credits</option><option value="253" title="schedule | department graduation credits | Can view department graduation credits">schedule | department graduation credits | Can view department graduation credits</option><option value="134" title="schedule | location | Can add location">schedule | location | Can add location</option><option value="135" title="schedule | location | Can change location">schedule | location | Can change location</option><option value="136" title="schedule | location | Can delete location">schedule | location | Can delete location</option><option value="270" title="schedule | location | Can view location">schedule | location | Can view location</option><option value="122" title="schedule | marking period | Can add marking period">schedule | marking period | Can add marking period</option><option value="123" title="schedule | marking period | Can change marking period">schedule | marking period | Can change marking period</option><option value="124" title="schedule | marking period | Can delete marking period">schedule | marking period | Can delete marking period</option><option value="271" title="schedule | marking period | Can view marking period">schedule | marking period | Can view marking period</option><option value="152" title="schedule | omit course gpa | Can add omit course gpa">schedule | omit course gpa | Can add omit course gpa</option><option value="153" title="schedule | omit course gpa | Can change omit course gpa">schedule | omit course gpa | Can change omit course gpa</option><option value="154" title="schedule | omit course gpa | Can delete omit course gpa">schedule | omit course gpa | Can delete omit course gpa</option><option value="273" title="schedule | omit course gpa | Can view omit course gpa">schedule | omit course gpa | Can view omit course gpa</option><option value="155" title="schedule | omit year gpa | Can add omit year gpa">schedule | omit year gpa | Can add omit year gpa</option><option value="156" title="schedule | omit year gpa | Can change omit year gpa">schedule | omit year gpa | Can change omit year gpa</option><option value="157" title="schedule | omit year gpa | Can delete omit year gpa">schedule | omit year gpa | Can delete omit year gpa</option><option value="274" title="schedule | omit year gpa | Can view omit year gpa">schedule | omit year gpa | Can view omit year gpa</option><option value="128" title="schedule | period | Can add period">schedule | period | Can add period</option><option value="129" title="schedule | period | Can change period">schedule | period | Can change period</option><option value="130" title="schedule | period | Can delete period">schedule | period | Can delete period</option><option value="276" title="schedule | period | Can view period">schedule | period | Can view period</option><option value="16" title="sessions | session | Can add session">sessions | session | Can add session</option><option value="17" title="sessions | session | Can change session">sessions | session | Can change session</option><option value="18" title="sessions | session | Can delete session">sessions | session | Can delete session</option><option value="47" title="sessions | session | Can view session">sessions | session | Can view session</option><option value="223" title="simple_import | column match | Can add column match">simple_import | column match | Can add column match</option><option value="224" title="simple_import | column match | Can change column match">simple_import | column match | Can change column match</option><option value="225" title="simple_import | column match | Can delete column match">simple_import | column match | Can delete column match</option><option value="242" title="simple_import | column match | Can view column match">simple_import | column match | Can view column match</option><option value="232" title="simple_import | imported object | Can add imported object">simple_import | imported object | Can add imported object</option><option value="233" title="simple_import | imported object | Can change imported object">simple_import | imported object | Can change imported object</option><option value="234" title="simple_import | imported object | Can delete imported object">simple_import | imported object | Can delete imported object</option><option value="267" title="simple_import | imported object | Can view imported object">simple_import | imported object | Can view imported object</option><option value="226" title="simple_import | import log | Can add import log">simple_import | import log | Can add import log</option><option value="227" title="simple_import | import log | Can change import log">simple_import | import log | Can change import log</option><option value="228" title="simple_import | import log | Can delete import log">simple_import | import log | Can delete import log</option><option value="265" title="simple_import | import log | Can view import log">simple_import | import log | Can view import log</option><option value="220" title="simple_import | import setting | Can add import setting">simple_import | import setting | Can add import setting</option><option value="221" title="simple_import | import setting | Can change import setting">simple_import | import setting | Can change import setting</option><option value="222" title="simple_import | import setting | Can delete import setting">simple_import | import setting | Can delete import setting</option><option value="266" title="simple_import | import setting | Can view import setting">simple_import | import setting | Can view import setting</option><option value="229" title="simple_import | relational match | Can add relational match">simple_import | relational match | Can add relational match</option><option value="230" title="simple_import | relational match | Can change relational match">simple_import | relational match | Can change relational match</option><option value="231" title="simple_import | relational match | Can delete relational match">simple_import | relational match | Can delete relational match</option><option value="278" title="simple_import | relational match | Can view relational match">simple_import | relational match | Can view relational match</option><option value="31" title="sitetree | Site Tree | Can add Site Tree">sitetree | Site Tree | Can add Site Tree</option><option value="32" title="sitetree | Site Tree | Can change Site Tree">sitetree | Site Tree | Can change Site Tree</option><option value="33" title="sitetree | Site Tree | Can delete Site Tree">sitetree | Site Tree | Can delete Site Tree</option><option value="37" title="sitetree | Site Tree | Can view Site Tree">sitetree | Site Tree | Can view Site Tree</option><option value="34" title="sitetree | Site Tree Item | Can add Site Tree Item">sitetree | Site Tree Item | Can add Site Tree Item</option><option value="35" title="sitetree | Site Tree Item | Can change Site Tree Item">sitetree | Site Tree Item | Can change Site Tree Item</option><option value="36" title="sitetree | Site Tree Item | Can delete Site Tree Item">sitetree | Site Tree Item | Can delete Site Tree Item</option><option value="38" title="sitetree | Site Tree Item | Can view Site Tree Item">sitetree | Site Tree Item | Can view Site Tree Item</option><option value="442" title="testcrud | test | Can add test">testcrud | test | Can add test</option><option value="443" title="testcrud | test | Can change test">testcrud | test | Can change test</option><option value="444" title="testcrud | test | Can delete test">testcrud | test | Can delete test</option><option value="445" title="testcrud | test | Can view test">testcrud | test | Can view test</option><option value="357" title="work_study | attendance | Can add attendance">work_study | attendance | Can add attendance</option><option value="358" title="work_study | attendance | Can change attendance">work_study | attendance | Can change attendance</option><option value="359" title="work_study | attendance | Can delete attendance">work_study | attendance | Can delete attendance</option><option value="370" title="work_study | attendance | Can view attendance">work_study | attendance | Can view attendance</option><option value="351" title="work_study | attendance fee | Can add attendance fee">work_study | attendance fee | Can add attendance fee</option><option value="352" title="work_study | attendance fee | Can change attendance fee">work_study | attendance fee | Can change attendance fee</option><option value="353" title="work_study | attendance fee | Can delete attendance fee">work_study | attendance fee | Can delete attendance fee</option><option value="371" title="work_study | attendance fee | Can view attendance fee">work_study | attendance fee | Can view attendance fee</option><option value="354" title="work_study | attendance reason | Can add attendance reason">work_study | attendance reason | Can add attendance reason</option><option value="355" title="work_study | attendance reason | Can change attendance reason">work_study | attendance reason | Can change attendance reason</option><option value="356" title="work_study | attendance reason | Can delete attendance reason">work_study | attendance reason | Can delete attendance reason</option><option value="372" title="work_study | attendance reason | Can view attendance reason">work_study | attendance reason | Can view attendance reason</option><option value="360" title="work_study | client visit | Can add client visit">work_study | client visit | Can add client visit</option><option value="361" title="work_study | client visit | Can change client visit">work_study | client visit | Can change client visit</option><option value="362" title="work_study | client visit | Can delete client visit">work_study | client visit | Can delete client visit</option><option value="373" title="work_study | client visit | Can view client visit">work_study | client visit | Can view client visit</option><option value="303" title="work_study | company | Can add company">work_study | company | Can add company</option><option value="304" title="work_study | company | Can change company">work_study | company | Can change company</option><option value="305" title="work_study | company | Can delete company">work_study | company | Can delete company</option><option value="374" title="work_study | company | Can view company">work_study | company | Can view company</option><option value="336" title="work_study | company history | Can add company history">work_study | company history | Can add company history</option><option value="337" title="work_study | company history | Can change company history">work_study | company history | Can change company history</option><option value="338" title="work_study | company history | Can delete company history">work_study | company history | Can delete company history</option><option value="375" title="work_study | company history | Can view company history">work_study | company history | Can view company history</option><option value="321" title="work_study | Company contract | Can add Company contract">work_study | Company contract | Can add Company contract</option><option value="322" title="work_study | Company contract | Can change Company contract">work_study | Company contract | Can change Company contract</option><option value="323" title="work_study | Company contract | Can delete Company contract">work_study | Company contract | Can delete Company contract</option><option value="367" title="work_study | Company contract | Can view Company contract">work_study | Company contract | Can view Company contract</option><option value="300" title="work_study | Contact supervisor | Can add Contact supervisor">work_study | Contact supervisor | Can add Contact supervisor</option><option value="301" title="work_study | Contact supervisor | Can change Contact supervisor">work_study | Contact supervisor | Can change Contact supervisor</option><option value="302" title="work_study | Contact supervisor | Can delete Contact supervisor">work_study | Contact supervisor | Can delete Contact supervisor</option><option value="369" title="work_study | Contact supervisor | Can view Contact supervisor">work_study | Contact supervisor | Can view Contact supervisor</option><option value="294" title="work_study | Contact CRA | Can add Contact CRA">work_study | Contact CRA | Can add Contact CRA</option><option value="295" title="work_study | Contact CRA | Can change Contact CRA">work_study | Contact CRA | Can change Contact CRA</option><option value="296" title="work_study | Contact CRA | Can delete Contact CRA">work_study | Contact CRA | Can delete Contact CRA</option><option value="368" title="work_study | Contact CRA | Can view Contact CRA">work_study | Contact CRA | Can view Contact CRA</option><option value="363" title="work_study | message to supervisor | Can add message to supervisor">work_study | message to supervisor | Can add message to supervisor</option><option value="364" title="work_study | message to supervisor | Can change message to supervisor">work_study | message to supervisor | Can change message to supervisor</option><option value="365" title="work_study | message to supervisor | Can delete message to supervisor">work_study | message to supervisor | Can delete message to supervisor</option><option value="376" title="work_study | message to supervisor | Can view message to supervisor">work_study | message to supervisor | Can view message to supervisor</option><option value="312" title="work_study | payment option | Can add payment option">work_study | payment option | Can add payment option</option><option value="313" title="work_study | payment option | Can change payment option">work_study | payment option | Can change payment option</option><option value="314" title="work_study | payment option | Can delete payment option">work_study | payment option | Can delete payment option</option><option value="377" title="work_study | payment option | Can view payment option">work_study | payment option | Can view payment option</option><option value="324" title="work_study | personality | Can add personality">work_study | personality | Can add personality</option><option value="325" title="work_study | personality | Can change personality">work_study | personality | Can change personality</option><option value="326" title="work_study | personality | Can delete personality">work_study | personality | Can delete personality</option><option value="378" title="work_study | personality | Can view personality">work_study | personality | Can view personality</option><option value="297" title="work_study | Companies: pickup | Can add Companies: pickup">work_study | Companies: pickup | Can add Companies: pickup</option><option value="298" title="work_study | Companies: pickup | Can change Companies: pickup">work_study | Companies: pickup | Can change Companies: pickup</option><option value="299" title="work_study | Companies: pickup | Can delete Companies: pickup">work_study | Companies: pickup | Can delete Companies: pickup</option><option value="366" title="work_study | Companies: pickup | Can view Companies: pickup">work_study | Companies: pickup | Can view Companies: pickup</option><option value="339" title="work_study | preset comment | Can add preset comment">work_study | preset comment | Can add preset comment</option><option value="340" title="work_study | preset comment | Can change preset comment">work_study | preset comment | Can change preset comment</option><option value="341" title="work_study | preset comment | Can delete preset comment">work_study | preset comment | Can delete preset comment</option><option value="379" title="work_study | preset comment | Can view preset comment">work_study | preset comment | Can view preset comment</option><option value="318" title="work_study | student desired skill | Can add student desired skill">work_study | student desired skill | Can add student desired skill</option><option value="319" title="work_study | student desired skill | Can change student desired skill">work_study | student desired skill | Can change student desired skill</option><option value="320" title="work_study | student desired skill | Can delete student desired skill">work_study | student desired skill | Can delete student desired skill</option><option value="380" title="work_study | student desired skill | Can view student desired skill">work_study | student desired skill | Can view student desired skill</option><option value="315" title="work_study | student functional responsibility | Can add student functional responsibility">work_study | student functional responsibility | Can add student functional responsibility</option><option value="316" title="work_study | student functional responsibility | Can change student functional responsibility">work_study | student functional responsibility | Can change student functional responsibility</option><option value="317" title="work_study | student functional responsibility | Can delete student functional responsibility">work_study | student functional responsibility | Can delete student functional responsibility</option><option value="381" title="work_study | student functional responsibility | Can view student functional responsibility">work_study | student functional responsibility | Can view student functional responsibility</option><option value="342" title="work_study | student interaction | Can add student interaction">work_study | student interaction | Can add student interaction</option><option value="343" title="work_study | student interaction | Can change student interaction">work_study | student interaction | Can change student interaction</option><option value="344" title="work_study | student interaction | Can delete student interaction">work_study | student interaction | Can delete student interaction</option><option value="382" title="work_study | student interaction | Can view student interaction">work_study | student interaction | Can view student interaction</option><option value="330" title="work_study | student worker | Can add student worker">work_study | student worker | Can add student worker</option><option value="331" title="work_study | student worker | Can change student worker">work_study | student worker | Can change student worker</option><option value="332" title="work_study | student worker | Can delete student worker">work_study | student worker | Can delete student worker</option><option value="383" title="work_study | student worker | Can view student worker">work_study | student worker | Can view student worker</option><option value="327" title="work_study | student worker route | Can add student worker route">work_study | student worker route | Can add student worker route</option><option value="328" title="work_study | student worker route | Can change student worker route">work_study | student worker route | Can change student worker route</option><option value="329" title="work_study | student worker route | Can delete student worker route">work_study | student worker route | Can delete student worker route</option><option value="384" title="work_study | student worker route | Can view student worker route">work_study | student worker route | Can view student worker route</option><option value="333" title="work_study | survey | Can add survey">work_study | survey | Can add survey</option><option value="334" title="work_study | survey | Can change survey">work_study | survey | Can change survey</option><option value="335" title="work_study | survey | Can delete survey">work_study | survey | Can delete survey</option><option value="385" title="work_study | survey | Can view survey">work_study | survey | Can view survey</option><option value="348" title="work_study | time sheet | Can add time sheet">work_study | time sheet | Can add time sheet</option><option value="349" title="work_study | time sheet | Can change time sheet">work_study | time sheet | Can change time sheet</option><option value="350" title="work_study | time sheet | Can delete time sheet">work_study | time sheet | Can delete time sheet</option><option value="386" title="work_study | time sheet | Can view time sheet">work_study | time sheet | Can view time sheet</option><option value="345" title="work_study | time sheet performance choice | Can add time sheet performance choice">work_study | time sheet performance choice | Can add time sheet performance choice</option><option value="346" title="work_study | time sheet performance choice | Can change time sheet performance choice">work_study | time sheet performance choice | Can change time sheet performance choice</option><option value="347" title="work_study | time sheet performance choice | Can delete time sheet performance choice">work_study | time sheet performance choice | Can delete time sheet performance choice</option><option value="387" title="work_study | time sheet performance choice | Can view time sheet performance choice">work_study | time sheet performance choice | Can view time sheet performance choice</option><option value="309" title="work_study | work team | Can add work team">work_study | work team | Can add work team</option><option value="310" title="work_study | work team | Can change work team">work_study | work team | Can change work team</option><option value="311" title="work_study | work team | Can delete work team">work_study | work team | Can delete work team</option><option value="388" title="work_study | work team | Can view work team">work_study | work team | Can view work team</option><option value="306" title="work_study | work team user | Can add work team user">work_study | work team user | Can add work team user</option><option value="307" title="work_study | work team user | Can change work team user">work_study | work team user | Can change work team user</option><option value="308" title="work_study | work team user | Can delete work team user">work_study | work team user | Can delete work team user</option><option value="389" title="work_study | work team user | Can view work team user">work_study | work team user | Can view work team user</option><option value="426" title="xadmin | Bookmark | Can add Bookmark">xadmin | Bookmark | Can add Bookmark</option><option value="427" title="xadmin | Bookmark | Can change Bookmark">xadmin | Bookmark | Can change Bookmark</option><option value="428" title="xadmin | Bookmark | Can delete Bookmark">xadmin | Bookmark | Can delete Bookmark</option><option value="435" title="xadmin | Bookmark | Can view Bookmark">xadmin | Bookmark | Can view Bookmark</option><option value="429" title="xadmin | User Setting | Can add User Setting">xadmin | User Setting | Can add User Setting</option><option value="430" title="xadmin | User Setting | Can change User Setting">xadmin | User Setting | Can change User Setting</option><option value="431" title="xadmin | User Setting | Can delete User Setting">xadmin | User Setting | Can delete User Setting</option><option value="436" title="xadmin | User Setting | Can view User Setting">xadmin | User Setting | Can view User Setting</option><option value="432" title="xadmin | User Widget | Can add User Widget">xadmin | User Widget | Can add User Widget</option><option value="433" title="xadmin | User Widget | Can change User Widget">xadmin | User Widget | Can change User Widget</option><option value="434" title="xadmin | User Widget | Can delete User Widget">xadmin | User Widget | Can delete User Widget</option><option value="437" title="xadmin | User Widget | Can view User Widget">xadmin | User Widget | Can view User Widget</option></select><a title="Click to choose all Permissions granting access at once." href="javascript: (function(){ SelectBox.move_all("id_access_permissions_from", "id_access_permissions_to"); SelectFilter.refresh_icons("id_access_permissions");})()" id="id_access_permissions_add_all_link" class="selector-chooseall active">Choose all</a></div><ul class="selector-chooser"><li><a title="Choose" href="javascript: (function(){ SelectBox.move("id_access_permissions_from","id_access_permissions_to"); SelectFilter.refresh_icons("id_access_permissions");})()" id="id_access_permissions_add_link" class="selector-add">Choose</a></li><li><a title="Remove" href="javascript: (function(){ SelectBox.move("id_access_permissions_to","id_access_permissions_from"); SelectFilter.refresh_icons("id_access_permissions");})()" id="id_access_permissions_remove_link" class="selector-remove">Remove</a></li></ul><div class="selector-chosen"><h2>Chosen Permissions granting access </h2><select id="id_access_permissions_to" multiple="multiple" size="0" name="access_permissions" class="filtered"></select><a title="Click to remove all chosen Permissions granting access at once." href="javascript: (function() { SelectBox.move_all("id_access_permissions_to", "id_access_permissions_from"); SelectFilter.refresh_icons("id_access_permissions");})()" id="id_access_permissions_remove_all_link" class="selector-clearall">Remove all</a></div></div></div></div></div><div class="grp-row grp-cells-1 access_perm_type "><div class="l-2c-fluid l-d-4"><div class="c-1"><label class="required" for="id_access_perm_type">Permissions interpretation</label></div><div class="c-2"><select id="id_access_perm_type" name="access_perm_type"><option value="1" selected="selected">Any</option><option value="2">All</option></select><p class="grp-help"><b>Any</b> — user should have any of chosen permissions. <b>All</b> — user should have all chosen permissions.</p></div></div></div></fieldset>
+                
+                    
+<fieldset class="grp-module collapse"><h2 class="grp-collapse-handler">Display settings</h2><div class="grp-row grp-cells-1 hidden "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input id="id_hidden" name="hidden" type="checkbox"><label class="vCheckboxLabel" for="id_hidden">Hidden</label><p class="grp-help">Whether to show this item in navigation.</p></div></div></div><div class="grp-row grp-cells-1 inmenu "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input checked="checked" id="id_inmenu" name="inmenu" type="checkbox"><label class="vCheckboxLabel" for="id_inmenu">Show in menu</label><p class="grp-help">Whether to show this item in a menu.</p></div></div></div><div class="grp-row grp-cells-1 inbreadcrumbs "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input checked="checked" id="id_inbreadcrumbs" name="inbreadcrumbs" type="checkbox"><label class="vCheckboxLabel" for="id_inbreadcrumbs">Show in breadcrumb path</label><p class="grp-help">Whether to show this item in a breadcrumb path.</p></div></div></div><div class="grp-row grp-cells-1 insitetree "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input checked="checked" id="id_insitetree" name="insitetree" type="checkbox"><label class="vCheckboxLabel" for="id_insitetree">Show in site tree</label><p class="grp-help">Whether to show this item in a site tree.</p></div></div></div></fieldset>
+                
+                    
+<fieldset class="grp-module collapse"><h2 class="grp-collapse-handler">Additional settings</h2><div class="grp-row grp-cells-1 hint "><div class="l-2c-fluid l-d-4"><div class="c-1"><label for="id_hint">Hint</label></div><div class="c-2"><input class="vTextField" id="id_hint" maxlength="200" name="hint" type="text"><p class="grp-help">Some additional information about this item that is used as a hint.</p></div></div></div><div class="grp-row grp-cells-1 description "><div class="l-2c-fluid l-d-4"><div class="c-1"><label for="id_description">Description</label></div><div class="c-2"><textarea class="vLargeTextField" cols="40" id="id_description" name="description" rows="10"></textarea><p class="grp-help">Additional comments on this item.</p></div></div></div><div class="grp-row grp-cells-1 alias "><div class="l-2c-fluid l-d-4"><div class="c-1"><label for="id_alias">Alias</label></div><div class="c-2"><input class="vTextField" id="id_alias" maxlength="80" name="alias" type="text"><p class="grp-help">Short name to address site tree item from a template.<br><b>Reserved aliases:</b> "trunk", "this-children", "this-siblings", "this-ancestor-children", "this-parent-siblings".</p></div></div></div><div class="grp-row grp-cells-1 urlaspattern "><div class="l-2c-fluid l-d-4"><div class="c-1">&nbsp;</div><div class="c-2"><input id="id_urlaspattern" name="urlaspattern" type="checkbox"><label class="vCheckboxLabel" for="id_urlaspattern">URL as Pattern</label><p class="grp-help">Whether the given URL should be treated as a pattern.<br><b>Note:</b> Refer to Django "URL dispatcher" documentation (e.g. "Naming URL patterns" part).</p></div></div></div></fieldset>
+                
+            
+            
+            
+            
+            <!-- Inlines -->
+            
+                
+            
+            
+            
+            
+            <!-- Submit-Row -->
+            
+<footer class="grp-module grp-submit-row grp-fixed-footer">
+    <header style="display:none"><h1>Submit Options</h1></header>
+    <ul>
+        
+        
+        	<li><input type="submit" value="Save" class="grp-button grp-default" name="_save"></li>
+        
+        
+        
+        	<li><input type="submit" value="Save and add another" class="grp-button" name="_addanother"></li>
+        
+        
+        	<li><input type="submit" value="Save and continue editing" class="grp-button" name="_continue"></li>
+        
+    </ul>
+</footer>
+
+            
+            <!-- JS for prepopulated fields -->
+            
+
+<script type="text/javascript">
+(function($) {
+    var field;
+
+
+})(grp.jQuery);
+</script>
+
+            
+        </div>
+    </form>
+
+<div id="sitetree-urlnames" class="help" style="display: none;">
+    <p>You are seeing this warning because "URL as Pattern" option is active and pattern entered above seems to be invalid. Currently registered URL pattern names and parameters: </p>
+    <ul>
+        
+            <li><b>add_popup</b> app_label model</li>
+        
+            <li><b>ajax_get_choices</b> </li>
+        
+            <li><b>ajax_get_formats</b> </li>
+        
+            <li><b>ajax_lookup</b> channel</li>
+        
+            <li><b>ckeditor_browse</b> </li>
+        
+            <li><b>ckeditor_upload</b> </li>
+        
+            <li><b>dajaxice-call-endpoint</b> _0</li>
+        
+            <li><b>dajaxice-endpoint</b> </li>
+        
+            <li><b>django-admindocs-bookmarklets</b> </li>
+        
+            <li><b>django-admindocs-docroot</b> </li>
+        
+            <li><b>django-admindocs-filters</b> </li>
+        
+            <li><b>django-admindocs-models-detail</b> app_label model_name</li>
+        
+            <li><b>django-admindocs-models-index</b> </li>
+        
+            <li><b>django-admindocs-tags</b> </li>
+        
+            <li><b>django-admindocs-templates</b> template</li>
+        
+            <li><b>django-admindocs-views-detail</b> view</li>
+        
+            <li><b>django-admindocs-views-index</b> </li>
+        
+            <li><b>export_to_report</b> </li>
+        
+            <li><b>grp_autocomplete_lookup</b> </li>
+        
+            <li><b>grp_doc</b> </li>
+        
+            <li><b>grp_doc_admin_index</b> </li>
+        
+            <li><b>grp_doc_basic_page_structure</b> </li>
+        
+            <li><b>grp_doc_change_form</b> </li>
+        
+            <li><b>grp_doc_change_list</b> </li>
+        
+            <li><b>grp_doc_context_navigation</b> </li>
+        
+            <li><b>grp_doc_date_hierarchy</b> </li>
+        
+            <li><b>grp_doc_errors</b> </li>
+        
+            <li><b>grp_doc_fieldsets</b> </li>
+        
+            <li><b>grp_doc_filter</b> </li>
+        
+            <li><b>grp_doc_form_fields</b> </li>
+        
+            <li><b>grp_doc_groups</b> </li>
+        
+            <li><b>grp_doc_modules</b> </li>
+        
+            <li><b>grp_doc_mueller_grid_system</b> </li>
+        
+            <li><b>grp_doc_mueller_grid_system_layouts</b> </li>
+        
+            <li><b>grp_doc_mueller_grid_system_tests</b> </li>
+        
+            <li><b>grp_doc_navigation</b> </li>
+        
+            <li><b>grp_doc_object_tools</b> </li>
+        
+            <li><b>grp_doc_pagination</b> </li>
+        
+            <li><b>grp_doc_search_form</b> </li>
+        
+            <li><b>grp_doc_submit_rows</b> </li>
+        
+            <li><b>grp_doc_tables</b> </li>
+        
+            <li><b>grp_doc_tools</b> </li>
+        
+            <li><b>grp_m2m_lookup</b> </li>
+        
+            <li><b>grp_related_lookup</b> </li>
+        
+            <li><b>grp_switch_user</b> object_id</li>
+        
+            <li><b>login_as_user</b> user_id</li>
+        
+            <li><b>logout</b> </li>
+        
+            <li><b>main.home</b> </li>
+        
+            <li><b>password_change_done</b> </li>
+        
+            <li><b>report_check_status</b> pk task_id</li>
+        
+            <li><b>report_create</b> </li>
+        
+            <li><b>report_download_xlsx</b> pk</li>
+        
+            <li><b>report_update_view</b> pk</li>
+        
+            <li><b>scaffold-report-download</b> name</li>
+        
+            <li><b>scaffold-report</b> name</li>
+        
+            <li><b>simple_import-do_import</b> import_log_id</li>
+        
+            <li><b>simple_import-match_columns</b> import_log_id</li>
+        
+            <li><b>simple_import-match_relations</b> import_log_id</li>
+        
+            <li><b>simple_import-start_import</b> </li>
+        
+            <li><b>student:create</b> </li>
+        
+            <li><b>student:delete</b> pk</li>
+        
+            <li><b>student:list</b> page</li>
+        
+            <li><b>student:update</b> pk</li>
+        
+            <li><b>su_exit</b> </li>
+        
+            <li><b>su_login</b> </li>
+        
+            <li><b>xadmin:account_password</b> </li>
+        
+            <li><b>xadmin:auth_group_add</b> </li>
+        
+            <li><b>xadmin:auth_group_bookmark</b> </li>
+        
+            <li><b>xadmin:auth_group_change</b> _0</li>
+        
+            <li><b>xadmin:auth_group_changelist</b> </li>
+        
+            <li><b>xadmin:auth_group_chart</b> _0</li>
+        
+            <li><b>xadmin:auth_group_dashboard</b> _0</li>
+        
+            <li><b>xadmin:auth_group_delete</b> _0</li>
+        
+            <li><b>xadmin:auth_group_detail</b> _0</li>
+        
+            <li><b>xadmin:auth_group_patch</b> _0</li>
+        
+            <li><b>xadmin:auth_permission_add</b> </li>
+        
+            <li><b>xadmin:auth_permission_bookmark</b> </li>
+        
+            <li><b>xadmin:auth_permission_change</b> _0</li>
+        
+            <li><b>xadmin:auth_permission_changelist</b> </li>
+        
+            <li><b>xadmin:auth_permission_chart</b> _0</li>
+        
+            <li><b>xadmin:auth_permission_dashboard</b> _0</li>
+        
+            <li><b>xadmin:auth_permission_delete</b> _0</li>
+        
+            <li><b>xadmin:auth_permission_detail</b> _0</li>
+        
+            <li><b>xadmin:auth_permission_patch</b> _0</li>
+        
+            <li><b>xadmin:auth_user_add</b> </li>
+        
+            <li><b>xadmin:auth_user_bookmark</b> </li>
+        
+            <li><b>xadmin:auth_user_change</b> _0</li>
+        
+            <li><b>xadmin:auth_user_changelist</b> </li>
+        
+            <li><b>xadmin:auth_user_chart</b> _0</li>
+        
+            <li><b>xadmin:auth_user_dashboard</b> _0</li>
+        
+            <li><b>xadmin:auth_user_delete</b> _0</li>
+        
+            <li><b>xadmin:auth_user_detail</b> _0</li>
+        
+            <li><b>xadmin:auth_user_patch</b> _0</li>
+        
+            <li><b>xadmin:index</b> </li>
+        
+            <li><b>xadmin:jsi18n</b> </li>
+        
+            <li><b>xadmin:login</b> </li>
+        
+            <li><b>xadmin:logout</b> </li>
+        
+            <li><b>xadmin:user_change_password</b> _0</li>
+        
+            <li><b>xadmin:user_settings</b> </li>
+        
+            <li><b>xadmin:xadmin_bookmark_add</b> </li>
+        
+            <li><b>xadmin:xadmin_bookmark_bookmark</b> </li>
+        
+            <li><b>xadmin:xadmin_bookmark_change</b> _0</li>
+        
+            <li><b>xadmin:xadmin_bookmark_changelist</b> </li>
+        
+            <li><b>xadmin:xadmin_bookmark_chart</b> _0</li>
+        
+            <li><b>xadmin:xadmin_bookmark_dashboard</b> _0</li>
+        
+            <li><b>xadmin:xadmin_bookmark_delete</b> _0</li>
+        
+            <li><b>xadmin:xadmin_bookmark_detail</b> _0</li>
+        
+            <li><b>xadmin:xadmin_bookmark_patch</b> _0</li>
+        
+            <li><b>xadmin:xadmin_password_reset</b> </li>
+        
+            <li><b>xadmin:xadmin_password_reset_complete</b> </li>
+        
+            <li><b>xadmin:xadmin_password_reset_confirm</b> uidb36 token</li>
+        
+            <li><b>xadmin:xadmin_usersettings_add</b> </li>
+        
+            <li><b>xadmin:xadmin_usersettings_bookmark</b> </li>
+        
+            <li><b>xadmin:xadmin_usersettings_change</b> _0</li>
+        
+            <li><b>xadmin:xadmin_usersettings_changelist</b> </li>
+        
+            <li><b>xadmin:xadmin_usersettings_chart</b> _0</li>
+        
+            <li><b>xadmin:xadmin_usersettings_dashboard</b> _0</li>
+        
+            <li><b>xadmin:xadmin_usersettings_delete</b> _0</li>
+        
+            <li><b>xadmin:xadmin_usersettings_detail</b> _0</li>
+        
+            <li><b>xadmin:xadmin_usersettings_patch</b> _0</li>
+        
+            <li><b>xadmin:xadmin_userwidget_add</b> </li>
+        
+            <li><b>xadmin:xadmin_userwidget_bookmark</b> </li>
+        
+            <li><b>xadmin:xadmin_userwidget_change</b> _0</li>
+        
+            <li><b>xadmin:xadmin_userwidget_changelist</b> </li>
+        
+            <li><b>xadmin:xadmin_userwidget_chart</b> _0</li>
+        
+            <li><b>xadmin:xadmin_userwidget_dashboard</b> _0</li>
+        
+            <li><b>xadmin:xadmin_userwidget_delete</b> _0</li>
+        
+            <li><b>xadmin:xadmin_userwidget_detail</b> _0</li>
+        
+            <li><b>xadmin:xadmin_userwidget_patch</b> _0</li>
+        
+    </ul>
+</div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        
+
+    
+
+
+</body></html>

@@ -1,0 +1,45 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+    {{ formset.media }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            grappelli.initDateAndTimePicker();
+        });
+    </script>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div id="grp-context-navigation">
+        <nav id="grp-breadcrumbs" class="">
+            <header style="display:none"><h1>Breadcrumbs</h1></header>
+            <ul class="grp-horizontal-list">
+                <li><a href="/">Home</a></li>
+                {% for crumb in breadcrumbs %}
+                    <li>
+                        {% if crumb.link %}
+                            <a href="{{ crumb.link }}">
+                        {% endif %}
+                        {{ crumb.name }}
+                        {% if crumb.link %}
+                            </a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+	    </nav>
+	</div>
+{% endblock %}
+
+{% block content %}
+    <h2> {{ subtitle }} </h2>
+    {{ msg }}
+    <form method="post" enctype="multipart/form-data" action="">
+		<table>
+        {{ form.as_table }}
+		</table>
+        <input type="submit" value="Submit"/>    
+    </form>
+{% endblock %}
+

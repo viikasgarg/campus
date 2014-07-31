@@ -1,0 +1,152 @@
+{% load i18n %}
+{% load static from staticfiles %}
+<div class="row">
+  <a class="toggle" gumby-trigger="#nav1 > .colgrid > .row > ul" href="#"><i class="icon-menu"></i></a>
+  <div class="two columns logo">
+    <a href="/">
+      <img style="height: 48px; padding-top:10px;" src="{% static "images/logo.png" %}" />
+    </a>
+  </div>
+  <ul class="fourteen columns" style="float: right;">
+    {% if perms.profiles.change_student or perms.profiles.view_student %}
+    <li class="field">
+        <div class="admin-title view_student" style="heig;">
+            <form id="form_view_student" style="margin-bottom: 0px;" class="view_student" action="/profiles/view_student/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='RgVLrCUEmKq7vd7puOH2tlouKv7U5GSv' />
+                <input type="search" style="width:100%;" placeholder="Lookup Student" name="view_student_text" id="id_view_student_text" value="" maxlength="255" class="ui-autocomplete-input view_student search input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                <input type="hidden" name="student" id="id_view_student" value="">
+                <div id="id_view_student_on_deck" style="display: none;" class="results_on_deck"><div></div></div>
+                <script type="text/javascript">//<![CDATA[
+                jQuery(document).ready(function($){
+                        addAutoComplete("id_view_student", function(html_id) {
+                                $("#"+html_id).autocompleteselect({
+                                        minLength: 1,
+                                        source: '/ajax_select/ajax_lookup/dstudent',
+                                });
+                        });
+                $("#id_view_student_on_deck").bind('added',function() {
+                    $('#form_view_student').submit()
+                });
+                });//]]>
+                </script>
+            </form>
+        </div>
+
+
+   </li>
+   {% endif %}
+  <li class="mobile_only">
+    <a href="javascript:void(0);">
+      {{ user.first_name }} {{ user.last_name }} 
+      <i class="icon-down-dir"></i>
+    </a>
+    <div class="dropdown">
+      <ul>
+        <li>
+          <a href="/profiles/preferences">Preferences</a>
+        </li>
+        <li>
+          <a href="{% url 'admin:password_change' %}">Change Password</a>
+        </li>
+        <li>
+          <a href="{% url 'admin:logout' %}">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+    {% if perms.profiles.change_student or perms.profiles.view_student or perms.profiles.reports %}
+    <li class="{% if app_name == "profiles" %}active {% endif %}">
+          <a href="/profiles/dashboard/">Student</a>
+          <div class="dropdown">
+            <ul>
+              {% if perms.profiles.change_student or perms.profiles.view_student %}
+                <li><a href="{% url "admin:profiles_student_changelist" %}">{% trans 'Edit Students' %}</a></li>
+              {% endif %}
+              {% if 'attendance' in settings.INSTALLED_APPS %}
+              {% if perms.attendance.take_studentattendance or perms.attendance.take_studentattendance %}
+                  <li>
+                  <a href="{% url 'attendance.views.teacher_attendance' %}"> {% trans 'Take Attendance' %} </a>
+                  </li>
+              {% endif %}
+                  <li>
+                  <a href="/attendance/daily_attendance_report/">Daily Attendance Report</a>
+                  </li>
+              {% endif %}
+              {% if perms.profiles.reports %}
+                  <li><a href="/reports/student_report/">{% trans 'Reports' %}</a></li>
+              {% endif %}
+            </ul>
+          </div>
+      </li>
+    {% endif %}
+    
+
+    {% if 'schedule' in settings.INSTALLED_APPS %}
+    {% if perms.schedule.change_course or perms.grades.change_own_grade %}
+      <li>
+        <a href="/schedule/dashboard/"> {% trans 'Courses' %} </a>
+        <div class="dropdown">
+          <ul>
+              {% if perms.grades.change_own_grade and 'grades' in settings.INSTALLED_APPS %}
+                <li><a href="{% url "grades.views.select_grade_method" %}?next=teacher_grade">{% trans 'Submit Grades' %}</a></li>
+              {% endif %}
+              {% if 'omr' in settings.INSTALLED_APPS %}
+              {% if perms.omr.change_test or perms.omr.teacher_test %}
+                <li>
+                  <a href="/omr/dashboard"> OMR </a>
+                </li>
+              {% endif %}
+              {% endif %}
+          </ul>
+        </div>
+      </li>
+    {% endif %}
+    {% endif %}
+    
+
+    {% if 'discipline' in settings.INSTALLED_APPS %}
+    {% if perms.discipline.change_studentdiscipline %}
+      <li>
+        <a href="/discipline/dashboard/"> {% trans 'Discipline' %} </a>
+      </li>
+    {% endif %}
+    {% endif %}
+    
+  
+  
+  {% if perms.counseling.add_referralform and 'counseling' in settings.INSTALLED_APPS %}
+    <li>
+      <a href="/counseling/dashboard"> Counseling </a>
+    </li>
+  {% endif %}
+  
+  {% if 'work_study' in settings.INSTALLED_APPS %} {% if perms.work_study.change_studentworker or perms.work_study.view_studentworker or perm.work_study.reports %}
+    <li>
+      <a href="/work_study/dashboard/"> CWSP </a>
+    </li>
+  {% endif %}{% endif %}
+
+
+
+  {% if perms.alumni.change_alumni and 'alumni' in settings.INSTALLED_APPS %}
+    <li>
+      <a href="/alumni/dashboard/"> Alumni </a>
+    </li>
+  {% endif %}
+  {% if perms.admissions.change_applicant and 'admissions' in settings.INSTALLED_APPS %}
+    <li>
+      <a href="/admissions/dashboard/"> Admissions </a>
+    </li>
+  {% endif %}
+
+
+  {% if perms.alumni.change_alumni or perms.auth.change_user or perms.administration.change_configuration or perms.engrade_sync.change_coursesync %}
+  <li>
+    <a href="/administration/dashboard/"> Management </a>
+  </li>
+  {% endif %}
+
+  
+  </ul>
+</div>
+

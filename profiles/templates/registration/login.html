@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Hello." %}</h1>
+
+<div class="subhead-text">
+<strong>Welcome to Django School Infomation System.</strong><br />
+{% trans "Please log in below." %}
+</div>
+
+
+<form method="post" action="">
+{{ form.non_field_errors }}    
+{% csrf_token %}
+
+
+<!--[if IE]>
+<div class="">
+        <label for="id_username">Username</label>
+        <input type="text" placeholder="Username" id="id_{{ form.username.html_name }}" name="{{ form.username.html_name }}" class="">
+</div>
+<div class="">
+    <div class="">
+            <label for="id_password">Password</label>
+            <input type="password" placeholder="Password" id="id_{{ form.password.html_name }}" name="{{ form.password.html_name }}" class="">
+    </div>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<div class="username-field">
+        <input type="text" placeholder="Username" id="id_{{ form.username.html_name }}" name="{{ form.username.html_name }}" class="username">
+</div>
+
+<div class="clear"></div>
+
+<div class="password-login">
+    <div class="inputfield">
+            <input type="password" placeholder="Password" id="id_{{ form.password.html_name }}" name="{{ form.password.html_name }}" class="password">
+    </div>
+<!--<![endif]-->
+    <div class="loginbuttonwrap">
+        <input type="submit" class="button gray" value="Log In">
+    </div>
+</div>
+
+    
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+<div class="clear"></div>
+
+<!--[if IE 7]>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<![endif]-->
+
+<div class="subhead-text">
+Switch to <a href="/admin/">Admin Interface</a>.
+</div>
+{% endblock %}

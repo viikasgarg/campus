@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ msg }}
+<h1>Supervisor Dashboard</h1>
+
+<div class="subhead-text">
+Approval Queue
+</div>
+
+    <form method="post" action="/work_study/supervisor/">
+        <table class="submitted-timecards">
+            <tr>
+		<th class="supervisor-student">Student Name</th>
+		<th class="supervisor-date">Date</th>
+		<th class="supervisor-hours">Hours</th>
+		<th class="supervisor-action">View / Delete</th>
+		<th class="supervisor-approve">Mass Approve</th>
+	</tr>
+            {% for timesheet in timeSheets %}
+               <tr class="submitted-row{% cycle '1' '2' %}">
+                   <td > {{ timesheet.student }} </td>
+                   <td> {{ timesheet.date }} </td>
+                   <td> {{ timesheet.hours }} </td>
+                   <td>
+		    <span class="supervisor-view-icon">
+			<a href="{% url "work_study.views.approve" %}?key={{ timesheet.supervisor_key }}"></a>
+		    </span>
+		    <span class="supervisor-delete-icon">
+			<a href="/work_study/supervisor/delete?key={{ timesheet.supervisor_key }}"></a>
+		    </span>
+		   </td>
+                   <td> <input type="checkbox" name="approved_ckbox{{ timesheet.id }}" value="{{ timesheet.id }}" /> </td>
+               </tr>
+            {% endfor %}
+        </table>
+        <div class="spacer-3"></div>
+
+<div class="supervisor-viewapproved">
+<a href="/work_study/supervisor/view/" class="button gray">View Approved Time Cards</a>
+</div>
+<div class="supervisor-submitwithoutapproval">
+    {% if timeSheets %}
+	<input type="submit" class="button gray" name="mass_approve" value="Approve Without Reviewing">
+    {% endif %}
+</div>
+
+</form>
+
+<div class="clear"></div>
+
+<div class="spacer-3"></div>
+
+
+<div class="subhead-text">
+Create New Timecard
+</div>
+    <table class="submitted-timecards">
+	<tbody>
+	    <tr>
+		    <th class="supervisor-create-student">Student Name</th>
+		    <th class="supervisor-create-workday">Work Day</th>
+		    <th class="supervisor-create-supervisor">Supervisor (click to change)</th>
+		    <th class="supervisor-create-timecard">Time Card</th>
+	    </tr>
+	    {% for student in students %}
+	       <tr class="submitted-row{% cycle '1' '2' %}"">
+		       <td> {{ student.lname }}, {{ student.fname }} </td>
+		       <td> {{ student.get_day_display }} </td>
+		       <td> <a href="{% url "work_study.views.change_supervisor" student.id %}">{{ student.primary_contact }}</a></td>
+		       <td><span class="supervisor-newcard-icon"><a href="{% url "work_study.views.create_time_card" student.id %}"></a></span></td>
+	       </tr>
+	    {% endfor %}
+	</tbody>
+    </table>
+{% endblock %}
+

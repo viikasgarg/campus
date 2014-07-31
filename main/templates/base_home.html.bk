@@ -1,0 +1,132 @@
+{% load sitetree %}
+{% load dajaxice_templatetags %}
+
+<!DOCTYPE html> <!-- INSIDE MAIN -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon" />
+
+    {% block bootstrap_css %}
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    {% endblock %}
+
+    <!-- Custom styles for this template -->
+    {% block jquery_js %}
+        <link href="/static/jquery-ui-1.10.4.custom/css/le-frog/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+        <script src="/static/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"></script>
+        <script src="/static/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="/static/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+
+        <!-- Just for debugging purposes. Don't actually copy this line! -->
+        <!--[if lt IE 9]><script src="/static/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    {% endblock %}
+
+    {% block javascripts %}
+      {% dajaxice_js_import %}
+      {% load static from staticfiles %}
+
+      <script type="text/javascript" src="{% static "js/ajax_select.js" %}"></script>
+      <script type="text/javascript" src="{% static "js/jquery.multiselect.js" %}"></script>
+      <script type="text/javascript" src="{% static "js/jquery.multiselect.filter.js" %}"></script>
+        <script>
+          $.fn.simple_multiselect = $.fn.multiselect;
+          delete $.fn.multiselect;
+        </script>
+    {% endblock %}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/ui.core.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/cupertino/jquery-ui-1.10.3.custom.min.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/global.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/jquery.multiselect.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/jquery.multiselect.filter.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "jquery.uix.multiselect/jquery.uix.multiselect.css" %}"/>
+        <link rel="stylesheet" media="print" type="text/css" href="{% static "css/print.css" %}"/>
+    {% endblock %}
+
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      // Dropdown example for topbar nav
+      // ===============================
+
+      $("body").bind("click", function (e) {
+        $('a.menu').parent("li").removeClass("open");
+      });
+
+      $("a.menu").click(function (e) {
+        var $li = $(this).parent("li").toggleClass('open');
+        return false;
+        });
+      });
+    </script>
+
+  <title> Campus Management System </title>
+
+  {% spaceless %}
+      {% block head %}{% endblock %}
+  {% endspaceless %}
+
+  </head>
+
+  <body>
+    {% block topbar_wrapper %}
+    <div class="topbar-wrapper" style="z-index: 5;">
+        <div class="topbar">
+            <div class="fill">
+                <div class="container">
+                    {% block topbar_container %}
+                    <h3><a href="#"> Campus Management </a></h3>
+                    {% sitetree_menu from "topmenu" include "trunk" template "sitetree/menu_bootstrap3.html" %}
+                    {% endblock %}
+                </div>
+            </div> <!-- /fill -->
+        </div> <!-- /topbar -->
+    </div> <!-- topbar-wrapper -->
+    {% endblock %}
+
+    <div class=container>
+        <section id="content">
+            {% block messages %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert-message{% if message.tags %} {{ message.tags }}{% endif %}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endblock %}
+
+            <div class="page-header">
+                {% block page_header %}
+                {% endblock %}
+            </div>
+            <div style="padding-bottom:16px;text-align:right;">
+                {% block button_bar %}
+                {% endblock %}
+            </div>
+
+            {% block content %}
+            {% endblock %}
+
+            <div class="footer">
+             <p>&copy; Vikas Garg 2014</p>
+          </div>
+        </section>
+    </div>
+  </body>
+</html>
