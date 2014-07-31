@@ -38,7 +38,7 @@ urlpatterns = patterns('',
     (r'^admin/jsi18n', 'django.views.i18n.javascript_catalog'),
 
     (r'^report_builder/', include('report_builder.urls')),
-    #(r'^simple_import/', include('simple_import.urls')),
+    (r'^simple_import/', include('simple_import.urls')),
     url(r'^accounts/password_change/$', 'django.contrib.auth.views.password_change'),
     url(r'^accounts/password_change_done/$', 'django.contrib.auth.views.password_change_done', name="password_change_done"),
 

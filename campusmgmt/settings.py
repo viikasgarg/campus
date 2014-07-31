@@ -72,7 +72,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'report_builder',
     'responsive_dashboard',
-    #'simple_import',
+    'simple_import',
     'djangobower',
     #'scaffold_report',
     'django_su',
