@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from os.path import join, abspath, dirname
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = dirname(dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,10 +32,9 @@ root = lambda *x: join(abspath(BASE_DIR), *x)
 
 INSTALLED_APPS = (
     #'grappelli.dashboard',
-    #'xadmin',
-
     #'bootstrap',
     'django_forms_bootstrap',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,7 +52,7 @@ INSTALLED_APPS = (
     'dajaxice',
 
     'reversion',
-    'grappelli',
+
     'profiles',
     'administration',
     'schedule',
@@ -105,13 +104,9 @@ WSGI_APPLICATION = 'campusmgmt.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'campus',                      # Or path to database file if using sqlite3.
-        'USER': 'vikas',                      # Not used with sqlite3.
-        'PASSWORD': 'garg88',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'campusdb.sqlite3'),
     }
 }
 '''
@@ -146,8 +141,9 @@ USE_TZ = True
 PREFERED_FORMAT = 'o'
 
 # Additional locations of static files
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static_files'),
+    os.path.join(BASE_DIR, 'static'),
     'gumby_css',
     root('components/')
 )
@@ -156,7 +152,7 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = root('static/')
+STATIC_ROOT = ''#root('static/')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = root('media/')
 CKEDITOR_UPLOAD_PATH = root('media/uploads')
@@ -260,8 +256,8 @@ CKEDITOR_CONFIGS = {
 
 
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
     'djangobower.finders.BowerFinder',
 )
 

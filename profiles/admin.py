@@ -22,10 +22,10 @@ def mark_inactive(modeladmin, request, queryset):
     for object in queryset:
         object.is_active=False
         LogEntry.objects.log_action(
-                    user_id         = request.user.pk, 
+                    user_id         = request.user.pk,
                     content_type_id = ContentType.objects.get_for_model(object).pk,
                     object_id       = object.pk,
-                    object_repr     = unicode(object), 
+                    object_repr     = unicode(object),
                     action_flag     = CHANGE
                 )
         object.save()
@@ -33,8 +33,8 @@ def mark_inactive(modeladmin, request, queryset):
 class StudentNumberInline(admin.TabularInline):
     model = StudentNumber
     extra = 0
-    
-    
+
+
 class EmergencyContactInline(admin.TabularInline):
     model = EmergencyContactNumber
     extra = 1
@@ -46,11 +46,11 @@ class EmergencyContactInline(admin.TabularInline):
     formfield_overrides = {
         models.CharField: {'widget': TextInput()},
     }
-    
+
 class TranscriptNoteInline(admin.TabularInline):
     model = TranscriptNote
     extra = 0
-    
+
 class StudentFileInline(admin.TabularInline):
     model = StudentFile
     extra = 0
@@ -59,11 +59,11 @@ class StudentFileInline(admin.TabularInline):
 class StudentHealthRecordInline(admin.TabularInline):
     model = StudentHealthRecord
     extra = 0
-    
+
 class StudentAwardInline(admin.TabularInline):
     model = AwardStudent
     extra = 0
-   
+
 class StudentCohortInline(admin.TabularInline):
     model = Student.cohorts.through
     extra = 0
@@ -74,7 +74,7 @@ class StudentECInline(admin.TabularInline):
     classes = ('grp-collapse grp-open',)
     verbose_name = "Student for Contact"
     verbose_name_plural = "Students for Contact"
-    
+
 
 class MarkingPeriodInline(admin.StackedInline):
     model = MarkingPeriod
@@ -91,12 +91,12 @@ class MarkingPeriodInline(admin.StackedInline):
                        'friday','saturday','sunday',),
         },),
     )
-    
+
 
 class FacultyAdmin(admin.ModelAdmin):
     fields = ['username', 'is_active', 'first_name', 'last_name', 'email', 'number', 'ext', 'teacher']
     search_fields = list_display = ['username', 'first_name', 'last_name', 'is_active']
-    
+
 admin.site.register(Faculty, FacultyAdmin)
 
 class StudentCourseInline(admin.TabularInline):
@@ -111,7 +111,7 @@ class StudentCourseInline(admin.TabularInline):
     extra = 0
 
 admin.site.register(GradeLevel)
-        
+
 
 
 class StudentAdmin(VersionAdmin, ReadPermissionModelAdmin, CustomFieldAdmin):
@@ -124,12 +124,12 @@ class StudentAdmin(VersionAdmin, ReadPermissionModelAdmin, CustomFieldAdmin):
         except: pass # In case there is no referer
         return super(StudentAdmin,self).changelist_view(request, extra_context=extra_context)
 
-    
+
     def lookup_allowed(self, lookup, *args, **kwargs):
         if lookup in ('id', 'id__in', 'year__id__exact'):
             return True
         return super(StudentAdmin, self).lookup_allowed(lookup, *args, **kwargs)
-    
+
     def render_change_form(self, request, context, *args, **kwargs):
         if 'original' in context:
             if context['original'].alert:
@@ -145,14 +145,18 @@ class StudentAdmin(VersionAdmin, ReadPermissionModelAdmin, CustomFieldAdmin):
 
         if 'benchmark_grade' in settings.INSTALLED_APPS:
             context['adminform'].form.fields['family_access_users'].queryset = User.objects.filter(groups__name='family')
-        
+
         return super(StudentAdmin, self).render_change_form(request, context,  *args, **kwargs)
-    
+
     def change_view(self, request, object_id, extra_context=None):
-        courses = Course.objects.filter(courseenrollment__user__id=object_id, courseenrollment__role__iexact="student", marking_period__school_year__active_year=True).distinct()
+        #courses = Course.objects.filter(courseenrollment__user__id=object_id, courseenrollment__role__iexact="student", marking_period__school_year__active_year=True).distinct()
+        courses = Course.objects.filter(courseenrollment__user__id=object_id, courseenrollment__role__iexact="student").distinct()
+
         for course in courses:
             course.enroll = course.courseenrollment_set.get(user__id=object_id, role__iexact="student").id
-        other_courses = Course.objects.filter(courseenrollment__user__id=object_id, marking_period__school_year__active_year=False).distinct()
+        #other_courses = Course.objects.filter(courseenrollment__user__id=object_id, marking_period__school_year__active_year=False).distinct()
+        other_courses = Course.objects.filter(courseenrollment__user__id=object_id).distinct()
+
         for course in other_courses:
             try:
                 course.enroll = course.courseenrollment_set.get(user__id=object_id, role__iexact="student").id
@@ -173,7 +177,7 @@ class StudentAdmin(VersionAdmin, ReadPermissionModelAdmin, CustomFieldAdmin):
                 user.groups.add(group)
                 user.save()
 
-        
+
     def get_form(self, request, obj=None, **kwargs):
         exclude = []
         if not request.user.has_perm('profiles.view_ssn_student'):
@@ -185,7 +189,7 @@ class StudentAdmin(VersionAdmin, ReadPermissionModelAdmin, CustomFieldAdmin):
         form = super(StudentAdmin,self).get_form(request,obj,**kwargs)
         autoselect_fields_check_can_add(StudentForm, self.model ,request.user)
         return form
-    
+
     fieldsets = [
         (None, {'fields': [('last_name', 'first_name'), ('mname', 'is_active'), ('date_dismissed','reason_left'), 'username', 'grad_date', 'pic', 'alert', ('sex', 'bday'), ('class_of_year', 'year'),('unique_id','ssn'),
             'family_preferred_language', 'alt_email', 'notes','emergency_contacts', 'siblings','individual_education_program',]}),
@@ -202,7 +206,7 @@ class StudentAdmin(VersionAdmin, ReadPermissionModelAdmin, CustomFieldAdmin):
     list_display = ['first_name','last_name','year','is_active','primary_cohort', 'phone', 'gpa']
     if 'benchmark_grade' in settings.INSTALLED_APPS:
         filter_horizontal = ('family_access_users',)
-        
+
 try:
     from admin_import.options import add_import
 except ImportError:
@@ -239,14 +243,14 @@ class EmergencyContactAdmin(admin.ModelAdmin):
     inlines = [EmergencyContactInline, StudentECInline]
     search_fields = ['fname', 'lname', 'email', 'student__first_name', 'student__last_name']
     list_display = ['fname', 'lname', 'primary_contact', 'relationship_to_student', 'show_student']
-    
+
 admin.site.register(EmergencyContact, EmergencyContactAdmin)
 
 admin.site.register(LanguageChoice)
 
 class CohortAdmin(admin.ModelAdmin):
     filter_horizontal = ('students',)
-    
+
     def queryset(self, request):
         # exclude PerCourseCohorts from Cohort admin
         qs = super(CohortAdmin, self).queryset(request)
@@ -257,27 +261,27 @@ class CohortAdmin(admin.ModelAdmin):
             prev_students = Cohort.objects.get(id=obj.id).students.all()
         else:
             prev_students = Student.objects.none()
-            
+
         # Django is retarded about querysets,
         # save these ids because the queryset will just change later
         student_ids = []
         for student in prev_students:
             student_ids.append(student.id)
-        
+
         super(CohortAdmin, self).save_model(request, obj, form, change)
         form.save_m2m()
-        
+
         for student in obj.students.all() | Student.objects.filter(id__in=student_ids):
             student.cache_cohorts()
             student.save()
-    
+
 admin.site.register(Cohort, CohortAdmin)
 
 class PerCourseCohortAdmin(CohortAdmin):
     exclude = ('primary',)
 
     def __get_teacher_courses(self, username):
-        from django.db.models import Q 
+        from django.db.models import Q
         from schedule.models import Course
         try:
             teacher = Faculty.objects.get(username=username)
@@ -301,7 +305,7 @@ class PerCourseCohortAdmin(CohortAdmin):
                 kwargs['queryset'] = Student.objects.filter(course__in=self.__get_teacher_courses(request.user.username))
         return super(PerCourseCohortAdmin, self).formfield_for_manytomany(db_field, request, **kwargs)
 
-    
+
 admin.site.register(PerCourseCohort, PerCourseCohortAdmin)
 
 admin.site.register(ReasonLeft)
