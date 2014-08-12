@@ -21,7 +21,7 @@ BASE_DIR = dirname(dirname(__file__))
 SECRET_KEY = 'r(sx+j3#e5@_tkx+y-c26h33fxa3^)e4s2rm989!0sa*p&43)q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
