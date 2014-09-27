@@ -1,6 +1,48 @@
-
 {% extends "base_home.html" %}
 {% load schedule_tags %}
+{% load dajaxice_templatetags %}
+
+{% block extrahead %}
+    <script type="text/javascript" src="/static/MultiDatesPicker v1.6.1/jquery-ui.multidatespicker.js"></script>
+    <script type="text/javascript">
+     $(function() {
+        dates = []
+        $( "#datepicker" ).multiDatesPicker({
+            pickableRange: 7,
+            adjustRangeToDisabled: true,
+            onSelect: function(dateText) {
+      // do whatever here
+                var dates = $('#datepicker').multiDatesPicker('getDates');
+                //alert(dates.toString());
+                Dajaxice.schedule.classes(show_table,{'dates':dates.toString()});
+        }
+        });
+    var today = new Date(); var dd = today.getDate(); var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear(); if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} var today = mm+'/'+dd+'/'+yyyy;
+    Dajaxice.schedule.classes(show_table,{'dates':today});
+    });
+
+    function show_table(coursemeets){
+        $("#coursemeets").empty();
+        for (i=0; i<coursemeets.length; i++) {
+                row = $('<tr />');
+                row.append($('<td />').html(coursemeets[i].courses));
+                row.append($('<td />').html(coursemeets[i].time));
+                row.append($('<td />').html(coursemeets[i].location));
+                row.append($('<td />').html(coursemeets[i].day));
+                $("#coursemeets").append(row);
+        }
+        if (coursemeets.length == 0) {
+                row = $('<tr />');
+                row.append($('<td />').html("No Class").attr('colspan',3));
+                $("#coursemeets").append(row);
+        }
+    }
+     </script>
+
+     {% dajaxice_js_import %}
+
+{% endblock %}
 
 {# coding: utf8 #}
 {% block button_bar %}
@@ -9,7 +51,7 @@
 
 
 {% block content %}
-
+<div class="col-md-8">
  {% if object_list %}
     <table class="table table-striped">
     <thead >
@@ -21,16 +63,7 @@
         </tr>
     </thead>
 
-    <tbody >
-     {% for obj in object_list %}
-        <tr>
-            <td >{{obj.course.fullname}}</td>
-            <td >{{obj.start_time}} - {{obj.end_time}}</td>
-            <td >{{obj.location}}</td>
-            <td >{{ obj.day|day_name }}</td>
-
-        </tr>
-    {% endfor %}
+    <tbody id="coursemeets">
     </tbody>
     </table>
     {% if is_paginated %}
@@ -91,4 +124,9 @@
 {% else %}
     <p id="coursemeet_list_not_found_msg" > No Classes found. </p>
 {% endif %}
+</div>
+<div class="col-md-4">
+    <div type="text" id="datepicker"></div>
+</div>
+
 {% endblock %}

@@ -8,9 +8,13 @@ from ajax_select.fields import autoselect_fields_check_can_add
 from daterange_filter.filter import DateRangeFilter
 
 from profiles.models import Faculty, Student
+from django.contrib.auth.models import User
+
 from models import CourseMeet, Course, Department, CourseEnrollment, MarkingPeriod
 from models import Period, Location, OmitCourseGPA, OmitYearGPA, Award
 from models import DepartmentGraduationCredits, DaysOff, Day
+from noticeapp.models import Course as NoticeCourse
+from noticeapp.models import Notice
 
 def copy(modeladmin, request, queryset):
     for object in queryset:
@@ -41,6 +45,13 @@ class CourseAdmin(admin.ModelAdmin):
         obj.save()
         form.save_m2m()
         obj.save()
+        ## saving notice Course
+        student_subscribers = [sub.id for sub in Student.objects.filter(courseenrollment__course = obj)]
+        secondary_teachers =  [sub.id for sub in obj.secondary_teachers.all()]
+        notice, created = NoticeCourse.objects.get_or_create(name=obj.fullname, notice=Notice.objects.all()[0], user=obj.teacher)
+        subscribers = set(student_subscribers) | set(secondary_teachers) | set([obj.teacher.id])
+        notice.subscribers = User.objects.filter(id__in=list(subscribers))
+        notice.save()
 
 admin.site.register(Course, CourseAdmin)
 

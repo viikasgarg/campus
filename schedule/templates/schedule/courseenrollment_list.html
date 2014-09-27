@@ -22,9 +22,10 @@
     <table class="table table-striped">
     <thead >
         <tr>
-            <th >My Courses </th>
+            <th > Courses </th>
             <th > Teacher </th>
             <th > Description</th>
+            <th > Credits</th>
         </tr>
     </thead>
 
@@ -37,6 +38,9 @@
             </td>
             <td >
                 {{obj.course.description}}
+            </td>
+            <td >
+                {{obj.course.credits}}
             </td>
         </tr>
     {% endfor %}

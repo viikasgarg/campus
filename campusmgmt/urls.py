@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.contrib import admin
 from dajaxice.core import dajaxice_autodiscover, dajaxice_config
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # from xadmin.plugins import xversion
 # xversion.register_models()
@@ -35,6 +35,7 @@ urlpatterns = patterns('',
     #url(r'^campus/', include(xadmin.site.urls)),
     #url(r'^testcrud/', include('testcrud.urls', namespace='testcrud')),
     url(r'^profiles/', include('profiles.urls')),
+    url(r'^notices/', include('noticeapp.urls', namespace='noticeapp')),
     (r'^admin/jsi18n', 'django.views.i18n.javascript_catalog'),
 
     (r'^report_builder/', include('report_builder.urls')),
@@ -97,6 +98,7 @@ if 'social.apps.django_app.default' in settings.INSTALLED_APPS:
     urlpatterns += patterns('', url('', include('social.apps.django_app.urls', namespace='social')),)
 
 urlpatterns += patterns('', (r'^', include('responsive_dashboard.urls')), )
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
     urlpatterns += patterns('',

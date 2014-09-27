@@ -16,7 +16,7 @@
     <script src="{% static "js/ajax_select.js" %}" type="text/javascript"></script>
 
     <script type="text/javascript" src="{% static "js/admin_django_sis.js" %}"></script>
-
+    <link rel="stylesheet" type="text/css" href="/static/media/base/css/style.css" />
     <!-- STYLESHEETS -->
     {% block stylesheets %}
         <link href="{% static "grappelli/jquery/ui/css/custom-theme/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" type="text/css" media="screen" />
@@ -96,10 +96,34 @@ button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3
 </head>
 <body>
 
+        <div class="container">
+              <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                   <li> <a> Logged in:  {{request.user.username}}</a></li>
+                   <li><a href="/logout">logout</a></li>
+                {% endif %}
+              </ul>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="container content_area" style="margin-top:50px;margin-bottom:100px;">
+
+        <!-- MESSAGES -->
+        {% block messages %}
+            {% if messages %}
+                <ul class="grp-messagelist">
+                    <!-- NOTE: no message|capfirst by purpose, because it does not work in some languages -->
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="grp-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endblock %}
+
     {% block topbar_wrapper %}
 
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+      <div class="container" style="background-color:#e3ebee">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -109,7 +133,7 @@ button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3
           </button>
           <a class="navbar-brand" href="#"><h3><a href="#"> Campus Management </a></h3></a>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse" style="float:right">
           {% block topbar_container %}
                     {% if user|in_group:"students" %}
                         {% sitetree_menu from "student_top_menu" include "trunk" template "sitetree/menu_bootstrap3.html" %}
@@ -124,33 +148,12 @@ button, input, optgroup, select, textarea, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3
 
           {% endblock %}
 
-          <ul class="nav navbar-nav navbar-right">
-            {% if request.user.is_authenticated %}
-               <li> <a> Logged in:  {{request.user.username}}</a></li>
-               <li><a href="/logout">logout</a></li>
-            {% endif %}
-          </ul>
+
         </div><!--/.nav-collapse -->
       </div>
 
     </div>
     {% endblock %}
-
-        <!-- CONTENT -->
-        <div class="container" style="margin-top:60px;margin-bottom:100px;">
-
-            <!-- MESSAGES -->
-            {% block messages %}
-                {% if messages %}
-                    <ul class="grp-messagelist">
-                        <!-- NOTE: no message|capfirst by purpose, because it does not work in some languages -->
-                        {% for message in messages %}
-                            <li{% if message.tags %} class="grp-{{ message.tags }}"{% endif %}>{{ message }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endblock %}
-
             <!-- CONTENT TITLE -->
             <header id="grp-content-title">
                 {% block pretitle %}{% endblock %}

@@ -82,16 +82,20 @@ INSTALLED_APPS = (
     #'work_study',
     'engrade_sync',
     'django_extensions',
-    #'south'
+
+    'noticeapp',
+    'south'
     )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'noticeapp.middleware.NoticeappMiddleware',
 )
 
 ROOT_URLCONF = 'campusmgmt.urls'
@@ -259,6 +263,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'djangobower.finders.BowerFinder',
+    'dajaxice.finders.DajaxiceFinder',
 )
 
 CRISPY_TEMPLATE_PACK='bootstrap'
@@ -273,6 +278,7 @@ TEMPLATE_LOADERS = (
     'apptemplates.Loader',
     'django.template.loaders.eggs.Loader',
 )
+
 
 #Engrade
 # http://ww7.engrade.com/api/key.php
@@ -295,7 +301,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
                 "django.core.context_processors.media",
                 "django.core.context_processors.static",
                 "django.contrib.messages.context_processors.messages",
-                "django.core.context_processors.request"
+                "django.core.context_processors.request",
+                'noticeapp.context_processors.processor',
                 )
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -347,4 +354,14 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     ('gumby_css', root('components/')),
 )
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+}
+
+SOUTH_MIGRATION_MODULES = {
+        'noticeapp': 'noticeapp.south_migrations',
+    }
 
