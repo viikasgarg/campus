@@ -84,7 +84,7 @@ INSTALLED_APPS = (
     'django_extensions',
 
     'noticeapp',
-    'south'
+    #'south'
     )
 
 MIDDLEWARE_CLASSES = (
