@@ -1,0 +1,42 @@
+{% extends 'noticeapp/base.html' %}
+
+{% load url from future %}
+{% load noticeapp_tags i18n %}
+
+{% block breadcrumb %}
+    {% noticeapp_get_profile target_user as target_profile %}
+    {% include "noticeapp/breadcrumb.html" with object=target_profile extra_crumb=_('Courses') %}
+{% endblock %}
+
+{% block title %}{% trans "courses created by" %} {{ profile }}{% endblock %}
+
+{% block content %}
+
+    {% noticeapp_get_profile target_user as target_profile %}
+    <h1> Notifications:{{ target_user.get_username }} </h1>
+
+    <div class="userinfo">
+        {% if object_list %}
+            <h2>{% trans "Notifications Created" %} </h2>
+        {% endif %}
+        {% include "noticeapp/pagination.html" %}
+
+        {% for notice in object_list %}
+
+            {% cycle 'odd' 'even' as rowcolors silent %}
+            {% include "noticeapp/post_template.html" with course=notice.course %}
+        {% endfor %}
+
+        {% include "noticeapp/pagination.html" %}
+        </div>
+
+    <div class="userinfo">
+    {% if course_list %}
+        <h2>{% trans "My Courses" %} </h2>
+    {% endif %}
+    {% include "noticeapp/course_list.html" %}
+    </div>
+
+
+
+{% endblock %}

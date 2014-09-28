@@ -1,0 +1,96 @@
+{% extends 'noticeapp/base.html' %}
+
+{% load url from future %}
+
+{% load noticeapp_tags i18n %}
+
+{% block title %}{{ course }}{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    {% include "noticeapp/_markitup.html" %}
+    <script type="text/javascript" src="{{ STATIC_URL }}noticeapp/js/jquery.formset.min.js"></script>
+{% endblock %}
+
+{% block breadcrumb %}
+    {% with object=course %}
+        {% include "noticeapp/breadcrumb.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+    <div class="course">
+        <h1>{{ course.name }}</h1>
+        {% with _('Posts') as label %}
+            {% include "noticeapp/pagination.html" %}
+        {% endwith %}
+
+        {% if course.poll_type %}
+            {% include 'noticeapp/poll.html' %}
+        {% endif %}
+
+        <div class="posts">
+            {% if first_post %}{% ifnotequal first_post post_list.0 %}
+                {% with first_post as post %}
+                    <li class="first_post">{% include "noticeapp/post_template.html" %}</li>
+                {% endwith %}
+            {% endifnotequal %}{% endif %}
+            {% for post in post_list %}
+                {% cycle 'odd' 'even' as rowcolors silent %}
+                {% include "noticeapp/post_template.html" %}
+            {% endfor %}
+        </div>
+        <div>&nbsp;</div>
+        {% with _('Posts') as label %}
+            {% include "noticeapp/pagination.html" %}
+        {% endwith %}
+
+        {% if user.is_authenticated %}
+            <div class="controls">
+                {% if user.is_moderator %}
+                    {% if course.sticky %}
+                        <a href="{% url 'noticeapp:unstick_course' course.id %}">{% trans "Unstick course" %}</a> /
+                    {% else %}
+                        <a href="{% url 'noticeapp:stick_course' course.id %}">{% trans "Stick course" %}</a> /
+                    {% endif %}
+
+                    {% if course.closed %}
+                        <a href="{% url 'noticeapp:open_course' course.id %}">{% trans "Open course" %}</a> /
+                    {% else %}
+                        <a href="{% url 'noticeapp:close_course' course.id %}">{% trans "Close course" %}</a> /
+                    {% endif %}
+                    {% if perms.noticeapp.change_course and user.is_staff %}
+                        <a href="{% url 'admin:noticeapp_course_change' course.id %}">{% trans 'Admin' %}</a> /
+                    {% endif %}
+                    {% comment %}
+            <a href="{% url 'noticeapp:merge_courses' %}?course={{ course.id }}">{% trans 'Merge courses' %}</a> /
+            {% endcomment %}
+                {% endif %}
+
+                {% if user.is_subscribed %}
+                    <a href="{% url 'noticeapp:delete_subscription' course.id %}?from_course">{% trans "Unsubscribe" %}</a>
+                {% else %}
+                    <a href="{% url 'noticeapp:add_subscription' course.id %}">{% trans "Subscribe" %}</a>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if user|noticeapp_may_create_post:course %}
+            {% noticeapp_get_profile user=user as user_profile %}
+            {% include "noticeapp/post_form.html" %}
+        {% else %}
+            {% if not user.is_authenticated %}
+                {% include 'noticeapp/_need_to_login_message.html' %}
+            {% endif %}
+        {% endif %}
+
+        {% if user.is_staff %}
+            <div class="subscriber-list">
+                {% trans "Subscribers" %}:
+                {% for subscriber in course.subscribers.all %}
+                    <a href="{% url 'noticeapp:user' subscriber.username %}">{{ subscriber.username }}</a>,
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

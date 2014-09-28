@@ -1,0 +1,32 @@
+{% extends 'noticeapp/base.html' %}
+
+{% load url from future %}
+
+{% load i18n noticeapp_tags %}
+
+{% block title %}{% trans "Profile editing" %}{% endblock title %}
+
+{% block content %}
+    <h1>{% trans "Profile editing" %}</h1>
+    {% include 'noticeapp/avatar.html' with user=user %}
+    <form method="post" enctype="multipart/form-data" class="profile-edit">
+        {% csrf_token %}
+        <fieldset>
+            <legend>{% trans "Profile editing" %}</legend>
+            {% include "noticeapp/form.html" %}
+            <p>{% include "noticeapp/_button_save.html" %}</p>
+        </fieldset>
+    </form>
+    <h1>{% trans "Subscriptions on courses" %}</h1>
+    <ul>
+        {% for sub in user.subscriptions.all %}
+            <li>
+                {% noticeapp_link sub %}
+                &mdash;
+                <strong>
+                    <a href="{% url 'noticeapp:delete_subscription' sub.id %}">{% trans "delete" %}</a>
+                </strong>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

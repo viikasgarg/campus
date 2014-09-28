@@ -1,0 +1,49 @@
+{% load noticeapp_tags i18n %}
+
+{% if notice_list %}
+    <table class="table {% if category %}category-table{% elif parent_notice %}child-notices-table{% endif %}">
+        <thead>
+            <tr class="notice-row head-row">
+                <th class="notice-name">
+                    {% trans "Notice" %}
+                </th>
+                <th class="notice-course-count">
+                    {% trans "Courses" %}
+                </th>
+                <th class="notice-post-count">
+                    {% trans "Posts" %}
+                </th>
+                <th class="notice-last-post">
+                    {% trans "Last posts" %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for notice in notice_list|noticeapp_notice_unread:user %}
+            <tr class="notice-row">
+                <td class="notice-name {% if notice.unread %} notice-unread{% endif %}">
+                    <div class="state-indicator"></div>
+                    <a href="{{ notice.get_absolute_url }}">{{ notice.name }}</a> {% if notice.hidden %}[{% trans "Hidden" %}]{% endif %}
+                    <div class="notice-description">
+                        {{ notice.description|safe }}
+                    </div>
+                </td>
+                <td class="notice-course-count">
+                    {{ notice.course_count }}
+                </td>
+                <td class="notice-post-count">
+                    {{ notice.post_count }}
+                </td>
+                <td class="notice-last-post">
+                    {% include "noticeapp/notice_last_update_info.html" %}
+                </td>
+            </tr>
+        {% empty %}
+            {% if category %}
+                <h3>{% trans "No notices created" %}</h3>
+                <a href="{% url 'admin:noticeapp_notice_add' %}">{% trans "Add notice now" %}</a>
+            {%  endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

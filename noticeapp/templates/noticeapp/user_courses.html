@@ -1,0 +1,31 @@
+{% extends 'noticeapp/base.html' %}
+
+{% load url from future %}
+
+{% load noticeapp_tags i18n %}
+
+{% block title %}{% trans "Last updates in courses" %}{% endblock title %}
+
+{% block breadcrumb %}
+    {% with extra_crumb=_("My courses") %}
+        {% include "noticeapp/breadcrumb.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+    <div class="notice">
+        <h1>{% trans "Courses" %}</h1>
+        {% if notice.headline %}
+            <div class="notice-headline alert alert-block">
+                {{ notice.headline|safe }}
+            </div>
+        {% endif %}
+
+        {% include "noticeapp/pagination.html" %}
+
+        {% include "noticeapp/course_list.html" %}
+
+        {% include "noticeapp/pagination.html" %}
+
+    </div>
+{% endblock content %}

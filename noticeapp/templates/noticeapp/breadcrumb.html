@@ -1,0 +1,21 @@
+{% load url from future %}
+{% load i18n noticeapp_tags %}
+<ul class='breadcrumb'>
+    {% include "noticeapp/breadcrumb_top_extra_crumb.html" %}
+    <li><a href="{% url 'noticeapp:index' %}">{% trans "Home" %}</a> <span class="divider">/</span></li>
+    {% if object %}
+        {% if object.get_parents %}
+            {% for obj in object.get_parents %}
+                <li>{% noticeapp_link obj %} <span class="divider">/</span></li>
+            {% endfor %}
+        {% endif %}
+        {% if extra_crumb %}
+            <li>{% noticeapp_link object %} <span class="divider">/</span></li>
+        {% else %}
+            <li>{{ object }}</li>
+        {% endif %}
+    {% endif %}
+    {% if extra_crumb %}
+        <li>{% trans extra_crumb %}</li>
+    {% endif %}
+</ul>

@@ -1,0 +1,30 @@
+{% extends 'noticeapp/base.html' %}
+{% load noticeapp_tags i18n %}
+
+{% block title %}{{ notice.name }}{% endblock title %}
+
+{% block breadcrumb %}
+    {% with notice as object %}
+        {% include "noticeapp/breadcrumb.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+    <div class="notice">
+        <h1>{{ notice.name }}</h1>
+        {% if notice.headline %}
+            <div class="notice-headline alert alert-block">
+                {{ notice.headline|safe }}
+            </div>
+        {% endif %}
+
+        {% include "noticeapp/pagination.html" %}
+
+        {% include 'noticeapp/notice_list.html' with notice_list=notice.notices_accessed category='' parent_notice=notice %}
+
+        {% include "noticeapp/course_list.html" %}
+
+        {% include "noticeapp/pagination.html" %}
+
+    </div>
+{% endblock content %}

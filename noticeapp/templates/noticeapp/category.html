@@ -1,0 +1,7 @@
+{% load url from future %}
+{% load i18n noticeapp_tags %}
+
+<div class='category'>
+    <h1>{{ category.name }} {% if category.hidden %}[{% trans "Hidden" %}]{% endif %}</h1>
+    {% include 'noticeapp/notice_list.html' with notice_list=category.notices_accessed category=category parent_notice='' %}
+</div>

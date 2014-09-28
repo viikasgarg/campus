@@ -1,0 +1,672 @@
+# Italian translation for the noticeappm form.
+# Copyright (C) 2014 Andrea Magatti
+# This file is distributed under the same license as the noticeappm package.
+# Andrea Magatti <andrea.magatti@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: noticeappm\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-08 14:37+0200\n"
+"PO-Revision-Date: 2014-09-08 15:57+0100\n"
+"Last-Translator: Andrea Magatti <andrea.magatti@gmail.com>\n"
+"Language-Team: Italina <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.9\n"
+
+#: admin.py:41 admin.py:67 admin.py:95 admin.py:117
+msgid "Additional options"
+msgstr "Azioni aggiuntive"
+
+#: admin.py:100 models.py:230
+msgid "Message"
+msgstr "Post"
+
+#: admin.py:131
+msgid "View post"
+msgstr "Visualizza post"
+
+#: admin.py:136
+msgid "Edit post"
+msgstr "Modifica il post"
+
+#: feeds.py:27 feeds.py:28 templates/noticeapp/base.html:12
+msgid "Latest posts on notice"
+msgstr "Ultimi post sul notice"
+
+#: feeds.py:41 feeds.py:42 templates/noticeapp/base.html:13
+msgid "Latest courses on notice"
+msgstr "Ultimi Course sul notice"
+
+#: forms.py:28
+msgid "Attachment is too big"
+msgstr "Allegato troppo pesante"
+
+#: forms.py:48
+#, python-format
+msgid "You cant add more than %s answers for poll"
+msgstr "Non è possibile aggiungere più di %s risposte al sondaggio"
+
+#: forms.py:50
+msgid "Add two or more answers for this poll"
+msgstr "Aggiungi due o più risposte a questo sondaggio"
+
+#: forms.py:58 models.py:137
+msgid "Subject"
+msgstr "Soggetto"
+
+#: forms.py:59 models.py:149
+msgid "Poll type"
+msgstr "Tipo di sondaggio"
+
+#: forms.py:61 models.py:150
+msgid "Poll question"
+msgstr "Domanda del sondaggio"
+
+#: forms.py:114
+msgid "Polls question is required when adding a poll"
+msgstr "E' richiesta almeno una domanda per un sondaggio"
+
+#: forms.py:166 models.py:140 models.py:245 models.py:318 models.py:455
+#: templates/noticeapp/mail_templates/subscription_email_body.html:3
+msgid "User"
+msgstr "Utente"
+
+#: forms.py:202
+#, python-format
+msgid "Avatar is too large, max size: %s bytes"
+msgstr "Avatar toppo grande, dimensione massima %s bytes"
+
+#: models.py:33 models.py:67
+msgid "Name"
+msgstr "Nome"
+
+#: models.py:34 models.py:68
+msgid "Position"
+msgstr "Posizione"
+
+#: models.py:35 models.py:74 templates/noticeapp/category.html:5
+#: templates/noticeapp/notice_list.html:26
+msgid "Hidden"
+msgstr "Nascosto"
+
+#: models.py:36
+msgid "If checked, this category will be visible only for staff"
+msgstr "Se selezionato questa categoria darà visibile solo allo Staff"
+
+#: models.py:41 models.py:64
+msgid "Category"
+msgstr "Categoria"
+
+#: models.py:42
+msgid "Categories"
+msgstr "Categoria"
+
+#: models.py:65
+msgid "Parent notice"
+msgstr "Notice padre"
+
+#: models.py:69
+msgid "Description"
+msgstr "Descrizione"
+
+#: models.py:70
+msgid "Moderators"
+msgstr "Moderatori"
+
+#: models.py:71 models.py:139 models.py:247
+msgid "Updated"
+msgstr "Aggiornato"
+
+#: models.py:72 models.py:146 profiles.py:45
+msgid "Post count"
+msgstr "Numero dei post"
+
+#: models.py:73
+msgid "Course count"
+msgstr "Numero dei course"
+
+#: models.py:76
+msgid "Headline"
+msgstr "Titolo"
+
+#: models.py:80 models.py:136 templates/noticeapp/notice_list.html:8
+msgid "Notice"
+msgstr "Notice"
+
+#: models.py:81
+msgid "Notices"
+msgstr "Notice"
+
+#: models.py:131
+msgid "None"
+msgstr "Nessuno"
+
+#: models.py:132
+msgid "Single answer"
+msgstr "Risposta singola"
+
+#: models.py:133
+msgid "Multiple answers"
+msgstr "Risposte multiple"
+
+#: models.py:138 models.py:246
+msgid "Created"
+msgstr "Creato"
+
+#: models.py:141
+msgid "Views count"
+msgstr "Conteggio visualizzazioni"
+
+#: models.py:142 templates/noticeapp/course_list.html:27
+msgid "Sticky"
+msgstr "In evidenza"
+
+#: models.py:143 templates/noticeapp/course_list.html:28
+msgid "Closed"
+msgstr "Chiuso"
+
+#: models.py:144 templates/noticeapp/course.html:90
+msgid "Subscribers"
+msgstr "Sottoscrittori"
+
+#: models.py:148 models.py:249
+msgid "On moderation"
+msgstr "Moderato"
+
+#: models.py:154 models.py:244 models.py:431 templates/noticeapp/course_list.html:7
+msgid "Course"
+msgstr "Course"
+
+#: models.py:155 templates/noticeapp/notice_list.html:11
+#: templates/noticeapp/user_courses.html:8
+msgid "Courses"
+msgstr "Course"
+
+#: models.py:231
+msgid "HTML version"
+msgstr "Versione HTML"
+
+#: models.py:232
+msgid "Text version"
+msgstr "Versione Testuale"
+
+#: models.py:248
+msgid "User IP"
+msgstr "IO utente"
+
+#: models.py:253 models.py:334
+msgid "Post"
+msgstr "Post"
+
+#: models.py:254 templates/noticeapp/notice_list.html:14
+#: templates/noticeapp/course.html:24 templates/noticeapp/course.html.py:44
+#: templates/noticeapp/course_list.html:10 templates/noticeapp/user_posts.html:8
+msgid "Posts"
+msgstr "Post"
+
+#: models.py:321
+msgid "Profile"
+msgstr "Profilo"
+
+#: models.py:322
+msgid "Profiles"
+msgstr "Profili"
+
+#: models.py:331
+msgid "Attachment"
+msgstr "Allegato"
+
+#: models.py:332
+msgid "Attachments"
+msgstr "Allegati"
+
+#: models.py:335
+msgid "Size"
+msgstr "Dimensione"
+
+#: models.py:336
+msgid "File"
+msgstr "File"
+
+#: models.py:386
+msgid "Course read tracker"
+msgstr "Contatore dei course letti"
+
+#: models.py:387
+msgid "Course read trackers"
+msgstr "Contatori dei course letti"
+
+#: models.py:424
+msgid "Notice read tracker"
+msgstr "Contatore dei notice letti"
+
+#: models.py:425
+msgid "Notice read trackers"
+msgstr "Contatore dei notice letti"
+
+#: models.py:432
+msgid "Text"
+msgstr "Testo"
+
+#: models.py:435 models.py:454
+msgid "Poll answer"
+msgstr "Risposta al sondaggio"
+
+#: models.py:436
+msgid "Polls answers"
+msgstr "Risposte al sondaggio"
+
+#: models.py:459
+msgid "Poll answer user"
+msgstr "Utente della risposta al sondaggio"
+
+#: models.py:460
+msgid "Polls answers users"
+msgstr "Utente delle risposte al sondaggio"
+
+#: profiles.py:34
+msgid "Signature"
+msgstr "Firma"
+
+#: profiles.py:36
+msgid "Signature HTML Version"
+msgstr "Versione HTML della firma"
+
+#: profiles.py:38
+msgid "Time zone"
+msgstr "Fuso Orario"
+
+#: profiles.py:40
+msgid "Language"
+msgstr "Lingua"
+
+#: profiles.py:43
+msgid "Show signatures"
+msgstr "Mostra le firme"
+
+#: profiles.py:46
+msgid "Avatar"
+msgstr "Avatar"
+
+#: profiles.py:48
+msgid "Automatically subscribe"
+msgstr "Segui automaticamente"
+
+#: profiles.py:49
+msgid "Automatically subscribe to courses that you answer"
+msgstr "Segui automaticamente I course a cui rispondi"
+
+#: util.py:43
+msgid "Can't get profile for anonymous user"
+msgstr "Non posso determinare il profile di un utente anonimo"
+
+#: views.py:687
+msgid "All notices marked as read"
+msgstr "Tutti I notice sono segnati come letti"
+
+#: views.py:720
+msgid "User successfuly blocked"
+msgstr "Utente bloccato con successo"
+
+#: views.py:733
+msgid "User successfuly unblocked"
+msgstr "Utente sbloccato con successo"
+
+#: templates/noticeapp/_button_new_course.html:2 templates/noticeapp/add_post.html:5
+#: templates/noticeapp/add_post.html.py:28
+msgid "New course"
+msgstr "Nuovo course"
+
+#: templates/noticeapp/_button_save.html:1
+msgid "Save"
+msgstr "Salva"
+
+#: templates/noticeapp/_button_submit.html:2
+msgid "Submit"
+msgstr "Invia"
+
+#: templates/noticeapp/_markitup.html:15
+msgid "Bold"
+msgstr "Grassetto"
+
+#: templates/noticeapp/_markitup.html:16
+msgid "Italic"
+msgstr "Italico"
+
+#: templates/noticeapp/_markitup.html:17
+msgid "Underline"
+msgstr "Sottolineato"
+
+#: templates/noticeapp/_markitup.html:18
+msgid "Stroke"
+msgstr "Segnato"
+
+#: templates/noticeapp/_markitup.html:20
+msgid "Picture"
+msgstr "Immagine"
+
+#: templates/noticeapp/_markitup.html:21
+msgid "Link"
+msgstr "Collegamento"
+
+#: templates/noticeapp/_markitup.html:23
+msgid "Bulleted list"
+msgstr "Lista puntata"
+
+#: templates/noticeapp/_markitup.html:24
+msgid "Numeric list"
+msgstr "Lista numerata"
+
+#: templates/noticeapp/_markitup.html:25
+msgid "List item"
+msgstr "Item della lista"
+
+#: templates/noticeapp/_markitup.html:27
+msgid "Quotes"
+msgstr "Citazioni"
+
+#: templates/noticeapp/_markitup.html:28
+msgid "Code"
+msgstr "Codice"
+
+#: templates/noticeapp/_markitup.html:30
+msgid "Clean"
+msgstr "Cancella"
+
+#: templates/noticeapp/_markitup.html:31
+msgid "Preview"
+msgstr "Antprima"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "Register"
+msgstr "Registrazione"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "or"
+msgstr "o"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "login"
+msgstr "login"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "to create to post a reply"
+msgstr "per creare o lasciare una risposta"
+
+#: templates/noticeapp/add_post.html:5 templates/noticeapp/add_post.html.py:28
+msgid "New reply"
+msgstr "Nuova risposta"
+
+#: templates/noticeapp/attachments_formset.html:6
+msgid "Add attachments"
+msgstr "Aggiungi allegati"
+
+#: templates/noticeapp/attachments_formset.html:12
+#: templates/noticeapp/edit_profile.html:27
+msgid "delete"
+msgstr "eliminare"
+
+#: templates/noticeapp/breadcrumb.html:5
+msgid "Home"
+msgstr "Home"
+
+#: templates/noticeapp/delete_post.html:5
+msgid "Are you sure you want to delete this message?"
+msgstr "Vuoi davvero cancellare questo messaggio?"
+
+#: templates/noticeapp/delete_post.html:12
+msgid "No, take me back"
+msgstr "No, torna indietro"
+
+#: templates/noticeapp/delete_post.html:13
+msgid "Yes, I am sure"
+msgstr "SI, sono sicuro"
+
+#: templates/noticeapp/edit_post.html:4 templates/noticeapp/edit_post.html.py:13
+msgid "Editing the post"
+msgstr "Modificare il post"
+
+#: templates/noticeapp/edit_profile.html:7 templates/noticeapp/edit_profile.html:10
+#: templates/noticeapp/edit_profile.html:15
+msgid "Profile editing"
+msgstr "Modificare il profilo"
+
+#: templates/noticeapp/edit_profile.html:20
+msgid "Subscriptions on courses"
+msgstr "Sottoscrizioni ai post"
+
+#: templates/noticeapp/notice_list.html:17
+msgid "Last posts"
+msgstr "Ultimi post"
+
+#: templates/noticeapp/notice_list.html:43
+msgid "No notices created"
+msgstr "Nessun notice creato"
+
+#: templates/noticeapp/notice_list.html:44
+msgid "Add notice now"
+msgstr "Aggiungi subito un notice"
+
+#: templates/noticeapp/index.html:19
+msgid "Notice categories are not created"
+msgstr "Le categorie dei notice non sono state create"
+
+#: templates/noticeapp/index.html:20
+msgid "Add a category now"
+msgstr "Aggiungi una categoria, adesso"
+
+#: templates/noticeapp/index.html:25 templates/noticeapp/latest_courses.html:7
+#: templates/noticeapp/latest_courses.html:10 templates/noticeapp/latest_courses.html:17
+msgid "Last updates in courses"
+msgstr "Ultimi aggiornamenti ai course"
+
+#: templates/noticeapp/index.html:28
+msgid "Mark all notices as read"
+msgstr "Segna tutti i notice come letti"
+
+#: templates/noticeapp/latest_courses.html:33
+msgid "Mark all courses as read"
+msgstr "Segna tutti i post come letti"
+
+#: templates/noticeapp/pagination.html:7
+msgid "previous page"
+msgstr "pagina precedente"
+
+#: templates/noticeapp/pagination.html:21
+msgid "next page"
+msgstr "pagina succcessiva"
+
+#: templates/noticeapp/poll.html:5
+msgid "Poll"
+msgstr "Sondaggio"
+
+#: templates/noticeapp/poll.html:37
+msgid "Cancel my poll vote"
+msgstr "Elimina il mio voto al sondaggio"
+
+#: templates/noticeapp/poll_edit_form.html:7
+msgid "Poll answers"
+msgstr "Risposta al sondaggio"
+
+#: templates/noticeapp/poll_edit_form.html:20
+msgid "remove answer"
+msgstr "Cancella la risposta"
+
+#: templates/noticeapp/poll_edit_form.html:21
+msgid "add answer"
+msgstr "Aggiungi risposta"
+
+#: templates/noticeapp/post_template.html:25
+msgid "Rank"
+msgstr "Classifica"
+
+#: templates/noticeapp/post_template.html:38 templates/noticeapp/user.html:46
+msgid "Edit"
+msgstr "Modificare"
+
+#: templates/noticeapp/post_template.html:42
+msgid "Delete post?"
+msgstr "Eliminare il post?"
+
+#: templates/noticeapp/post_template.html:43
+msgid "Delete"
+msgstr "Eliminare"
+
+#: templates/noticeapp/post_template.html:45
+msgid "Approve post"
+msgstr "Appprovare il post"
+
+#: templates/noticeapp/post_template.html:50 templates/noticeapp/course.html:63
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/noticeapp/post_template.html:66
+msgid "Edited"
+msgstr "Modificato"
+
+#: templates/noticeapp/post_template.html:80
+msgid "quote"
+msgstr "citare"
+
+#: templates/noticeapp/post_template.html:81
+msgid "quote selected"
+msgstr "cita la selezione"
+
+#: templates/noticeapp/course.html:52
+msgid "Unstick course"
+msgstr "togli il course da \"in evidenza\""
+
+#: templates/noticeapp/course.html:54
+msgid "Stick course"
+msgstr "Metti in evidenza il course"
+
+#: templates/noticeapp/course.html:58
+msgid "Open course"
+msgstr "Apri un course"
+
+#: templates/noticeapp/course.html:60
+msgid "Close course"
+msgstr "Chiudi un course"
+
+#: templates/noticeapp/course.html:72
+msgid "Unsubscribe"
+msgstr "Smetti di seguire"
+
+#: templates/noticeapp/course.html:74
+msgid "Subscribe"
+msgstr "Seguire"
+
+#: templates/noticeapp/course_list.html:13
+msgid "Views"
+msgstr "Visualizzazioni"
+
+#: templates/noticeapp/course_list.html:16
+msgid "Last post"
+msgstr "Ultimo post"
+
+#: templates/noticeapp/course_list.html:26
+msgid "Go to first unread post"
+msgstr "Vai al primo post non letto"
+
+#: templates/noticeapp/course_list.html:32
+msgid "pages"
+msgstr "pagine"
+
+#: templates/noticeapp/user.html:15
+msgid "Statistics"
+msgstr "Statistiche"
+
+#: templates/noticeapp/user.html:18
+msgid "Number of courses"
+msgstr "Numero di course"
+
+#: templates/noticeapp/user.html:24
+msgid "Number of posts"
+msgstr "Numero dei post"
+
+#: templates/noticeapp/user.html:28
+msgid "Date of registration"
+msgstr "Data di iscrizione"
+
+#: templates/noticeapp/user.html:36
+msgid "Block"
+msgstr "Bloccare"
+
+#: templates/noticeapp/user.html:37
+msgid "Block and delete all messages"
+msgstr "Blocca ed elimina tutti i messaggi"
+
+#: templates/noticeapp/user.html:41
+msgid "Unblock"
+msgstr "Sbloccare"
+
+#: templates/noticeapp/user_posts.html:13
+msgid "All posts created by"
+msgstr "Tutti i post create da"
+
+#: templates/noticeapp/user_courses.html:11 templates/noticeapp/user_courses.html.py:15
+msgid "All courses created by"
+msgstr "Tutti i course create da"
+
+#: templates/noticeapp/users.html:8 templates/noticeapp/users.html.py:24
+msgid "Users"
+msgstr "Utenti"
+
+#: templates/noticeapp/users.html:12
+msgid "Search"
+msgstr "Ricerca"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:3
+msgid "replied in course to which you are subscribed."
+msgstr "risposto a course che segui"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:4
+msgid "Link to post:"
+msgstr "Collegamento al post:"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:5
+msgid "Link to course:"
+msgstr "Collegamento al course"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:8
+msgid ""
+"If you don't want to recive notifications on new messages in this course "
+"visit following link:"
+msgstr ""
+"Se non vuoi ricevere notifiche per i nuovi messaggi di questo topi segui "
+"questo link:"
+
+#: templates/noticeapp/mail_templates/subscription_email_subject.html:2
+msgid "New answer in course that you subscribed."
+msgstr "Nuova risposta ad un course che segui"
+
+#: templatetags/noticeapp_tags.py:63
+msgid "seconds ago,seconds ago,seconds ago"
+msgstr "secondi fà"
+
+#: templatetags/noticeapp_tags.py:66
+msgid "seconds ago"
+msgstr "secondi fà"
+
+#: templatetags/noticeapp_tags.py:72
+msgid "minutes ago,minutes ago,minutes ago"
+msgstr "minuti fà"
+
+#: templatetags/noticeapp_tags.py:75
+msgid "minutes ago"
+msgstr "minuti fà"
+
+#: templatetags/noticeapp_tags.py:85
+#, python-format
+msgid "today, %s"
+msgstr "oggi, %s"
+
+#: templatetags/noticeapp_tags.py:87
+#, python-format
+msgid "yesterday, %s"
+msgstr "ieri, %s"

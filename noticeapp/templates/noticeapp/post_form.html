@@ -1,0 +1,31 @@
+{% load url from future %}
+{% load i18n noticeapp_tags %}
+<form class="post-form" action="
+    {% if notice %}
+        {% url 'noticeapp:add_course' notice.pk %}
+    {% else %}
+        {% if course %}
+            {% url 'noticeapp:add_post' course.pk %}
+        {% else %}
+            {% url 'noticeapp:edit_post' pk=object.pk %}
+        {% endif %}
+    {% endif %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <fieldset>
+    {% include "noticeapp/form_errors.html" %}
+    {% if form.name %} {% include "noticeapp/form_field.html" with field=form.name %} {% endif %}
+    {% if form.login %} {% include "noticeapp/form_field.html" with field=form.login %}  {% endif %}
+    {% if form.body %} {% include "noticeapp/form_field.html" with field=form.body %}  {% endif %}
+    <div id='emoticons'>
+      {% for smile, url in form.available_smiles.items %}
+        <a href='#' title='{{ smile|safe }}'><img src='{{ STATIC_URL }}{{ form.smiles_prefix }}{{ url }}'></a>
+      {% endfor %}
+    </div>
+
+    {% if request.user|noticeapp_may_create_poll and form.poll_type %}
+      {% include "noticeapp/poll_edit_form.html" %}
+    {% endif %}
+    {% include "noticeapp/attachments_formset.html" %}
+    <p class="submit">{% include "noticeapp/_button_submit.html" %}</p>
+  </fieldset>
+</form>

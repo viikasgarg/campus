@@ -1,0 +1,54 @@
+{% load i18n noticeapp_tags %}
+
+<table class="table course-list">
+    <thead>
+        <tr class="course-row head-row">
+            <th class="course-name">
+                {% trans "Course" %}
+            </th>
+            <th class="course-post-count">
+                {% trans "Notifications" %}
+            </th>
+            <th class="course-last-post">
+                {% trans "Last notice" %}
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+    {% for course in course_list|noticeapp_course_unread:user %}
+        <tr class="course-row {% if course.sticky %} sticky {% endif %} {% cycle "odd" "even" %} {% if course.on_moderation %} on-moderation {% endif %}">
+            <td class="course-name{% if course.unread %} course-unread{% endif %}">
+                <div class="state-indicator"></div>
+                <a href="{{ course.get_absolute_url }}">{{ course.name|truncatewords:10 }}</a>
+                <a href="{{ course.get_absolute_url }}?first-unread=1" class="first-unread-post-link" title="{% trans 'Go to first unread post' %}">⇨</a>
+                {% if course.sticky %} &nbsp;[{% trans "Sticky" %}] {% endif %}
+                {% if course.closed %} &nbsp;[{% trans "Closed" %}] {% endif %}
+                {% with course|noticeapp_course_inline_pagination as pages %}
+                    {% if pages|length > 1 %}
+                        <span class="mini-pagination">
+                            {% trans "pages" %}:
+                            {% for page in pages %}
+                                <span class="page">
+                                {% if page == "..." %}
+                                    ...
+                                {% else %}
+                                    <a href="{{ course.get_absolute_url }}?page={{ page }}">{{ page }}</a>
+                                {% endif %}
+                                </span>
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+                {% endwith %}
+            </td>
+            <td class="course-post-count">
+                {{ course.post_count }}
+            </td>
+
+            <td class="course-last-post">
+                {% include "noticeapp/course_last_message_info.html" %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

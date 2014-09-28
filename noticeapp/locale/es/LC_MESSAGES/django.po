@@ -1,0 +1,595 @@
+# Spanish translation for the noticeappm form.
+# Copyright (C) 2013 Jose Antonio Martin
+# This file is distributed under the same license as the noticeappm package.
+# Jose Antonio Martin <jantonio.martin@gmail.com>, 2013.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: noticeappm\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-15 19:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jose Antonio Martin <jantonio.martin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: admin.py:40 admin.py:66 admin.py:94 admin.py:116
+msgid "Additional options"
+msgstr "Opciones adicionales"
+
+#: admin.py:99 models.py:255
+msgid "Message"
+msgstr "Mensaje"
+
+#: admin.py:130
+msgid "View post"
+msgstr "Ver mensaje"
+
+#: admin.py:135
+msgid "Edit post"
+msgstr "Editar mensaje"
+
+#: feeds.py:25 feeds.py:26 templates/noticeapp/base.html:12
+msgid "Latest posts on notice"
+msgstr "Últimos mensajes en el foro"
+
+#: feeds.py:35 feeds.py:36 templates/noticeapp/base.html:13
+msgid "Latest courses on notice"
+msgstr "Últimos temas en el foro"
+
+#: forms.py:26
+msgid "Attachment is too big"
+msgstr "El adjunto es demasiado grande"
+
+#: forms.py:46
+#, python-format
+msgid "You cant add more than %s answers for poll"
+msgstr "No puedes añadir más de %s respuestas por encuesta"
+
+#: forms.py:48
+msgid "Add two or more answers for this poll"
+msgstr "Añade dos o más respuestas a la encuesta"
+
+#: forms.py:56 models.py:163
+msgid "Subject"
+msgstr "Asunto"
+
+#: forms.py:57 models.py:175
+msgid "Poll type"
+msgstr "Tipo de encuesta"
+
+#: forms.py:59 models.py:176
+msgid "Poll question"
+msgstr "Pregunta de la encuesta"
+
+#: forms.py:108
+msgid "Polls question is required when adding a poll"
+msgstr "Se requiere una pregunta para añadir una encuesta"
+
+#: forms.py:158 models.py:166 models.py:269 models.py:382 models.py:511
+#: templates/noticeapp/mail_templates/subscription_email_body.html:3
+msgid "User"
+msgstr "Usuario"
+
+#: forms.py:190
+#, python-format
+msgid "Avatar is too large, max size: %s bytes"
+msgstr "El avatar es demasiado grande, máximo tamaño: %s bytes"
+
+#: models.py:65 models.py:96
+msgid "Name"
+msgstr "Nombre"
+
+#: models.py:66 models.py:97
+msgid "Position"
+msgstr "Posición"
+
+#: models.py:67 models.py:103 templates/noticeapp/category.html:5
+#: templates/noticeapp/category.html.py:28
+msgid "Hidden"
+msgstr "Oculto"
+
+#: models.py:68
+msgid "If checked, this category will be visible only for staff"
+msgstr "Marcado, esta categoría será visible solo para administradores"
+
+#: models.py:73 models.py:95
+msgid "Category"
+msgstr "Categoría"
+
+#: models.py:74
+msgid "Categories"
+msgstr "Categorías"
+
+#: models.py:98
+msgid "Description"
+msgstr "Descripción"
+
+#: models.py:99
+msgid "Moderators"
+msgstr "Moderadores"
+
+#: models.py:100 models.py:165 models.py:271
+msgid "Updated"
+msgstr "Actualizado"
+
+#: models.py:101 models.py:172 models.py:358
+msgid "Post count"
+msgstr "Número de mensajes"
+
+#: models.py:102
+msgid "Course count"
+msgstr "Número de temas"
+
+#: models.py:105
+msgid "Headline"
+msgstr "Titular"
+
+#: models.py:109 models.py:162 templates/noticeapp/category.html:10
+msgid "Notice"
+msgstr "Foro"
+
+#: models.py:110
+msgid "Notices"
+msgstr "Foros"
+
+#: models.py:157
+msgid "None"
+msgstr "Ninguna"
+
+#: models.py:158
+msgid "Single answer"
+msgstr "Respuesta única"
+
+#: models.py:159
+msgid "Multiple answers"
+msgstr "Respuestas múltiples"
+
+#: models.py:164 models.py:270
+msgid "Created"
+msgstr "Creado"
+
+#: models.py:167
+msgid "Views count"
+msgstr "Lecturas"
+
+#: models.py:168 templates/noticeapp/course_list.html:27
+msgid "Sticky"
+msgstr "Pegajoso"
+
+#: models.py:169 templates/noticeapp/course_list.html:28
+msgid "Closed"
+msgstr "Cerrado"
+
+#: models.py:170 templates/noticeapp/course.html:93
+msgid "Subscribers"
+msgstr "Suscriptores"
+
+#: models.py:174 models.py:273
+msgid "On moderation"
+msgstr "En moderación"
+
+#: models.py:180 models.py:268 models.py:490 templates/noticeapp/course_list.html:7
+msgid "Course"
+msgstr "Tema"
+
+#: models.py:181 templates/noticeapp/category.html:13
+#: templates/noticeapp/user_courses.html:8
+msgid "Courses"
+msgstr "Temas"
+
+#: models.py:256
+msgid "HTML version"
+msgstr "Versión HTML"
+
+#: models.py:257
+msgid "Text version"
+msgstr "Versión de texto"
+
+#: models.py:272
+msgid "User IP"
+msgstr "IP de usuario"
+
+#: models.py:277 models.py:398
+msgid "Post"
+msgstr "Mensaje"
+
+#: models.py:278 templates/noticeapp/category.html:16 templates/noticeapp/course.html:24
+#: templates/noticeapp/course.html.py:44 templates/noticeapp/course_list.html:10
+#: templates/noticeapp/user_posts.html:8
+msgid "Posts"
+msgstr "Mensajes"
+
+#: models.py:347
+msgid "Signature"
+msgstr "Firma"
+
+#: models.py:349
+msgid "Signature HTML Version"
+msgstr "Versión HTML de la firma"
+
+#: models.py:351
+msgid "Time zone"
+msgstr "Huso horario"
+
+#: models.py:353
+msgid "Language"
+msgstr "Idioma"
+
+#: models.py:356
+msgid "Show signatures"
+msgstr "Mostrar firmas"
+
+#: models.py:359
+msgid "Avatar"
+msgstr "Avatar"
+
+#: models.py:361
+msgid "Automatically subscribe"
+msgstr "Suscribir automáticamente"
+
+#: models.py:362
+msgid "Automatically subscribe to courses that you answer"
+msgstr "Te suscribe automáticamente a los temas a los que respondas"
+
+#: models.py:385
+msgid "Profile"
+msgstr "Perfil"
+
+#: models.py:386
+msgid "Profiles"
+msgstr "Perfiles"
+
+#: models.py:395
+msgid "Attachment"
+msgstr "Adjunto"
+
+#: models.py:396
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#: models.py:399
+msgid "Size"
+msgstr "Tamaño"
+
+#: models.py:400
+msgid "File"
+msgstr "Archivo"
+
+#: models.py:448
+msgid "Course read tracker"
+msgstr "Seguidor de temas leídos"
+
+#: models.py:449
+msgid "Course read trackers"
+msgstr "Seguidores de temas leídos"
+
+#: models.py:484
+msgid "Notice read tracker"
+msgstr "Seguidor de foros leídos"
+
+#: models.py:485
+msgid "Notice read trackers"
+msgstr "Seguidores de foros leídos"
+
+#: models.py:491
+msgid "Text"
+msgstr "Texto"
+
+#: models.py:494 models.py:510
+msgid "Poll answer"
+msgstr "Respuesta de encuesta"
+
+#: models.py:495
+msgid "Polls answers"
+msgstr "Respuestas de encuestas"
+
+#: models.py:515
+msgid "Poll answer user"
+msgstr "Usuario de respuesta de encuesta"
+
+#: models.py:516
+msgid "Polls answers users"
+msgstr "Usuarios de respuestas de encuestas"
+
+#: util.py:58
+msgid "Can't get profile for anonymous user"
+msgstr "No se pude obtener el perfil del usuario anónimo"
+
+#: views.py:626
+msgid "All notices marked as read"
+msgstr "Todos los foros marcados como leídos"
+
+#: views.py:638
+msgid "User successfuly blocked"
+msgstr "Usuario bloqueado con éxito"
+
+#: templates/noticeapp/_button_new_course.html:2 templates/noticeapp/add_post.html:24
+msgid "New course"
+msgstr "Nuevo tema"
+
+#: templates/noticeapp/_button_save.html:1
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/noticeapp/_button_submit.html:1
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "Register"
+msgstr "Registrar"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "or"
+msgstr "o"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "login"
+msgstr "entrar"
+
+#: templates/noticeapp/_need_to_login_message.html:3
+msgid "to create to post a reply"
+msgstr "para crear o responder a un tema"
+
+#: templates/noticeapp/add_post.html:24
+msgid "New reply"
+msgstr "Nueva respuesta"
+
+#: templates/noticeapp/attachments_formset.html:4
+msgid "Add attachments"
+msgstr "Añadir adjuntos"
+
+#: templates/noticeapp/attachments_formset.html:10
+#: templates/noticeapp/edit_profile.html:27
+msgid "delete"
+msgstr "borrar"
+
+#: templates/noticeapp/breadcrumb.html:5
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/noticeapp/category.html:19
+msgid "Last posts"
+msgstr "Últimos mensajes"
+
+#: templates/noticeapp/category.html:44
+msgid "No notices created"
+msgstr "No hay foros creados"
+
+#: templates/noticeapp/category.html:45
+msgid "Add notice now"
+msgstr "Añadir foro ahora"
+
+#: templates/noticeapp/delete_post.html:5
+msgid "Are you sure you want to delete this message?"
+msgstr "¿Estás seguro de que deseas borrar este mensaje?"
+
+#: templates/noticeapp/delete_post.html:12
+msgid "No, take me back"
+msgstr "No, cancelar"
+
+#: templates/noticeapp/delete_post.html:13
+msgid "Yes, I am sure"
+msgstr "Sí, estoy seguro"
+
+#: templates/noticeapp/edit_post.html:4 templates/noticeapp/edit_post.html.py:13
+msgid "Editing the post"
+msgstr "Editando el mensaje"
+
+#: templates/noticeapp/edit_profile.html:7 templates/noticeapp/edit_profile.html:10
+#: templates/noticeapp/edit_profile.html:15
+msgid "Profile editing"
+msgstr "Editando perfil"
+
+#: templates/noticeapp/edit_profile.html:20
+msgid "Subscriptions on courses"
+msgstr "Subscripciones a temas"
+
+#: templates/noticeapp/index.html:19
+msgid "Notice categories are not created"
+msgstr "Las categorías del foro no están creadas"
+
+#: templates/noticeapp/index.html:20
+msgid "Add a category now"
+msgstr "Añadir categoría ahora"
+
+#: templates/noticeapp/index.html:25 templates/noticeapp/latest_courses.html:7
+#: templates/noticeapp/latest_courses.html:10 templates/noticeapp/latest_courses.html:17
+msgid "Last updates in courses"
+msgstr "Últimas acutalizaciones de temas"
+
+#: templates/noticeapp/index.html:28
+msgid "Mark all notices as read"
+msgstr "Marcar todos los foros como leídos"
+
+#: templates/noticeapp/latest_courses.html:33
+msgid "Mark all courses as read"
+msgstr "Marcar todos los temas como leídos"
+
+#: templates/noticeapp/pagination.html:7
+msgid "previous page"
+msgstr "página anterior"
+
+#: templates/noticeapp/pagination.html:21
+msgid "next page"
+msgstr "página siguiente"
+
+#: templates/noticeapp/poll.html:5
+msgid "Poll"
+msgstr "Encuesta"
+
+#: templates/noticeapp/poll_edit_form.html:7
+msgid "Poll answers"
+msgstr "Respuestas a encuesta"
+
+#: templates/noticeapp/poll_edit_form.html:20
+msgid "remove answer"
+msgstr "eliminar respuesta"
+
+#: templates/noticeapp/poll_edit_form.html:21
+msgid "add answer"
+msgstr "añadir respuesta"
+
+#: templates/noticeapp/post_template.html:25
+msgid "Rank"
+msgstr "Rango"
+
+#: templates/noticeapp/post_template.html:38 templates/noticeapp/user.html:37
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/noticeapp/post_template.html:42
+msgid "Delete post?"
+msgstr "¿Borrar mensaje?"
+
+#: templates/noticeapp/post_template.html:43
+msgid "Delete"
+msgstr "Borrar"
+
+#: templates/noticeapp/post_template.html:45
+msgid "Approve post"
+msgstr "Aprobar mensaje"
+
+#: templates/noticeapp/post_template.html:50 templates/noticeapp/course.html:63
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/noticeapp/post_template.html:66
+msgid "Edited"
+msgstr "Editado"
+
+#: templates/noticeapp/post_template.html:79
+msgid "quote"
+msgstr "citar"
+
+#: templates/noticeapp/course.html:52
+msgid "Unstick course"
+msgstr "Desanclar tema"
+
+#: templates/noticeapp/course.html:54
+msgid "Stick course"
+msgstr "Anclar tema"
+
+#: templates/noticeapp/course.html:58
+msgid "Open course"
+msgstr "Abrir tema"
+
+#: templates/noticeapp/course.html:60
+msgid "Close course"
+msgstr "Cerrar tema"
+
+#: templates/noticeapp/course.html:72
+msgid "Unsubscribe"
+msgstr "Anular subscripción"
+
+#: templates/noticeapp/course.html:74
+msgid "Subscribe"
+msgstr "Subscribir"
+
+#: templates/noticeapp/course_list.html:13
+msgid "Views"
+msgstr "Vistas"
+
+#: templates/noticeapp/course_list.html:16
+msgid "Last post"
+msgstr "Último mensaje"
+
+#: templates/noticeapp/course_list.html:26
+msgid "Go to first unread post"
+msgstr "Ir al primer mensaje no leído"
+
+#: templates/noticeapp/course_list.html:32
+msgid "pages"
+msgstr "páginas"
+
+#: templates/noticeapp/user.html:15
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: templates/noticeapp/user.html:18
+msgid "Number of courses"
+msgstr "Número de temas"
+
+#: templates/noticeapp/user.html:24
+msgid "Number of posts"
+msgstr "Número de mensajes"
+
+#: templates/noticeapp/user.html:28
+msgid "Date of registration"
+msgstr "Fecha de registro"
+
+#: templates/noticeapp/user.html:34
+msgid "Block"
+msgstr "Bloquear"
+
+#: templates/noticeapp/user_posts.html:13
+msgid "All posts created by"
+msgstr "Todos los mensajes creados por"
+
+#: templates/noticeapp/user_courses.html:11 templates/noticeapp/user_courses.html.py:15
+msgid "All courses created by"
+msgstr "Todos los temas creados por"
+
+#: templates/noticeapp/users.html:8 templates/noticeapp/users.html.py:24
+msgid "Users"
+msgstr "Usuarios"
+
+#: templates/noticeapp/users.html:12
+msgid "Search"
+msgstr "Buscar"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:3
+msgid "replied in course to which you are subscribed."
+msgstr "respondió a un tema al que estás suscrito"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:4
+msgid "Link to post:"
+msgstr "Enlace al mensaje:"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:5
+msgid "Link to course:"
+msgstr "Enlace al tema:"
+
+#: templates/noticeapp/mail_templates/subscription_email_body.html:8
+msgid ""
+"If you don't want to recive notifications on new messages in this course "
+"visit following link:"
+msgstr ""
+"Si no deseas recibir notificaciones de nuevos mensajes sobre este tema "
+"pulsa el siguiente enlace:"
+
+#: templates/noticeapp/mail_templates/subscription_email_subject.html:2
+msgid "New answer in course that you subscribed."
+msgstr "Nueva respuesta a un tema de tu interés."
+
+#: templatetags/noticeapp_tags.py:60
+msgid "seconds ago,seconds ago,seconds ago"
+msgstr ""
+
+#: templatetags/noticeapp_tags.py:63
+msgid "seconds ago"
+msgstr "segundos"
+
+#: templatetags/noticeapp_tags.py:69
+msgid "minutes ago,minutes ago,minutes ago"
+msgstr ""
+
+#: templatetags/noticeapp_tags.py:72
+msgid "minutes ago"
+msgstr "minutos"
+
+#: templatetags/noticeapp_tags.py:82
+#, python-format
+msgid "today, %s"
+msgstr "hoy, %s"
+
+#: templatetags/noticeapp_tags.py:84
+#, python-format
+msgid "yesterday, %s"
+msgstr "ayer, %s"

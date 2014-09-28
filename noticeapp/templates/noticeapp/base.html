@@ -1,0 +1,28 @@
+{% extends PYBB_TEMPLATE|default:"base.html" %}
+
+{% load url from future %}
+
+{% load i18n noticeapp_tags %}
+
+{%block title %}{{ PYBB_DEFAULT_TITLE }}{% endblock title %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml" href="{% url 'noticeapp:feed_posts' %}" title="{% trans "Latest posts on notice" %}" >
+    <link rel="alternate" type="application/atom+xml" href="{% url 'noticeapp:feed_courses' %}" title="{% trans "Latest courses on notice" %}" >
+
+    <style>
+    .form-control {
+        height: 100%;
+    }
+    </style>
+{% endblock %}
+
+
+{% block breadcrumb %}
+    {% include "noticeapp/breadcrumb.html" %}
+{% endblock %}
+
+{% block content %}{% endblock content %}
+

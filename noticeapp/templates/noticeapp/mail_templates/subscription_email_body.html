@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% trans "User" %} {{ post.user.username }} {% trans "replied in course to which you are subscribed." %} ({{ post.course.name }})
+{% trans "Link to post:" %} http://{{site}}{{ post.get_absolute_url }}
+{% trans "Link to course:" %} http://{{site}}{{ post.course.get_absolute_url }}
+
+-----
+{% trans "If you don't want to recive notifications on new messages in this course visit following link:" %} http://{{site}}{{ delete_url }}

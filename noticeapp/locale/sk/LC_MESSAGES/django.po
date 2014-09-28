@@ -1,0 +1,673 @@
+# Russian translation for noticeapp notice
+# Copyright (C) 2008 Grigoriy Petukhov
+# This file is distributed under the same license as the noticeapp package.
+# Grigoriy Petukhov <lizendir@gmail.com>, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: noticeapp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-29 21:12+0600\n"
+"PO-Revision-Date: 2009-10-26 14:09+0100\n"
+"Last-Translator: Tomas Drencak <tomas@drencak.com>\n"
+"Language-Team: tomas <tomas@drencak.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../../\n"
+"X-Poedit-Language: Slovak\n"
+"X-Poedit-Country: SLOVAKIA\n"
+
+#: admin.py:23 admin.py:42 admin.py:61 admin.py:88
+msgid "Additional options"
+msgstr "Ďalšie možnosti"
+
+#: admin.py:66 models.py:193
+msgid "Message"
+msgstr "Správa"
+
+#: admin.py:83
+msgid "IM"
+msgstr "IM"
+
+#: admin.py:93
+msgid "Ban options"
+msgstr "Nastevanie blokovania"
+
+#: feeds.py:21 feeds.py:22 templates/noticeapp/base.html:13
+msgid "Latest posts on notice"
+msgstr "Najnovšie príspevky na fóre"
+
+#: feeds.py:31 feeds.py:32 templates/noticeapp/base.html:14
+msgid "Latest courses on notice"
+msgstr "Najnovšie témy na fóre"
+
+#: forms.py:14 forms.py:112 models.py:108
+msgid "Subject"
+msgstr "Predmet"
+
+#: forms.py:15 templates/noticeapp/post_template.html:61
+msgid "Attachment"
+msgstr "Príloha"
+
+#: forms.py:42
+msgid "Attachment is too big"
+msgstr "Príloha je príliš veľká"
+
+#: models.py:39 models.py:67 models.py:327
+msgid "Name"
+msgstr "Názov"
+
+#: models.py:40 models.py:68
+msgid "Position"
+msgstr "Pozícia"
+
+#: models.py:44 models.py:66
+msgid "Category"
+msgstr "Kategória"
+
+#: models.py:45
+msgid "Categories"
+msgstr "Kategórie"
+
+#: models.py:69
+msgid "Description"
+msgstr "Popis"
+
+#: models.py:70
+msgid "Moderators"
+msgstr "Moderátori"
+
+#: models.py:71 models.py:110 models.py:191
+msgid "Updated"
+msgstr "Aktualizované"
+
+#: models.py:72 models.py:116
+msgid "Post count"
+msgstr "Počet príspevkov"
+
+#: models.py:76 models.py:107
+msgid "Notice"
+msgstr "Fórum"
+
+#: models.py:77
+msgid "Notices"
+msgstr "Fóra"
+
+#: models.py:109 models.py:190
+msgid "Created"
+msgstr "Vytvorené"
+
+#: models.py:111 models.py:189 models.py:251 models.py:303
+msgid "User"
+msgstr "Používateľ"
+
+#: models.py:112
+msgid "Views count"
+msgstr "Videné"
+
+#: models.py:113
+msgid "Sticky"
+msgstr "Sledovaná"
+
+#: models.py:114 templates/noticeapp/notice.html:24
+msgid "Closed"
+msgstr "Zatvorené"
+
+#: models.py:115
+msgid "Subscribers"
+msgstr "Odoberatelia"
+
+#: models.py:120 models.py:188 models.py:304
+msgid "Course"
+msgstr "Téma"
+
+#: models.py:121 templates/noticeapp/notice.html:36
+#: templates/noticeapp/quick_access.html:47 templates/noticeapp/user_posts.html:19
+#: templates/noticeapp/user_notices.html:25
+msgid "Courses"
+msgstr "Témy"
+
+#: models.py:192
+msgid "Markup"
+msgstr "Formátovaný text"
+
+#: models.py:194
+msgid "HTML version"
+msgstr "HTML verzia"
+
+#: models.py:195
+msgid "Text version"
+msgstr "Textová verzia"
+
+#: models.py:196
+msgid "User IP"
+msgstr "IP používateľa"
+
+#: models.py:201 models.py:323
+msgid "Post"
+msgstr "Príspevok"
+
+#: models.py:202 templates/noticeapp/quick_access.html:50
+#: templates/noticeapp/course.html:29 templates/noticeapp/course.html.py:42
+msgid "Posts"
+msgstr "Príspevky"
+
+#: models.py:246
+msgid "No"
+msgstr "Nie"
+
+#: models.py:247
+msgid "Caution"
+msgstr "Upozornenie"
+
+#: models.py:248
+msgid "Ban"
+msgstr "Blokovanie"
+
+#: models.py:252 templates/noticeapp/user.html:46
+msgid "Site"
+msgstr "Stránka"
+
+#: models.py:253
+msgid "Jabber"
+msgstr "Jabber"
+
+#: models.py:254
+msgid "ICQ"
+msgstr "ICQ"
+
+#: models.py:255
+msgid "MSN"
+msgstr "MSN"
+
+#: models.py:256
+msgid "AIM"
+msgstr "AIM"
+
+#: models.py:257
+msgid "Yahoo"
+msgstr "Yahoo"
+
+#: models.py:258 templates/noticeapp/user.html:43
+msgid "Location"
+msgstr "Umiestnenie"
+
+#: models.py:259
+msgid "Signature"
+msgstr "Podpis"
+
+#: models.py:260
+#, fuzzy
+msgid "Signature HTML Version"
+msgstr "HTML версия"
+
+#: models.py:261
+msgid "Time zone"
+msgstr "Časová zóna"
+
+#: models.py:262
+msgid "Language"
+msgstr "Jazyk"
+
+#: models.py:264
+msgid "Avatar"
+msgstr "Avatar"
+
+#: models.py:265
+msgid "Show signatures"
+msgstr "Zobraziť podpisy"
+
+#: models.py:266
+msgid "Default markup"
+msgstr "Východzí markup jazyk"
+
+#: models.py:267
+msgid "Ban status"
+msgstr "Status blokovania"
+
+#: models.py:268
+msgid "Ban till"
+msgstr "Blokovaný do"
+
+#: models.py:271
+msgid "Profile"
+msgstr "Profil"
+
+#: models.py:272
+msgid "Profiles"
+msgstr "Profily"
+
+#: models.py:305
+msgid "Time"
+msgstr "Čas"
+
+#: models.py:309
+msgid "Read"
+msgstr "Prečítané"
+
+#: models.py:310
+msgid "Reads"
+msgstr "Prečítania"
+
+#: models.py:324
+msgid "Size"
+msgstr "Veľkosť"
+
+#: models.py:325
+msgid "Content type"
+msgstr ""
+
+#: models.py:326
+msgid "Path"
+msgstr "Cesta"
+
+#: models.py:328
+msgid "Hash"
+msgstr "Hash"
+
+#: subscription.py:11
+#, python-format
+msgid ""
+"New reply from %(username)s to course that you have subscribed on.\n"
+"---\n"
+"%(message)s\n"
+"---\n"
+"See course: %(post_url)s\n"
+"Unsubscribe %(unsubscribe_url)s"
+msgstr ""
+"Nová odpoveď od %(username)s k téme, ktorú odoberáte.\n"
+"---\n"
+"%(message)s\n"
+"---\n"
+"Pozri tému: %(post_url)s\n"
+"Neodoberať %(unsubscribe_url)s"
+
+#: views.py:199
+#, python-format
+msgid "Added after %s minute"
+msgid_plural "Added after %s minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/noticeapp/add_post.html:23
+msgid "You banned"
+msgstr "Ste zablokovaný"
+
+#: templates/noticeapp/add_post.html:27 templates/noticeapp/add_post.html.py:29
+#: templates/noticeapp/category.html:11 templates/noticeapp/create_pm.html:7
+#: templates/noticeapp/edit_post.html:21 templates/noticeapp/notice.html:12
+#: templates/noticeapp/course.html:26
+msgid "Root"
+msgstr "Domov"
+
+#: templates/noticeapp/add_post.html:33 templates/noticeapp/add_post_form.html:9
+#: templates/noticeapp/notice.html:40
+msgid "New course"
+msgstr "Nová téma"
+
+#: templates/noticeapp/add_post.html:33 templates/noticeapp/add_post_form.html:9
+msgid "New reply"
+msgstr "Nová odpoveď"
+
+#: templates/noticeapp/add_post_form.html:5 templates/noticeapp/add_post_form.html:13
+#: templates/noticeapp/merge_courses.html:35
+msgid "Preview"
+msgstr "Náhľad"
+
+#: templates/noticeapp/add_post_form.html:12 templates/noticeapp/create_pm.html:14
+msgid "Submit"
+msgstr "Odoslať"
+
+#: templates/noticeapp/add_post_form.html:40
+msgid "Remove"
+msgstr ""
+
+#: templates/noticeapp/create_pm.html:7 templates/noticeapp/create_pm.html.py:12
+msgid "New private message"
+msgstr "Nová súkromná správa"
+
+#: templates/noticeapp/delete_post.html:5
+msgid "Are you sure you want to delete this message?"
+msgstr "Ste si istý že chcete vymazať túto správu?"
+
+#: templates/noticeapp/delete_post.html:10
+msgid "Yes, I am sure."
+msgstr "Áno, som si istý."
+
+#: templates/noticeapp/edit_post.html:24 templates/noticeapp/edit_post.html.py:28
+msgid "Editing the post"
+msgstr "Editácia príspevku"
+
+#: templates/noticeapp/edit_post.html:30 templates/noticeapp/edit_profile.html:30
+msgid "Save"
+msgstr "Uložiť"
+
+#: templates/noticeapp/edit_profile.html:20 templates/noticeapp/edit_profile.html:28
+msgid "Profile editing"
+msgstr "Úprava profilu"
+
+#: templates/noticeapp/edit_profile.html:24
+msgid "Change the password"
+msgstr "Zmeniť heslo"
+
+#: templates/noticeapp/edit_profile.html:33
+msgid "Subscriptions on courses"
+msgstr "Odoberatelia na témy"
+
+#: templates/noticeapp/edit_profile.html:40
+msgid "delete"
+msgstr "odstrániť"
+
+#: templates/noticeapp/footer.html:15
+msgid "PYBB - django notice engine"
+msgstr "PYBB - django fórum"
+
+#: templates/noticeapp/notice.html:25
+msgid "Important"
+msgstr "Dôležité"
+
+#: templates/noticeapp/head.html:10 templates/noticeapp/head.html.py:46
+#: templates/noticeapp/users.html:9
+msgid "Search"
+msgstr "Hľadať"
+
+#: templates/noticeapp/head.html:11 templates/noticeapp/quick_access.html:53
+#: templates/noticeapp/users.html:6 templates/noticeapp/users.html.py:20
+msgid "Users"
+msgstr "Používatelia"
+
+#: templates/noticeapp/head.html:13
+msgid "My profile"
+msgstr "Môj profil"
+
+#: templates/noticeapp/head.html:15
+msgid "Admincp"
+msgstr "Admin"
+
+#: templates/noticeapp/head.html:17
+msgid "Log out"
+msgstr "Odhlásiť"
+
+#: templates/noticeapp/head.html:18
+msgid "Logged in as "
+msgstr "Prihlásený ako"
+
+#: templates/noticeapp/head.html:20
+msgid "Sign up"
+msgstr "Registrovať"
+
+#: templates/noticeapp/head.html:21
+msgid "Log in"
+msgstr "Prihlásiť"
+
+#: templates/noticeapp/head.html:47
+msgid "Search powered by Google"
+msgstr "Vyhľadávanie používa Google"
+
+#: templates/noticeapp/merge_courses.html:11
+msgid "Enter course id for add to merged courses"
+msgstr "Vložte ID témy pre pridanie do zlúčených tém"
+
+#: templates/noticeapp/merge_courses.html:16
+msgid "Add"
+msgstr "Pridať"
+
+#: templates/noticeapp/merge_courses.html:24
+msgid "Choose main course to merge"
+msgstr "Zvoľte hlavnú tému pre zlúčenie"
+
+#: templates/noticeapp/merge_courses.html:31
+msgid "Merge"
+msgstr "Zlúčiť"
+
+#: templates/noticeapp/merge_courses.html:35
+msgid "Posts from changed courses"
+msgstr "Príspevky zo zmenených tém"
+
+#: templates/noticeapp/merge_courses.html:36 templates/noticeapp/user.html:26
+msgid "Number of posts"
+msgstr "Počet príspevkov"
+
+#: templates/noticeapp/pagination.html:6
+msgid "Enter page number"
+msgstr "Vložte číslo strany"
+
+#: templates/noticeapp/pagination.html:15 templates/noticeapp/pagination.html.py:23
+msgid "of"
+msgstr "z"
+
+#: templates/noticeapp/pagination.html:21
+msgid "Go to page..."
+msgstr "Ísť na stranu..."
+
+#: templates/noticeapp/pagination.html:22
+#: templates/noticeapp/course_mini_pagination.html:3
+msgid "Page"
+msgstr "Strana"
+
+#: templates/noticeapp/post_template.html:26 templates/noticeapp/user.html:19
+msgid "Expire"
+msgstr "Vyprší"
+
+#: templates/noticeapp/post_template.html:34
+msgid "Edit"
+msgstr "Upraviť"
+
+#: templates/noticeapp/post_template.html:39
+msgid "Delete post?"
+msgstr "Vymazať príspevok?"
+
+#: templates/noticeapp/post_template.html:40
+msgid "Delete"
+msgstr "Vymazať"
+
+#: templates/noticeapp/post_template.html:55
+msgid "Edited"
+msgstr "Upravené"
+
+#: templates/noticeapp/post_template.html:66
+msgid "quote"
+msgstr "citovať"
+
+#: templates/noticeapp/quick_access.html:16
+msgid "Last courses"
+msgstr "Najnovšie témy"
+
+#: templates/noticeapp/quick_access.html:17
+msgid "Last posts"
+msgstr "Najnovšie príspevky"
+
+#: templates/noticeapp/quick_access.html:18 templates/noticeapp/user.html:25
+msgid "Statistics"
+msgstr "Štatistiky"
+
+#: templates/noticeapp/course.html:48
+msgid "Unstick course"
+msgstr "Zrušiť sledovanie témy"
+
+#: templates/noticeapp/course.html:50
+msgid "Stick course"
+msgstr "Sledovať tému"
+
+#: templates/noticeapp/course.html:54
+msgid "Open course"
+msgstr "Otvoriť tému"
+
+#: templates/noticeapp/course.html:56
+msgid "Close course"
+msgstr "Zatvoriť tému"
+
+#: templates/noticeapp/course.html:59
+msgid "Merge courses"
+msgstr "Zlúčiť témy"
+
+#: templates/noticeapp/course.html:63
+msgid "Unsubscribe"
+msgstr "Neodoberať"
+
+#: templates/noticeapp/course.html:65
+msgid "Subscribe"
+msgstr "Odoberať"
+
+#: templates/noticeapp/user.html:30
+msgid "Find all posts"
+msgstr "Nájsť všetky príspevky"
+
+#: templates/noticeapp/user.html:34
+msgid "Number of courses"
+msgstr "Počet tém"
+
+#: templates/noticeapp/user.html:37
+msgid "Find all courses"
+msgstr "Nájsť všetky témy"
+
+#: templates/noticeapp/user.html:40
+msgid "Date of registration"
+msgstr "Dátum registrácie"
+
+#: templates/noticeapp/user.html:41
+msgid "Contacts"
+msgstr "Kontakty"
+
+#: templates/noticeapp/user_notices.html:6 templates/noticeapp/user_notices.html.py:11
+msgid "All courses created by"
+msgstr "Všetky témy vytvorené"
+
+#: templatetags/noticeapp_tags.py:58
+msgid "seconds ago,seconds ago,seconds ago"
+msgstr "sekúndu pred,sekundy pred,sekúnd pred"
+
+#: templatetags/noticeapp_tags.py:61
+msgid "seconds ago"
+msgstr "sekúnd pred"
+
+#: templatetags/noticeapp_tags.py:67
+msgid "minutes ago,minutes ago,minutes ago"
+msgstr "minútu pred,minúty pred,minút pred"
+
+#: templatetags/noticeapp_tags.py:70
+msgid "minutes ago"
+msgstr "minút pred"
+
+#: templatetags/noticeapp_tags.py:80
+#, python-format
+msgid "today, %s"
+msgstr "dnes, %s"
+
+#: templatetags/noticeapp_tags.py:82
+#, python-format
+msgid "yesterday, %s"
+msgstr "včera, %s"
+
+#~ msgid "Recipient"
+#~ msgstr "Príjemca"
+
+#~ msgid "User with login %s does not exist"
+#~ msgstr "Používateľ s loginom %s neexistuje"
+
+#~ msgid "You can't send PM to yourself"
+#~ msgstr "Nemôžete posielať PM sám sebe"
+
+#~ msgid "Invalid thread ID"
+#~ msgstr "Neplatné ID vlákna"
+
+#~ msgid "Inbox"
+#~ msgstr "Prichádzajúce správy"
+
+#~ msgid "Outbox"
+#~ msgstr "Odchádzajúce správy"
+
+#~ msgid "Trash"
+#~ msgstr "Kôš"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Private message"
+#~ msgstr "Súkromná správa"
+
+#~ msgid "Private messages"
+#~ msgstr "Súkromné správy"
+
+#~ msgid "Messagebox"
+#~ msgstr "Odkazová schránka"
+
+#~ msgid ""
+#~ "User %(username)s have sent your the new private message.\n"
+#~ "---\n"
+#~ "%(message)s\n"
+#~ "---\n"
+#~ "See message online: %(pm_url)s"
+#~ msgstr ""
+#~ "Používateľ %(username)s Vám poslal súkromnú správu.\n"
+#~ "---\n"
+#~ "%(message)s\n"
+#~ "---\n"
+#~ "Pozrieť správu online: %(pm_url)s"
+
+#~ msgid "New private message for you"
+#~ msgstr "Nová súkromná správa pre Vás"
+
+#~ msgid "PM"
+#~ msgstr "PM"
+
+#~ msgid "Send PM"
+#~ msgstr "Poslať PM"
+
+#~ msgid "Select messages:"
+#~ msgstr "Vyberte správy: "
+
+#~ msgid "All"
+#~ msgstr "Všetky"
+
+#~ msgid "None"
+#~ msgstr "Žiadne"
+
+#~ msgid "Read messages"
+#~ msgstr "Prečítané správy"
+
+#~ msgid "Unread messages"
+#~ msgstr "Neprečítané správy"
+
+#~ msgid "With selected:"
+#~ msgstr "Vybrané ako:"
+
+#~ msgid "Mark as read"
+#~ msgstr "Označiť ako prečítané"
+
+#~ msgid "Mark as unread"
+#~ msgstr "Označiť ako neprečítané"
+
+#~ msgid "Inbox is empty"
+#~ msgstr "Žiadne nové správy"
+
+#~ msgid "Message from"
+#~ msgstr "Správa od"
+
+#~ msgid "Message for"
+#~ msgstr "Správa pre"
+
+#~ msgid "Reply"
+#~ msgstr "Odpovedať"
+
+#~ msgid "to"
+#~ msgstr "pre"
+
+#~ msgid "Are you sure you want to delete these messages?"
+#~ msgstr "Ste si istý, že chcete vymazať tieto správy?"
+
+#~ msgid "Messages"
+#~ msgstr "Správy"
+
+#~ msgid "From"
+#~ msgstr "Od"
+
+#~ msgid "This messagebox is empty"
+#~ msgstr "Táto schránka je prázdna"
+
+#~ msgid "Sent messages"
+#~ msgstr "Odoslané správy"
+
+#~ msgid "outbox"
+#~ msgstr "исходящие сообщения"

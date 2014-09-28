@@ -1,0 +1,32 @@
+{% extends 'noticeapp/base.html' %}
+{% load i18n noticeapp_tags %}
+
+{% block title %}
+{% if notice %}{% trans "New course" %}{% else %}{% trans "New reply" %}{% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    {% include "noticeapp/_markitup.html" %}
+    <script type="text/javascript" src="{{ STATIC_URL }}noticeapp/js/jquery.formset.min.js"></script>
+{% endblock %}
+
+
+{% block breadcrumb %}
+    {% if notice %}
+        {% with object=notice extra_crumb="New course" %}
+            {% include 'noticeapp/breadcrumb.html' %}
+        {% endwith %}
+    {% else %}
+        {% with object=course extra_crumb="New reply" %}
+            {% include 'noticeapp/breadcrumb.html' %}
+        {% endwith %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<h1>{% if notice %}{% trans "New course" %}{% else %}{% trans "New reply" %}{% endif %}</h1>
+
+{% include "noticeapp/post_form.html" %}
+{% endblock content %}
