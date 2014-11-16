@@ -1,5 +1,5 @@
 jQuery.fn.table2CSV = function(options) {
-    var options = jQuery.extend({
+    options = jQuery.extend({
         separator: ',',
         header: [],
         delivery: '', // popup, value
@@ -40,9 +40,8 @@ jQuery.fn.table2CSV = function(options) {
         return popup(mydata);
     } else {
         //csvData.pop(); // remove dowbload option row
-        var mydata = csvData.join('\n');
-            // Data URI
-        csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(mydata);
+        // Data URI
+        csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csvData.join('\n'));
         var a = document.createElement('a');
         a.href        = csvData;
         a.target      = '_blank';
@@ -53,9 +52,9 @@ jQuery.fn.table2CSV = function(options) {
     }
 
     function row2CSV(tmpRow) {
-        var tmp = tmpRow.join('') // to remove any blank rows
+        var tmp = tmpRow.join(''); // to remove any blank rows
         // alert(tmp);
-        if (tmpRow.length > 0 && tmp != '') {
+        if (tmpRow.length > 0 && tmp !== '') {
             var mystr = tmpRow.join(options.separator);
             csvData[csvData.length] = mystr;
         }
@@ -65,11 +64,11 @@ jQuery.fn.table2CSV = function(options) {
         var regexp = new RegExp(/["]/g);
         var output = input.replace(regexp, "â€œ");
         //HTML
-        var regexp = new RegExp(/\<[^\<]+\>/g);
-        var output = output.replace(regexp, "");
+        regexp = new RegExp(/\<[^\<]+\>/g);
+        output = output.replace(regexp, "");
         output = output.replace(/\s{2,}/g, ' ');
         output = $.trim(output);
-        if (output == "") return '';
+        if (output === "") return '';
         return '"' + output + '"';
     }
     function popup(data) {
